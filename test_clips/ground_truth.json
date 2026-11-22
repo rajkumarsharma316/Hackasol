@@ -8,7 +8,7 @@
   "clip02_red_suv_mud": {
     "plate": "KA05MN7788",
     "source_image": "red_suv",
-    "note": "Mud smear hides characters 5-6 (series letters)",
+    "note": "Mud smear hides characters 5-6 (series letters MN)",
     "in_registry": true
   },
   "clip03_black_sedan_lowlight": {
@@ -26,13 +26,13 @@
   "clip05_scooter_motionblur": {
     "plate": "GJ01KQ5604",
     "source_image": "scooter",
-    "note": "Fast two-wheeler, heavy motion blur, passing occluder",
+    "note": "Fast two-wheeler, motion blur, passing occluder in middle frames",
     "in_registry": true
   },
   "clip06_truck": {
     "plate": "HR55AJ8016",
     "source_image": "truck",
-    "note": "Goods truck, dirty yellow plate",
+    "note": "Goods truck, dirty yellow two-line plate",
     "in_registry": true
   },
   "clip07_silver_suv_unregistered": {
