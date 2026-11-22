@@ -1,0 +1,601 @@
+reg_no,make,model,body_type,colour,year,fuel,owner,city,status
+RJ14PG3458,Maruti Suzuki,Alto,car,black,2017,CNG,Ishaan Pillai,Jaipur,Active
+TS07VH7386,Hero,Splendor,two-wheeler,white,2021,Petrol,Rohan Reddy,Hyderabad,Active
+TN07HG8481,Hyundai,Creta,suv,white,2018,Petrol,Ishaan Nair,Chennai,Active
+DL2CHJ4253,Ashok Leyland,Dost,truck,orange,2019,Petrol,Aditya Pillai,New Delhi,Active
+UP14VD5811,Maruti Suzuki,Ciaz,car,red,2010,CNG,Ananya Gupta,Lucknow,Active
+DL2CMX0966,Maruti Suzuki,Brezza,suv,white,2024,Petrol,Karthik Menon,New Delhi,Active
+HR26RA1119,Maruti Suzuki,Eeco,van,blue,2021,Petrol,Fatima Verma,Gurugram,Active
+HR55KD3722,Maruti Suzuki,Dzire,car,blue,2017,Petrol,Kavya Khan,Gurugram,Active
+KA51KC9656,TVS,Jupiter,two-wheeler,silver,2014,Petrol,Priya Chopra,Bengaluru,Active
+MH01TA8232,Piaggio,Ape,auto-rickshaw,black,2024,Diesel,Fatima Nair,Pune,Active
+KA53YZ9775,Tata,Harrier,suv,green,2014,CNG,Gurpreet Khan,Bengaluru,Active
+MH12DE4527,Maruti Suzuki,Swift,car,white,2012,Petrol,Pooja Verma,Pune,Active
+KL07BM5547,Tata,Harrier,suv,maroon,2020,Petrol,Fatima Patel,Kochi,Active
+RJ14N6464,TVS,King,auto-rickshaw,yellow,2022,Petrol,Rahul Das,Jaipur,Active
+DL1CAF3768,Volkswagen,Virtus,car,grey,2010,Petrol,Ananya Reddy,New Delhi,Active
+HR26AM3642,Kia,Seltos,suv,silver,2024,CNG,Aditya Desai,Gurugram,Active
+DL1CEG9627,Mahindra,Bolero Pickup,truck,orange,2022,Diesel,Imran Desai,New Delhi,Active
+MH04GD5062,Hyundai,Venue,suv,silver,2020,Petrol,Karthik Verma,Pune,Active
+MH43BF7313,Maruti Suzuki,Alto,car,black,2014,CNG,Ishaan Mehta,Pune,Active
+UP14PY0377,Maruti Suzuki,Eeco,van,grey,2010,Diesel,Gurpreet Desai,Lucknow,Active
+GJ18CK7568,Bajaj,RE,auto-rickshaw,green,2012,Petrol,Kavya Das,Ahmedabad,Active
+RJ27AY7579,Skoda,Slavia,car,blue,2021,Petrol,Kavya Rao,Jaipur,Active
+RJ27UC8848,Maruti Suzuki,Ertiga,van,silver,2017,CNG,Gurpreet Patel,Jaipur,Active
+HR26XC6941,Honda,Activa,two-wheeler,yellow,2024,Petrol,Meera Khan,Gurugram,Active
+MH01VS4913,Eicher,Pro 2049,truck,red,2023,Petrol,Aditya Menon,Pune,Active
+TS07VY0823,Mahindra,XUV700,suv,red,2022,Petrol,Priya Gupta,Hyderabad,Active
+TS07T9642,Maruti Suzuki,Ertiga,van,white,2024,Diesel,Siddharth Pillai,Hyderabad,Active
+TS07CX2859,Bajaj,Pulsar,two-wheeler,yellow,2014,Petrol,Gurpreet Singh,Hyderabad,Active
+WB06NZ0441,Skoda,Slavia,car,maroon,2013,CNG,Siddharth Khan,Kolkata,Active
+HR55BJ1630,Bajaj,RE,auto-rickshaw,yellow,2016,Petrol,Gurpreet Kulkarni,Gurugram,Active
+UP16X2941,Bajaj,Pulsar,two-wheeler,white,2012,Petrol,Vihaan Singh,Lucknow,Active
+KA05AB7788,Maruti Suzuki,Swift,car,red,2014,CNG,Neha Khan,Bengaluru,Active
+HR51N8623,Maruti Suzuki,Dzire,car,black,2012,Diesel,Gurpreet Desai,Gurugram,Active
+DL2CHY5425,Honda,Activa,two-wheeler,white,2025,Petrol,Vihaan Chopra,New Delhi,Active
+TN01FR2617,Kia,Sonet,suv,grey,2015,Petrol,Ishaan Das,Chennai,Active
+KL11ND4264,Tata,Harrier,suv,blue,2025,CNG,Ananya Nair,Kochi,Active
+WB06D1153,Honda,Amaze,car,silver,2022,CNG,Meera Shaikh,Kolkata,Active
+KL07NG9400,TVS,Apache,two-wheeler,silver,2014,Petrol,Meera Gupta,Kochi,Active
+DL3CF8532,Honda,Amaze,car,grey,2024,Petrol,Karthik Pillai,New Delhi,Active
+TN07ND1607,Hero,Splendor,two-wheeler,silver,2024,Petrol,Karthik Verma,Chennai,Active
+TN01RV4016,Ashok Leyland,Viking,bus,white,2021,Petrol,Aarav Sharma,Chennai,Active
+KA03MN7788,Honda,Activa,two-wheeler,red,2013,Petrol,Imran Verma,Bengaluru,Active
+RJ14P1649,Tata,407,truck,white,2014,CNG,Fatima Desai,Jaipur,Active
+RJ14X2135,Maruti Suzuki,Ciaz,car,black,2012,Petrol,Siddharth Kulkarni,Jaipur,Active
+RJ14AN7236,Royal Enfield,Classic 350,two-wheeler,grey,2020,Petrol,Priya Khan,Jaipur,Active
+UP32AD4692,Bajaj,RE,auto-rickshaw,green,2013,Petrol,Rahul Nair,Lucknow,Active
+KL11JZ2198,Hyundai,i20,car,red,2010,CNG,Aditya Iyer,Kochi,Active
+GJ05XK5249,Mahindra,XUV700,suv,white,2021,Diesel,Sneha Kulkarni,Ahmedabad,Active
+GJ18H2836,Honda,City,car,black,2023,CNG,Priya Desai,Ahmedabad,Active
+TN01ZK5945,Maruti Suzuki,Ertiga,van,blue,2014,Diesel,Vihaan Chopra,Chennai,Active
+KL11MM1320,Maruti Suzuki,Alto,car,orange,2016,CNG,Arjun Chopra,Kochi,Active
+TS07WN9194,Piaggio,Ape,auto-rickshaw,green,2010,Petrol,Imran Das,Hyderabad,Active
+UP16BZ7251,Hyundai,Creta,suv,black,2023,Petrol,Gurpreet Desai,Lucknow,Active
+RJ27ZG4174,Honda,Activa,two-wheeler,blue,2024,Petrol,Fatima Reddy,Jaipur,Active
+HR55UE2664,Maruti Suzuki,WagonR,car,white,2013,Diesel,Sneha Banerjee,Gurugram,Active
+TS07K4814,Hyundai,i20,car,red,2018,CNG,Arjun Menon,Hyderabad,Active
+DL8CU7467,Tata,LPT 1613,truck,blue,2016,CNG,Pooja Gupta,New Delhi,Active
+MH12XC9333,Honda,Activa,two-wheeler,white,2019,Petrol,Aarav Desai,Pune,Active
+WB02JW5991,Hero,Splendor,two-wheeler,silver,2010,Petrol,Pooja Gupta,Kolkata,Active
+KA01ME0471,Maruti Suzuki,WagonR,car,white,2012,Petrol,Priya Verma,Bengaluru,Active
+MH01CG9248,Toyota,Fortuner,suv,silver,2020,Petrol,Vihaan Pillai,Pune,Active
+HR55AJ8018,Tata,407,truck,yellow,2019,Petrol,Sneha Kulkarni,Gurugram,Active
+RJ27RV0016,Toyota,Fortuner,suv,orange,2020,Petrol,Meera Kulkarni,Jaipur,Active
+UP16VU1898,Hyundai,Verna,car,grey,2017,Diesel,Arjun Verma,Lucknow,Active
+TS07VM8441,Maruti Suzuki,WagonR,car,black,2016,Diesel,Divya Singh,Hyderabad,Active
+KA01XE4085,Tata,LPT 1613,truck,red,2020,Diesel,Pooja Joshi,Bengaluru,Active
+RJ14XM6534,Royal Enfield,Classic 350,two-wheeler,grey,2020,Petrol,Kavya Pillai,Jaipur,Active
+RJ27VB3438,TVS,King,auto-rickshaw,green,2024,Diesel,Neha Khan,Jaipur,Active
+MH43K0706,Bajaj,Pulsar,two-wheeler,silver,2013,Petrol,Priya Reddy,Pune,Active
+MH14NW6895,TVS,Jupiter,two-wheeler,beige,2020,Petrol,Imran Pillai,Pune,Active
+WB06C0093,TVS,Apache,two-wheeler,silver,2017,Petrol,Fatima Desai,Kolkata,Active
+UP16KG2159,Honda,City,car,red,2024,Petrol,Imran Khan,Lucknow,Active
+DL1CM6785,Hero,Splendor,two-wheeler,blue,2023,Petrol,Rahul Chopra,New Delhi,Active
+GJ01X8433,Mahindra,Treo,auto-rickshaw,blue,2011,Diesel,Divya Shaikh,Ahmedabad,Active
+KA05ST9079,Hero,Splendor,two-wheeler,black,2023,Petrol,Rahul Joshi,Bengaluru,Active
+HR51U8420,Hero,Splendor,two-wheeler,grey,2023,Petrol,Priya Banerjee,Gurugram,Active
+GJ05TV7809,Maruti Suzuki,Eeco,van,white,2021,Diesel,Siddharth Singh,Ahmedabad,Active
+KL11JK5929,Maruti Suzuki,Ciaz,car,blue,2011,Petrol,Divya Das,Kochi,Active
+KL11TM0783,Maruti Suzuki,Alto,car,white,2010,Petrol,Aarav Verma,Kochi,Active
+KL11BP0745,Honda,Amaze,car,red,2025,Petrol,Ishaan Menon,Kochi,Active
+TN22NZ7937,Skoda,Slavia,car,grey,2012,Diesel,Kavya Das,Chennai,Active
+RJ27DH4973,Royal Enfield,Classic 350,two-wheeler,grey,2022,Petrol,Karthik Nair,Jaipur,Active
+UP32KS9132,Honda,Activa,two-wheeler,silver,2015,Petrol,Priya Nair,Lucknow,Active
+KA51UN8302,Maruti Suzuki,Alto,car,grey,2020,Diesel,Rohan Kulkarni,Bengaluru,Active
+DL3CH0507,Ashok Leyland,Dost,truck,yellow,2017,Petrol,Meera Banerjee,New Delhi,Active
+TN07BK6204,Bajaj,Pulsar,two-wheeler,brown,2015,Petrol,Ananya Sharma,Chennai,Active
+MH12DF4521,Maruti Suzuki,Baleno,car,silver,2011,Diesel,Vihaan Reddy,Pune,Active
+TN07BX3307,Piaggio,Ape,auto-rickshaw,yellow,2019,Petrol,Ananya Banerjee,Chennai,Active
+KL11DP7695,TVS,Apache,two-wheeler,white,2022,Petrol,Meera Menon,Kochi,Active
+WB06M4756,Piaggio,Ape,auto-rickshaw,green,2022,CNG,Rahul Shaikh,Kolkata,Active
+HR51TK1985,Hyundai,Verna,car,white,2011,CNG,Pooja Shaikh,Gurugram,Active
+KL07HL9878,Maruti Suzuki,Eeco,van,grey,2020,Diesel,Ishaan Iyer,Kochi,Active
+KA01UG2636,Hero,Splendor,two-wheeler,red,2013,Petrol,Imran Menon,Bengaluru,Active
+WB02R6422,Maruti Suzuki,Eeco,van,orange,2012,Diesel,Pooja Shaikh,Kolkata,Active
+WB02RY1017,Mahindra,Scorpio,suv,red,2013,Diesel,Rohan Joshi,Kolkata,Active
+TN09SL2071,Mahindra,Thar,suv,grey,2018,Diesel,Siddharth Sharma,Chennai,Active
+KL07AR4976,Tata,Nexon,suv,green,2012,Diesel,Aditya Verma,Kochi,Active
+MH43UU3334,Honda,Activa,two-wheeler,blue,2024,Petrol,Gurpreet Khan,Pune,Active
+KA53BG8100,Kia,Seltos,suv,black,2012,Diesel,Meera Singh,Bengaluru,Active
+KA01L0426,Bajaj,RE,auto-rickshaw,green,2021,Petrol,Gurpreet Reddy,Bengaluru,Active
+TS07FH1725,Maruti Suzuki,Dzire,car,white,2013,CNG,Ishaan Patel,Hyderabad,Active
+TS09MP6862,Ashok Leyland,Viking,bus,red,2021,Petrol,Aarav Shaikh,Hyderabad,Active
+HR26D7985,Mahindra,Bolero Pickup,truck,white,2010,Diesel,Meera Pillai,Gurugram,Active
+HR51CX7830,Maruti Suzuki,Ertiga,van,beige,2024,Diesel,Rahul Shaikh,Gurugram,Active
+UP32BA3749,Hero,Splendor,two-wheeler,yellow,2019,Petrol,Arjun Menon,Lucknow,Active
+HR55NN9515,Tata,Altroz,car,yellow,2016,Diesel,Karthik Khan,Gurugram,Active
+WB02MP0531,Maruti Suzuki,Brezza,suv,black,2017,CNG,Rahul Chopra,Kolkata,Active
+HR26G4177,Maruti Suzuki,Ciaz,car,grey,2010,CNG,Neha Das,Gurugram,Active
+KA05JY4896,Toyota,Innova Crysta,van,blue,2011,CNG,Sneha Gupta,Bengaluru,Active
+WB02FW0065,Hero,Splendor,two-wheeler,silver,2014,Petrol,Divya Shaikh,Kolkata,Active
+HR51BW5170,Maruti Suzuki,Swift,car,black,2017,Diesel,Kavya Gupta,Gurugram,Active
+RJ14GA1077,Royal Enfield,Classic 350,two-wheeler,blue,2011,Petrol,Siddharth Das,Jaipur,Active
+UP32UR5156,Honda,Activa,two-wheeler,beige,2012,Petrol,Ishaan Khan,Lucknow,Active
+UP32GN2308,Eicher,Pro 2049,truck,red,2024,Petrol,Priya Gupta,Lucknow,Active
+MH04DB3106,Royal Enfield,Classic 350,two-wheeler,silver,2012,Petrol,Pooja Banerjee,Pune,Active
+GJ05NP5032,Honda,City,car,red,2011,CNG,Kavya Mehta,Ahmedabad,Active
+GJ01PY8818,Honda,Activa,two-wheeler,grey,2011,Petrol,Aditya Singh,Ahmedabad,Active
+TN22XR7076,Tata,407,truck,orange,2011,Petrol,Divya Verma,Chennai,Active
+HR26VE3140,Mahindra,Bolero Pickup,truck,white,2012,Diesel,Rahul Reddy,Gurugram,Active
+UP32M3378,Tata,Tiago,car,yellow,2015,Petrol,Meera Menon,Lucknow,Active
+UP14K6489,Maruti Suzuki,Eeco,van,red,2022,CNG,Aditya Reddy,Lucknow,Active
+TS09GG0946,Skoda,Slavia,car,white,2011,Diesel,Priya Shaikh,Hyderabad,Active
+DL3CAE0912,Honda,City,car,white,2024,CNG,Sneha Gupta,New Delhi,Active
+MH43PC4407,Tata,407,truck,yellow,2012,Diesel,Priya Desai,Pune,Active
+TS07FT1962,Maruti Suzuki,Ertiga,van,silver,2014,Petrol,Divya Chopra,Hyderabad,Active
+TS07GS3309,Hyundai,Verna,car,beige,2018,Diesel,Rahul Patel,Hyderabad,Active
+DL2CYK2189,Maruti Suzuki,Dzire,car,white,2023,Petrol,Siddharth Sharma,New Delhi,Active
+KL11V0881,Piaggio,Ape,auto-rickshaw,yellow,2017,Petrol,Divya Shaikh,Kochi,Active
+TN07LX5552,Hero,Splendor,two-wheeler,red,2021,Petrol,Priya Reddy,Chennai,Active
+UP32ZX4410,Mahindra,Scorpio,suv,silver,2016,CNG,Rohan Gupta,Lucknow,Active
+TS07GB4673,Kia,Seltos,suv,silver,2019,CNG,Imran Nair,Hyderabad,Active
+HR26DK7459,Royal Enfield,Classic 350,two-wheeler,red,2025,Petrol,Arjun Pillai,Gurugram,Active
+GJ05CM3398,TVS,Jupiter,two-wheeler,grey,2021,Petrol,Aarav Desai,Ahmedabad,Active
+HR26AC4188,Hyundai,Creta,suv,white,2022,CNG,Gurpreet Gupta,Gurugram,Active
+RJ14C1796,Volkswagen,Virtus,car,green,2019,Diesel,Meera Reddy,Jaipur,Active
+KA51UH6347,Hyundai,i20,car,red,2017,Petrol,Vihaan Desai,Bengaluru,Active
+TN22PM0253,Bajaj,RE,auto-rickshaw,yellow,2022,Diesel,Neha Gupta,Chennai,Active
+KA01K2213,Toyota,Innova Crysta,van,white,2020,Diesel,Fatima Shaikh,Bengaluru,Active
+RJ14AX7869,Hyundai,i20,car,white,2013,Diesel,Ananya Khan,Jaipur,Active
+KA01HH9754,Royal Enfield,Classic 350,two-wheeler,white,2017,Petrol,Priya Shaikh,Bengaluru,Active
+TS07AH2447,Hyundai,Venue,suv,silver,2018,Petrol,Ishaan Sharma,Hyderabad,Active
+HR26EY7542,Skoda,Slavia,car,white,2020,Petrol,Pooja Joshi,Gurugram,Active
+HR26AV7207,Maruti Suzuki,Swift,car,green,2013,Petrol,Ishaan Singh,Gurugram,Active
+KL11EW8508,Maruti Suzuki,WagonR,car,black,2017,Petrol,Fatima Sharma,Kochi,Active
+HR51S4619,Maruti Suzuki,Brezza,suv,grey,2020,Petrol,Aarav Rao,Gurugram,Active
+UP14Z3029,Toyota,Innova Crysta,van,white,2012,Petrol,Rahul Gupta,Lucknow,Active
+RJ27PC9703,Mahindra,Treo,auto-rickshaw,green,2018,Diesel,Neha Das,Jaipur,Active
+KL07RU9508,Mahindra,Bolero Pickup,truck,blue,2019,Petrol,Sneha Sharma,Kochi,Active
+DL1CGA9494,Royal Enfield,Classic 350,two-wheeler,grey,2019,Petrol,Ananya Nair,New Delhi,Active
+GJ18LB9229,Honda,Activa,two-wheeler,blue,2019,Petrol,Gurpreet Patel,Ahmedabad,Active
+HR55UF0974,Honda,Activa,two-wheeler,white,2011,Petrol,Imran Banerjee,Gurugram,Active
+TS07LD8304,Bajaj,Pulsar,two-wheeler,orange,2019,Petrol,Priya Iyer,Hyderabad,Active
+WB06RL7373,Mahindra,Thar,suv,silver,2017,Petrol,Kavya Mehta,Kolkata,Active
+KL07A9287,Maruti Suzuki,Baleno,car,red,2010,Petrol,Arjun Shaikh,Kochi,Active
+DL4CAK2480,Bajaj,Pulsar,two-wheeler,black,2024,Petrol,Pooja Shaikh,New Delhi,Active
+GJ01ZB7435,Toyota,Innova Crysta,van,red,2023,CNG,Aditya Joshi,Ahmedabad,Active
+KA01GE0255,Hyundai,Creta,suv,white,2012,Diesel,Ananya Khan,Bengaluru,Active
+HR55AU8016,Eicher,Pro 2049,truck,white,2021,Petrol,Karthik Das,Gurugram,Active
+KA53L8493,Maruti Suzuki,Ertiga,van,white,2011,Diesel,Arjun Desai,Bengaluru,Active
+RJ27DE1604,TVS,Apache,two-wheeler,grey,2019,Petrol,Rahul Mehta,Jaipur,Active
+MH02P6948,Hyundai,Verna,car,red,2013,Petrol,Ishaan Menon,Pune,Active
+KL07XM1390,Honda,Activa,two-wheeler,blue,2016,Petrol,Divya Singh,Kochi,Active
+TS09K9886,Bajaj,Pulsar,two-wheeler,black,2017,Petrol,Imran Kulkarni,Hyderabad,Active
+UP14CC0932,Maruti Suzuki,Ertiga,van,white,2022,Petrol,Ishaan Nair,Lucknow,Active
+TS07TL6245,Honda,City,car,silver,2010,CNG,Vihaan Verma,Hyderabad,Active
+TS07R9099,Honda,Activa,two-wheeler,blue,2013,Petrol,Divya Chopra,Hyderabad,Active
+TN07FM0955,Maruti Suzuki,Alto,car,black,2022,Petrol,Divya Pillai,Chennai,Active
+HR51NX0622,Mahindra,Thar,suv,black,2018,Petrol,Divya Menon,Gurugram,Active
+TN09ZN4627,Mahindra,Scorpio,suv,silver,2018,Diesel,Aarav Das,Chennai,Active
+KL11UU6334,Maruti Suzuki,Alto,car,white,2018,Petrol,Rohan Khan,Kochi,Active
+GJ01HD6526,Piaggio,Ape,auto-rickshaw,blue,2017,Diesel,Neha Banerjee,Ahmedabad,Active
+GJ18XF3157,Kia,Seltos,suv,black,2023,Diesel,Rohan Kulkarni,Ahmedabad,Active
+KL11KA3970,Maruti Suzuki,Alto,car,yellow,2022,Petrol,Aarav Das,Kochi,Active
+UP14DC6656,Maruti Suzuki,Ertiga,van,beige,2015,Diesel,Aarav Patel,Lucknow,Active
+MH12BM0684,Honda,Amaze,car,grey,2024,CNG,Ananya Khan,Pune,Active
+KA03DM3229,Tata,Altroz,car,white,2014,CNG,Neha Menon,Bengaluru,Active
+MH14B4226,TVS,Apache,two-wheeler,orange,2011,Petrol,Ananya Khan,Pune,Active
+KA51EA3158,Ashok Leyland,Dost,truck,orange,2024,Diesel,Ishaan Banerjee,Bengaluru,Active
+TN09BX3307,Bajaj,RE,auto-rickshaw,green,2015,Diesel,Priya Verma,Chennai,Active
+GJ01BL0335,Toyota,Fortuner,suv,white,2025,Petrol,Ananya Joshi,Ahmedabad,Active
+HR26LZ6433,TVS,Apache,two-wheeler,brown,2018,Petrol,Ishaan Shaikh,Gurugram,Active
+UP14HE9386,Mahindra,XUV700,suv,silver,2010,Petrol,Neha Shaikh,Lucknow,Active
+MH14PB0986,Tata,Altroz,car,black,2013,Petrol,Kavya Mehta,Pune,Active
+MH02MF6009,Tata,Nexon,suv,silver,2024,Petrol,Kavya Sharma,Pune,Active
+GJ18RY4163,Tata,407,truck,orange,2010,Petrol,Aarav Shaikh,Ahmedabad,Active
+MH12P8498,Bajaj,Pulsar,two-wheeler,orange,2011,Petrol,Fatima Verma,Pune,Active
+WB06W1027,Maruti Suzuki,Dzire,car,white,2021,Petrol,Priya Das,Kolkata,Active
+GJ05T4436,Honda,Activa,two-wheeler,white,2015,Petrol,Aarav Kulkarni,Ahmedabad,Active
+DL2CUL8052,Volkswagen,Virtus,car,grey,2019,Petrol,Aarav Singh,New Delhi,Active
+KA51NT6795,Toyota,Fortuner,suv,white,2013,Petrol,Karthik Joshi,Bengaluru,Active
+GJ18D2490,Tata,407,truck,orange,2019,Diesel,Siddharth Das,Ahmedabad,Active
+GJ18FV8947,Tata,Nexon,suv,white,2025,Petrol,Rohan Joshi,Ahmedabad,Active
+GJ05R7838,Hero,Splendor,two-wheeler,silver,2010,Petrol,Rohan Das,Ahmedabad,Active
+KL11HK1538,Maruti Suzuki,Brezza,suv,white,2021,Petrol,Siddharth Reddy,Kochi,Active
+KA05E6546,TVS,Jupiter,two-wheeler,white,2019,Petrol,Sneha Gupta,Bengaluru,Active
+HR26AJ8016,Honda,Amaze,car,silver,2015,Petrol,Divya Patel,Gurugram,Active
+TS09ED5952,Ashok Leyland,Dost,truck,brown,2023,Petrol,Aditya Menon,Hyderabad,Active
+TN07VV5276,Honda,Amaze,car,black,2012,Petrol,Ananya Gupta,Chennai,Active
+DL3CXZ4988,Hero,Splendor,two-wheeler,white,2025,Petrol,Vihaan Chopra,New Delhi,Active
+MH43ZT2283,Bajaj,RE,auto-rickshaw,blue,2017,Petrol,Aarav Patel,Pune,Active
+TN38AW0259,Maruti Suzuki,Alto,car,blue,2010,CNG,Fatima Das,Chennai,Active
+DL3CDB7137,Tata,407,truck,orange,2019,Petrol,Sneha Singh,New Delhi,Active
+TS07U7133,Hyundai,Verna,car,black,2017,Diesel,Pooja Das,Hyderabad,Active
+RJ14GW3120,Maruti Suzuki,Ciaz,car,grey,2012,Petrol,Aarav Nair,Jaipur,Active
+DL2CSN7212,Royal Enfield,Classic 350,two-wheeler,red,2012,Petrol,Kavya Das,New Delhi,Active
+GJ18EL7570,TVS,Apache,two-wheeler,grey,2016,Petrol,Ishaan Rao,Ahmedabad,Active
+KA53YP9583,TVS,Jupiter,two-wheeler,black,2015,Petrol,Neha Joshi,Bengaluru,Active
+HR26ZM9420,Honda,Activa,two-wheeler,red,2024,Petrol,Siddharth Reddy,Gurugram,Active
+HR26GA7425,Mahindra,XUV700,suv,black,2015,Petrol,Rohan Rao,Gurugram,Active
+TS07WU0840,TVS,Apache,two-wheeler,maroon,2022,Petrol,Sneha Sharma,Hyderabad,Active
+HR26BU5690,Piaggio,Ape,auto-rickshaw,black,2011,Diesel,Sneha Banerjee,Gurugram,Active
+DL2CCE3165,Honda,Activa,two-wheeler,yellow,2019,Petrol,Kavya Joshi,New Delhi,Active
+RJ14DG0016,Maruti Suzuki,Swift,car,blue,2017,Diesel,Vihaan Pillai,Jaipur,Active
+WB02TT1936,Hero,Splendor,two-wheeler,white,2019,Petrol,Ananya Nair,Kolkata,Active
+HR51NE6342,TVS,Jupiter,two-wheeler,silver,2010,Petrol,Meera Shaikh,Gurugram,Active
+TS07EX3739,Hyundai,Venue,suv,white,2014,Petrol,Vihaan Pillai,Hyderabad,Active
+HR26Z6289,Maruti Suzuki,Alto,car,grey,2013,Petrol,Vihaan Reddy,Gurugram,Active
+UP14CY0907,Mahindra,XUV700,suv,red,2012,Petrol,Aarav Singh,Lucknow,Active
+UP14AD3507,Royal Enfield,Classic 350,two-wheeler,blue,2010,Petrol,Aarav Reddy,Lucknow,Active
+MH14N3042,Maruti Suzuki,Swift,car,white,2010,Diesel,Rohan Joshi,Pune,Active
+KA05AR2274,Mahindra,Thar,suv,white,2024,Petrol,Vihaan Pillai,Bengaluru,Active
+RJ14R7087,Maruti Suzuki,Dzire,car,white,2023,Diesel,Aditya Singh,Jaipur,Active
+WB02BX6242,Piaggio,Ape,auto-rickshaw,blue,2022,CNG,Priya Shaikh,Kolkata,Active
+MH12TR4740,Eicher,Pro 2049,truck,red,2021,Diesel,Ananya Banerjee,Pune,Active
+KL07S5808,Toyota,Fortuner,suv,blue,2023,CNG,Kavya Pillai,Kochi,Active
+WB06ZT4254,Ashok Leyland,Dost,truck,blue,2014,Petrol,Ananya Kulkarni,Kolkata,Active
+UP14LH6038,Volkswagen,Virtus,car,red,2018,Diesel,Vihaan Patel,Lucknow,Active
+MH02UM9992,Maruti Suzuki,Eeco,van,yellow,2011,Petrol,Fatima Kulkarni,Pune,Active
+UP32U5095,Hero,Splendor,two-wheeler,grey,2025,Petrol,Siddharth Desai,Lucknow,Active
+UP32S5231,TVS,King,auto-rickshaw,green,2010,Diesel,Ishaan Gupta,Lucknow,Active
+MH14HL4995,TVS,Jupiter,two-wheeler,blue,2011,Petrol,Siddharth Sharma,Pune,Active
+TN07F2479,Maruti Suzuki,Alto,car,white,2025,Diesel,Ishaan Rao,Chennai,Active
+KL11K7478,Bajaj,Pulsar,two-wheeler,black,2012,Petrol,Ananya Banerjee,Kochi,Active
+GJ01GK4998,Maruti Suzuki,Eeco,van,black,2024,Diesel,Ishaan Das,Ahmedabad,Active
+MH01RH9815,Royal Enfield,Classic 350,two-wheeler,orange,2022,Petrol,Kavya Iyer,Pune,Active
+TN01E8587,Hyundai,Grand i10,car,silver,2018,Petrol,Pooja Gupta,Chennai,Active
+KA03RW7056,Honda,Activa,two-wheeler,white,2020,Petrol,Rohan Gupta,Bengaluru,Active
+TN07LG6369,Maruti Suzuki,Alto,car,blue,2025,Petrol,Siddharth Sharma,Chennai,Active
+MH14DE4521,Tata,Nexon,suv,white,2023,Petrol,Priya Gupta,Pune,Active
+KL07Y8937,TVS,Jupiter,two-wheeler,blue,2010,Petrol,Fatima Nair,Kochi,Active
+WB06LH4362,Bajaj,Pulsar,two-wheeler,grey,2011,Petrol,Aditya Joshi,Kolkata,Active
+RJ27G6424,Mahindra,XUV700,suv,silver,2021,CNG,Aditya Verma,Jaipur,Active
+KL07DT2153,Mahindra,Treo,auto-rickshaw,black,2019,CNG,Meera Reddy,Kochi,Active
+TS07BL3294,Tata,Starbus,bus,white,2010,Petrol,Vihaan Pillai,Hyderabad,Active
+KA53RJ1333,TVS,Apache,two-wheeler,red,2013,Petrol,Vihaan Chopra,Bengaluru,Active
+WB06Z0936,TVS,Jupiter,two-wheeler,grey,2020,Petrol,Aarav Menon,Kolkata,Active
+WB06VG6736,Hero,Splendor,two-wheeler,silver,2013,Petrol,Aarav Iyer,Kolkata,Active
+GJ18Z3567,Bajaj,Pulsar,two-wheeler,black,2024,Petrol,Karthik Menon,Ahmedabad,Active
+MH43PZ1939,Ashok Leyland,Viking,bus,yellow,2024,Diesel,Sneha Kulkarni,Pune,Active
+MH14AH1452,Maruti Suzuki,WagonR,car,silver,2013,CNG,Ishaan Pillai,Pune,Active
+UP16TC1849,Ashok Leyland,Viking,bus,white,2012,CNG,Ishaan Patel,Lucknow,Active
+RJ14PS1093,Maruti Suzuki,Dzire,car,yellow,2017,Petrol,Rahul Chopra,Jaipur,Active
+WB02CU0648,Maruti Suzuki,WagonR,car,grey,2011,CNG,Rohan Desai,Kolkata,Active
+KA01L2761,Maruti Suzuki,WagonR,car,white,2015,Diesel,Gurpreet Das,Bengaluru,Active
+MH01RJ5184,Hero,Splendor,two-wheeler,orange,2017,Petrol,Fatima Gupta,Pune,Active
+TN01VB2042,Royal Enfield,Classic 350,two-wheeler,white,2025,Petrol,Fatima Khan,Chennai,Active
+WB02YH6415,Eicher,Pro 2049,truck,white,2014,CNG,Meera Pillai,Kolkata,Active
+UP32DB2374,Bajaj,Pulsar,two-wheeler,white,2014,Petrol,Pooja Kulkarni,Lucknow,Active
+RJ14KH2313,Bajaj,Pulsar,two-wheeler,red,2021,Petrol,Siddharth Gupta,Jaipur,Active
+GJ18X5291,Ashok Leyland,Dost,truck,white,2020,Petrol,Divya Kulkarni,Ahmedabad,Active
+RJ14BP1435,Eicher,Pro 2049,truck,green,2010,Petrol,Pooja Verma,Jaipur,Active
+WB02LC2553,Tata,Nexon,suv,white,2013,Petrol,Siddharth Khan,Kolkata,Active
+KL11GM4128,Hero,Splendor,two-wheeler,black,2023,Petrol,Aditya Singh,Kochi,Active
+KA51Y2707,Tata,Altroz,car,grey,2012,Petrol,Pooja Banerjee,Bengaluru,Active
+MH04PB1443,Hero,Splendor,two-wheeler,yellow,2015,Petrol,Rohan Das,Pune,Active
+TS09AH7527,Bajaj,RE,auto-rickshaw,blue,2014,Diesel,Ishaan Kulkarni,Hyderabad,Active
+TN07F2518,Bajaj,RE,auto-rickshaw,yellow,2022,Petrol,Sneha Verma,Chennai,Active
+KL11M6353,Hyundai,Verna,car,white,2018,CNG,Sneha Chopra,Kochi,Active
+GJ01FA5495,Mahindra,Scorpio,suv,black,2016,Diesel,Siddharth Sharma,Ahmedabad,Active
+KA01GN7601,Tata,Tiago,car,maroon,2017,CNG,Karthik Sharma,Bengaluru,Active
+KL11G0246,TVS,Jupiter,two-wheeler,black,2010,Petrol,Priya Sharma,Kochi,Active
+TS09SJ7724,Mahindra,Scorpio,suv,yellow,2014,Diesel,Meera Reddy,Hyderabad,Active
+WB06PR4214,Mahindra,Bolero Pickup,truck,yellow,2014,Diesel,Fatima Sharma,Kolkata,Active
+KA01WC3414,Tata,Altroz,car,brown,2015,Diesel,Rohan Joshi,Bengaluru,Active
+GJ18HN6347,Royal Enfield,Classic 350,two-wheeler,grey,2024,Petrol,Sneha Sharma,Ahmedabad,Active
+WB02TA6061,Maruti Suzuki,Ertiga,van,beige,2016,Diesel,Aditya Banerjee,Kolkata,Active
+UP16GM5219,Hyundai,Grand i10,car,white,2020,Petrol,Karthik Sharma,Lucknow,Active
+DL3CAF0972,Hyundai,Verna,car,black,2012,Petrol,Gurpreet Nair,New Delhi,Active
+KA51KW2720,Tata,LPT 1613,truck,green,2011,CNG,Pooja Verma,Bengaluru,Active
+KA05LZ6249,Maruti Suzuki,Eeco,van,black,2013,Petrol,Karthik Banerjee,Bengaluru,Active
+WB02Y8987,Bajaj,Pulsar,two-wheeler,silver,2025,Petrol,Arjun Banerjee,Kolkata,Active
+WB02X7601,Ashok Leyland,Viking,bus,white,2025,Diesel,Karthik Das,Kolkata,Active
+KA53MJ5489,Mahindra,Bolero Pickup,truck,orange,2018,CNG,Ishaan Rao,Bengaluru,Active
+DL3CEZ2325,Hero,Splendor,two-wheeler,red,2013,Petrol,Fatima Joshi,New Delhi,Active
+MH04ST7930,Bajaj,RE,auto-rickshaw,green,2015,Petrol,Divya Singh,Pune,Active
+DL1CNE2431,TVS,Apache,two-wheeler,black,2023,Petrol,Ishaan Nair,New Delhi,Active
+TN07NA3670,Hero,Splendor,two-wheeler,blue,2021,Petrol,Meera Chopra,Chennai,Active
+DL4CXX7755,Bajaj,Pulsar,two-wheeler,black,2017,Petrol,Aarav Joshi,New Delhi,Active
+TS09AF0059,Tata,LPT 1613,truck,white,2019,Diesel,Neha Das,Hyderabad,Active
+GJ05RA6707,Toyota,Fortuner,suv,silver,2020,Petrol,Aditya Chopra,Ahmedabad,Active
+MH12VK3473,Maruti Suzuki,Brezza,suv,white,2015,Diesel,Vihaan Sharma,Pune,Active
+MH12DE4521,Maruti Suzuki,Swift,car,white,2020,Diesel,Aditya Patel,Pune,Flagged - red-light violation
+TN01U5923,Bajaj,Pulsar,two-wheeler,silver,2012,Petrol,Sneha Reddy,Chennai,Active
+UP32N4922,Maruti Suzuki,Swift,car,silver,2025,Petrol,Siddharth Pillai,Lucknow,Active
+MH14CZ2626,Hero,Splendor,two-wheeler,blue,2016,Petrol,Divya Singh,Pune,Active
+KA53NA9301,Maruti Suzuki,Swift,car,blue,2012,Diesel,Meera Mehta,Bengaluru,Active
+GJ01KQ5604,Honda,Activa,two-wheeler,blue,2025,Petrol,Neha Patel,Ahmedabad,Active
+TN09EY7970,Hero,Splendor,two-wheeler,grey,2010,Petrol,Siddharth Menon,Chennai,Active
+UP14VM6785,Tata,Harrier,suv,silver,2022,Petrol,Arjun Sharma,Lucknow,Active
+GJ05CG9558,Mahindra,Bolero Pickup,truck,orange,2019,CNG,Karthik Das,Ahmedabad,Active
+KL07L5307,Mahindra,Bolero Pickup,truck,yellow,2020,Diesel,Neha Sharma,Kochi,Active
+RJ14SM0292,TVS,Jupiter,two-wheeler,white,2016,Petrol,Divya Desai,Jaipur,Active
+DL4CC3165,Maruti Suzuki,Ciaz,car,silver,2014,CNG,Meera Gupta,New Delhi,Active
+DL3CNL0685,TVS,King,auto-rickshaw,blue,2015,Diesel,Aarav Shaikh,New Delhi,Active
+GJ01PB6701,Honda,Amaze,car,silver,2014,Diesel,Siddharth Gupta,Ahmedabad,Active
+HR51LB5525,TVS,Jupiter,two-wheeler,yellow,2021,Petrol,Meera Gupta,Gurugram,Active
+HR55E8171,Bajaj,Pulsar,two-wheeler,blue,2015,Petrol,Rahul Sharma,Gurugram,Active
+TN09BX3807,Bajaj,RE,auto-rickshaw,green,2019,Petrol,Rahul Menon,Chennai,Active
+UP14MG5342,TVS,Apache,two-wheeler,black,2019,Petrol,Divya Nair,Lucknow,Active
+KA05MN7788,Hyundai,Creta,suv,red,2013,Diesel,Imran Patel,Bengaluru,Active
+UP14M7507,Royal Enfield,Classic 350,two-wheeler,blue,2014,Petrol,Fatima Khan,Lucknow,Active
+TS09HS1895,Hero,Splendor,two-wheeler,red,2017,Petrol,Vihaan Singh,Hyderabad,Active
+WB06H6524,Maruti Suzuki,Ertiga,van,black,2025,Diesel,Arjun Nair,Kolkata,Active
+KL11XF5157,Hyundai,i20,car,orange,2023,Petrol,Ishaan Kulkarni,Kochi,Active
+UP16BU4804,Hyundai,Verna,car,brown,2021,Petrol,Meera Banerjee,Lucknow,Active
+KL07YS2211,Maruti Suzuki,Ciaz,car,black,2011,Petrol,Imran Singh,Kochi,Active
+HR55LF7893,TVS,Apache,two-wheeler,silver,2022,Petrol,Pooja Iyer,Gurugram,Active
+MH01FJ1498,Maruti Suzuki,Swift,car,grey,2014,CNG,Rahul Banerjee,Pune,Active
+TN01PF8349,TVS,King,auto-rickshaw,green,2023,Petrol,Ishaan Khan,Chennai,Active
+KL07N8486,Hyundai,Grand i10,car,white,2014,Diesel,Arjun Patel,Kochi,Active
+RJ27H9244,Mahindra,XUV700,suv,grey,2010,CNG,Aarav Desai,Jaipur,Active
+GJ18G2289,Kia,Sonet,suv,black,2011,Petrol,Aarav Das,Ahmedabad,Active
+DL1CL6964,Bajaj,Pulsar,two-wheeler,white,2013,Petrol,Karthik Singh,New Delhi,Active
+HR26MS7963,Tata,Starbus,bus,blue,2025,Diesel,Ananya Banerjee,Gurugram,Active
+DL3CV4877,Eicher,Pro 2049,truck,orange,2018,CNG,Divya Nair,New Delhi,Active
+WB06KD2228,Bajaj,RE,auto-rickshaw,black,2020,Petrol,Karthik Chopra,Kolkata,Active
+KL07RZ7503,Hyundai,Grand i10,car,black,2021,Petrol,Siddharth Pillai,Kochi,Active
+GJ18TG6755,Maruti Suzuki,Dzire,car,white,2021,Petrol,Neha Sharma,Ahmedabad,Active
+MH12DE4321,Hyundai,i20,car,red,2012,Petrol,Vihaan Verma,Pune,Active
+WB06KN0522,TVS,Jupiter,two-wheeler,black,2016,Petrol,Karthik Das,Kolkata,Active
+UP14JM6540,Maruti Suzuki,Baleno,car,red,2023,Diesel,Sneha Verma,Lucknow,Active
+UP16CR6515,Mahindra,Thar,suv,white,2017,Diesel,Aditya Pillai,Lucknow,Active
+HR51FL4506,Mahindra,Treo,auto-rickshaw,green,2018,Petrol,Arjun Verma,Gurugram,Active
+GJ01GM7079,Ashok Leyland,Viking,bus,red,2013,Petrol,Sneha Joshi,Ahmedabad,Active
+KL11CA6343,TVS,Apache,two-wheeler,silver,2025,Petrol,Neha Pillai,Kochi,Active
+DL8CC1204,Royal Enfield,Classic 350,two-wheeler,red,2014,Petrol,Aarav Nair,New Delhi,Active
+DL3CPY4238,Mahindra,Thar,suv,yellow,2025,CNG,Priya Desai,New Delhi,Active
+GJ01X4230,Hyundai,Grand i10,car,grey,2023,CNG,Karthik Mehta,Ahmedabad,Active
+RJ27T6081,Hyundai,Creta,suv,red,2018,CNG,Ishaan Joshi,Jaipur,Active
+HR26C1229,Maruti Suzuki,Dzire,car,grey,2022,Petrol,Neha Shaikh,Gurugram,Active
+WB06RR9284,Maruti Suzuki,Baleno,car,silver,2013,Diesel,Rohan Nair,Kolkata,Active
+RJ14MK1725,Maruti Suzuki,WagonR,car,red,2023,Petrol,Karthik Iyer,Jaipur,Active
+KL11DH7199,Mahindra,XUV700,suv,red,2014,Petrol,Kavya Pillai,Kochi,Active
+KA53NF4052,Toyota,Fortuner,suv,white,2025,CNG,Kavya Joshi,Bengaluru,Active
+DL8CDT6253,Tata,407,truck,orange,2010,Petrol,Siddharth Pillai,New Delhi,Active
+MH01VX5136,Honda,Amaze,car,red,2015,Petrol,Aarav Khan,Pune,Active
+HR55CA6710,Tata,LPT 1613,truck,orange,2018,Diesel,Kavya Verma,Gurugram,Active
+GJ01DU1851,Royal Enfield,Classic 350,two-wheeler,blue,2024,Petrol,Vihaan Patel,Ahmedabad,Active
+WB06HG1904,Honda,Amaze,car,white,2011,Petrol,Fatima Mehta,Kolkata,Active
+GJ01ZF4786,Honda,Activa,two-wheeler,maroon,2024,Petrol,Neha Joshi,Ahmedabad,Active
+TS09FD4177,Tata,Tiago,car,silver,2024,Petrol,Karthik Mehta,Hyderabad,Active
+UP14FN6977,Bajaj,Pulsar,two-wheeler,white,2017,Petrol,Karthik Pillai,Lucknow,Active
+TN01F9618,Hyundai,i20,car,silver,2011,Diesel,Divya Iyer,Chennai,Active
+UP14Z7758,Honda,City,car,brown,2016,CNG,Pooja Chopra,Lucknow,Active
+MH02GC4189,Maruti Suzuki,Baleno,car,grey,2025,Diesel,Ishaan Sharma,Pune,Active
+GJ01AP3604,Hyundai,Creta,suv,brown,2022,Petrol,Ananya Gupta,Ahmedabad,Active
+UP16M4206,Tata,407,truck,white,2020,Petrol,Sneha Shaikh,Lucknow,Active
+GJ01ZF6471,TVS,Apache,two-wheeler,blue,2013,Petrol,Ananya Banerjee,Ahmedabad,Active
+KA01CV3521,TVS,Apache,two-wheeler,black,2025,Petrol,Sneha Singh,Bengaluru,Active
+TN09R7831,Maruti Suzuki,Baleno,car,white,2016,Petrol,Gurpreet Chopra,Chennai,Active
+DL8CM9529,Maruti Suzuki,WagonR,car,brown,2020,Diesel,Karthik Menon,New Delhi,Active
+DL4CT6175,Bajaj,RE,auto-rickshaw,yellow,2017,Petrol,Siddharth Verma,New Delhi,Active
+GJ01YW4532,Honda,Activa,two-wheeler,orange,2017,Petrol,Pooja Verma,Ahmedabad,Active
+TN09BX3301,Maruti Suzuki,Dzire,car,white,2023,Diesel,Rahul Khan,Chennai,Active
+TN38HW2866,Piaggio,Ape,auto-rickshaw,black,2013,Petrol,Gurpreet Nair,Chennai,Active
+GJ01XH8912,Maruti Suzuki,Swift,car,silver,2021,CNG,Neha Reddy,Ahmedabad,Active
+TN09AC3428,Royal Enfield,Classic 350,two-wheeler,silver,2012,Petrol,Gurpreet Reddy,Chennai,Active
+HR55AJ8016,Tata,LPT 1613,truck,orange,2018,Petrol,Priya Patel,Gurugram,Active
+DL3CN7396,Toyota,Innova Crysta,van,white,2017,Petrol,Ishaan Sharma,New Delhi,Active
+UP16RT7182,Maruti Suzuki,Swift,car,green,2024,Diesel,Karthik Shaikh,Lucknow,Active
+TS09B4691,Maruti Suzuki,Baleno,car,orange,2014,Petrol,Fatima Menon,Hyderabad,Active
+MH14P2163,Tata,Harrier,suv,white,2021,Diesel,Pooja Singh,Pune,Active
+TN01MH1517,Royal Enfield,Classic 350,two-wheeler,blue,2023,Petrol,Rahul Chopra,Chennai,Active
+MH02N7339,Honda,Amaze,car,black,2013,Diesel,Meera Patel,Pune,Active
+GJ05N6393,Ashok Leyland,Viking,bus,blue,2023,CNG,Vihaan Desai,Ahmedabad,Active
+KA03L4338,Kia,Seltos,suv,white,2016,CNG,Rohan Pillai,Bengaluru,Active
+MH01G9265,Maruti Suzuki,Brezza,suv,grey,2018,CNG,Neha Iyer,Pune,Active
+DL2CX3165,Mahindra,Thar,suv,grey,2014,CNG,Neha Menon,New Delhi,Active
+HR51SB9893,Tata,Harrier,suv,black,2013,Petrol,Meera Desai,Gurugram,Active
+WB02HM4233,Hero,Splendor,two-wheeler,white,2023,Petrol,Aditya Joshi,Kolkata,Active
+TS07EJ6853,Kia,Seltos,suv,white,2018,CNG,Rahul Singh,Hyderabad,Active
+UP14PC3012,Toyota,Innova Crysta,van,red,2013,Diesel,Gurpreet Patel,Lucknow,Active
+KL07NT0149,Maruti Suzuki,WagonR,car,white,2017,Petrol,Imran Desai,Kochi,Active
+UP32XU1494,TVS,Jupiter,two-wheeler,black,2023,Petrol,Sneha Rao,Lucknow,Active
+HR26G2863,Bajaj,Pulsar,two-wheeler,white,2024,Petrol,Imran Singh,Gurugram,Active
+KA05WF2239,Honda,Activa,two-wheeler,silver,2018,Petrol,Rahul Singh,Bengaluru,Active
+UP14MW5967,Hyundai,Venue,suv,green,2024,Petrol,Divya Rao,Lucknow,Active
+RJ14MJ7524,Tata,Nexon,suv,red,2015,Diesel,Kavya Reddy,Jaipur,Active
+GJ05KQ5604,Hyundai,Grand i10,car,blue,2025,Petrol,Priya Reddy,Ahmedabad,Active
+UP32CN7589,Hyundai,Venue,suv,silver,2015,Diesel,Aarav Khan,Lucknow,Active
+DL8CYY6240,Royal Enfield,Classic 350,two-wheeler,grey,2018,Petrol,Karthik Sharma,New Delhi,Active
+HR51YM4085,Bajaj,RE,auto-rickshaw,yellow,2013,Diesel,Priya Mehta,Gurugram,Active
+MH02MR5430,Maruti Suzuki,Ertiga,van,red,2020,Petrol,Rahul Verma,Pune,Active
+HR55K8399,Maruti Suzuki,Dzire,car,black,2020,Petrol,Kavya Banerjee,Gurugram,Active
+UP16C1097,Maruti Suzuki,Eeco,van,red,2012,Diesel,Fatima Iyer,Lucknow,Active
+MH14YN8379,Tata,407,truck,red,2014,Petrol,Kavya Kulkarni,Pune,Active
+KL11CW6052,TVS,King,auto-rickshaw,blue,2020,Diesel,Rahul Iyer,Kochi,Active
+WB02D6288,Kia,Sonet,suv,black,2014,Petrol,Divya Mehta,Kolkata,Active
+KL11WW7772,Bajaj,Pulsar,two-wheeler,silver,2014,Petrol,Aarav Sharma,Kochi,Active
+KA53XB4137,Tata,Tiago,car,white,2010,Petrol,Neha Joshi,Bengaluru,Active
+GJ18KJ0994,TVS,Apache,two-wheeler,red,2010,Petrol,Rohan Shaikh,Ahmedabad,Active
+DL4CUJ2244,Royal Enfield,Classic 350,two-wheeler,black,2023,Petrol,Pooja Kulkarni,New Delhi,Active
+TS07N8649,Mahindra,Treo,auto-rickshaw,green,2013,Diesel,Rohan Khan,Hyderabad,Active
+UP14ZZ1187,Maruti Suzuki,Dzire,car,silver,2022,Petrol,Divya Reddy,Lucknow,Active
+UP14TG3242,Hero,Splendor,two-wheeler,red,2013,Petrol,Ishaan Desai,Lucknow,Active
+WB06AN6391,Hyundai,Verna,car,white,2021,Petrol,Rahul Mehta,Kolkata,Active
+DL4CAR9231,Royal Enfield,Classic 350,two-wheeler,silver,2025,Petrol,Priya Pillai,New Delhi,Active
+HR55FM8131,TVS,Apache,two-wheeler,blue,2015,Petrol,Siddharth Khan,Gurugram,Active
+KA51SG8898,Hyundai,Grand i10,car,white,2019,CNG,Meera Reddy,Bengaluru,Active
+GJ01KQ5684,TVS,Jupiter,two-wheeler,grey,2012,Petrol,Fatima Verma,Ahmedabad,Active
+KA03SL1202,Maruti Suzuki,Ertiga,van,black,2023,Petrol,Ishaan Mehta,Bengaluru,Active
+TN09FN1262,Ashok Leyland,Dost,truck,white,2019,CNG,Siddharth Singh,Chennai,Active
+UP16N5966,Tata,Altroz,car,white,2010,Petrol,Rohan Banerjee,Lucknow,Active
+TS09ZS4040,Mahindra,Thar,suv,white,2015,CNG,Karthik Verma,Hyderabad,Active
+DL1CEX0263,Mahindra,Thar,suv,red,2014,Petrol,Aarav Banerjee,New Delhi,Active
+TN01U3187,Honda,Activa,two-wheeler,silver,2019,Petrol,Neha Menon,Chennai,Active
+KL11XY9770,Bajaj,RE,auto-rickshaw,green,2011,Petrol,Kavya Iyer,Kochi,Active
+WB02V3322,Ashok Leyland,Viking,bus,white,2016,Petrol,Ishaan Verma,Kolkata,Active
+GJ01MV9397,Maruti Suzuki,Eeco,van,white,2013,Diesel,Neha Verma,Ahmedabad,Active
+DL4CCB7201,Kia,Sonet,suv,red,2010,Petrol,Gurpreet Banerjee,New Delhi,Active
+GJ18AJ4408,Maruti Suzuki,Swift,car,silver,2011,Petrol,Fatima Das,Ahmedabad,Active
+UP32PB2385,Maruti Suzuki,Alto,car,white,2015,CNG,Siddharth Desai,Lucknow,Active
+GJ18KX9599,Eicher,Pro 2049,truck,orange,2011,Diesel,Rohan Rao,Ahmedabad,Active
+WB02SG5108,Hero,Splendor,two-wheeler,grey,2024,Petrol,Meera Desai,Kolkata,Active
+HR55RZ9112,TVS,Apache,two-wheeler,black,2010,Petrol,Fatima Reddy,Gurugram,Active
+WB06WZ9342,Tata,Tiago,car,silver,2021,Petrol,Fatima Rao,Kolkata,Active
+TS09XM6374,Tata,Harrier,suv,white,2013,Petrol,Priya Kulkarni,Hyderabad,Active
+HR55PF9612,Tata,407,truck,yellow,2014,Diesel,Ishaan Pillai,Gurugram,Active
+KA53KV8317,Hyundai,Creta,suv,white,2014,Petrol,Aditya Desai,Bengaluru,Active
+KL07NG4407,Ashok Leyland,Viking,bus,yellow,2010,CNG,Rahul Pillai,Kochi,Active
+TN01M4490,Hyundai,Verna,car,black,2014,Petrol,Gurpreet Verma,Chennai,Active
+KL07PR8907,TVS,Apache,two-wheeler,white,2017,Petrol,Neha Khan,Kochi,Active
+DL1CWN1028,Hero,Splendor,two-wheeler,white,2022,Petrol,Imran Gupta,New Delhi,Active
+MH02G7206,Eicher,Pro 2049,truck,blue,2021,Petrol,Aarav Shaikh,Pune,Active
+GJ01FF4408,Tata,Nexon,suv,red,2020,CNG,Meera Patel,Ahmedabad,Active
+DL2CH4154,Hero,Splendor,two-wheeler,grey,2025,Petrol,Meera Pillai,New Delhi,Active
+UP16CH7653,Maruti Suzuki,Alto,car,blue,2013,Diesel,Neha Reddy,Lucknow,Active
+MH14XC4279,Kia,Seltos,suv,red,2017,CNG,Meera Shaikh,Pune,Active
+TS07ND1100,Tata,Tiago,car,red,2012,Petrol,Siddharth Banerjee,Hyderabad,Active
+MH04A0303,Royal Enfield,Classic 350,two-wheeler,silver,2025,Petrol,Meera Menon,Pune,Active
+DL2CC9971,Bajaj,Pulsar,two-wheeler,silver,2016,Petrol,Rohan Shaikh,New Delhi,Active
+TS07EK3754,Bajaj,RE,auto-rickshaw,green,2013,Diesel,Karthik Banerjee,Hyderabad,Active
+KL11AS6237,Kia,Seltos,suv,black,2014,Petrol,Imran Kulkarni,Kochi,Active
+UP32BJ3600,Bajaj,Pulsar,two-wheeler,silver,2016,Petrol,Imran Shaikh,Lucknow,Active
+MH01NV0720,Maruti Suzuki,Brezza,suv,grey,2017,Diesel,Vihaan Singh,Pune,Active
+RJ14E0694,Bajaj,RE,auto-rickshaw,green,2020,Petrol,Imran Pillai,Jaipur,Active
+UP32EH8763,Hyundai,Venue,suv,white,2013,Petrol,Divya Verma,Lucknow,Active
+KL07JE4917,Hyundai,Grand i10,car,white,2025,Diesel,Kavya Mehta,Kochi,Active
+HR26YK9664,TVS,Apache,two-wheeler,white,2025,Petrol,Rahul Das,Gurugram,Active
+KA05MJ3179,Kia,Seltos,suv,white,2019,Petrol,Kavya Chopra,Bengaluru,Active
+DL4CYA1734,TVS,Apache,two-wheeler,red,2016,Petrol,Vihaan Das,New Delhi,Active
+GJ18UW9364,TVS,Apache,two-wheeler,brown,2020,Petrol,Imran Khan,Ahmedabad,Active
+GJ18V2339,Piaggio,Ape,auto-rickshaw,yellow,2021,Diesel,Arjun Kulkarni,Ahmedabad,Active
+WB02DN9823,Toyota,Fortuner,suv,black,2023,CNG,Imran Gupta,Kolkata,Active
+TS07U2690,Toyota,Fortuner,suv,black,2016,Diesel,Rohan Nair,Hyderabad,Active
+MH01UA1039,Maruti Suzuki,Brezza,suv,yellow,2016,CNG,Karthik Banerjee,Pune,Active
+TS09Y3943,Kia,Sonet,suv,black,2013,Diesel,Pooja Khan,Hyderabad,Active
+TN01FK3182,Volkswagen,Virtus,car,white,2024,Diesel,Arjun Desai,Chennai,Active
+GJ05LU3501,Tata,Tiago,car,beige,2011,CNG,Rahul Reddy,Ahmedabad,Active
+WB02T3644,Kia,Sonet,suv,blue,2013,Petrol,Neha Banerjee,Kolkata,Active
+DL8CSL1679,Maruti Suzuki,Eeco,van,grey,2020,CNG,Sneha Reddy,New Delhi,Active
+TS07R0506,Tata,Altroz,car,blue,2012,Petrol,Meera Khan,Hyderabad,Active
+KA53N6395,Maruti Suzuki,Brezza,suv,blue,2017,Petrol,Pooja Pillai,Bengaluru,Active
+GJ18L0783,Maruti Suzuki,Ciaz,car,silver,2022,Diesel,Meera Nair,Ahmedabad,Active
+UP16A0893,Tata,Starbus,bus,red,2021,CNG,Fatima Khan,Lucknow,Active
+DL3CAF0912,Honda,City,car,black,2016,CNG,Ananya Pillai,New Delhi,Active
+GJ05LE3005,Bajaj,Pulsar,two-wheeler,black,2011,Petrol,Meera Mehta,Ahmedabad,Active
+HR51EY3318,Bajaj,Pulsar,two-wheeler,white,2025,Petrol,Ishaan Khan,Gurugram,Active
+UP16AV1631,Mahindra,XUV700,suv,yellow,2012,Diesel,Karthik Rao,Lucknow,Active
+MH14B2617,TVS,Apache,two-wheeler,black,2019,Petrol,Priya Nair,Pune,Active
+TS09RL3816,Tata,407,truck,yellow,2023,Petrol,Rohan Gupta,Hyderabad,Active
+MH04B5359,Hyundai,Grand i10,car,black,2021,CNG,Pooja Shaikh,Pune,Active
+GJ05M7886,Mahindra,Scorpio,suv,grey,2014,Petrol,Karthik Nair,Ahmedabad,Active
+HR55UC0747,Hyundai,Verna,car,green,2012,CNG,Imran Desai,Gurugram,Active
+UP32DV0692,Bajaj,Pulsar,two-wheeler,silver,2014,Petrol,Karthik Kulkarni,Lucknow,Active
+TS09WT1244,Mahindra,Thar,suv,grey,2019,Diesel,Imran Shaikh,Hyderabad,Active
+TN09S1544,Maruti Suzuki,WagonR,car,silver,2024,Petrol,Meera Shaikh,Chennai,Active
+KA01ZU1714,Bajaj,Pulsar,two-wheeler,white,2022,Petrol,Aditya Reddy,Bengaluru,Active
+DL8CAF0912,Kia,Seltos,suv,grey,2025,Petrol,Rahul Menon,New Delhi,Active
+DL2CRB1939,Hyundai,i20,car,red,2024,Petrol,Meera Mehta,New Delhi,Active
+HR55CU1580,TVS,Apache,two-wheeler,blue,2013,Petrol,Sneha Singh,Gurugram,Active
+GJ18XU0587,Bajaj,Pulsar,two-wheeler,white,2010,Petrol,Neha Gupta,Ahmedabad,Active
+KA05MN7783,Tata,Nexon,suv,blue,2013,CNG,Fatima Singh,Bengaluru,Active
+TS07GM0601,Tata,Tiago,car,blue,2022,Diesel,Sneha Joshi,Hyderabad,Active
+DL1CN2378,Maruti Suzuki,WagonR,car,silver,2013,CNG,Gurpreet Mehta,New Delhi,Active
+WB02DG1500,Tata,LPT 1613,truck,yellow,2018,Petrol,Neha Khan,Kolkata,Active
+KA03FS9608,Maruti Suzuki,Ertiga,van,yellow,2025,Petrol,Aarav Nair,Bengaluru,Active
+GJ05M8995,Maruti Suzuki,Ertiga,van,orange,2013,CNG,Ishaan Kulkarni,Ahmedabad,Active
+GJ01WF3659,Toyota,Fortuner,suv,white,2014,Petrol,Vihaan Nair,Ahmedabad,Active
+UP16L0029,Hyundai,Grand i10,car,blue,2013,Diesel,Aarav Rao,Lucknow,Active
+MH43UL6349,Honda,Activa,two-wheeler,white,2017,Petrol,Priya Verma,Pune,Active
+HR26GH5500,Ashok Leyland,Viking,bus,white,2011,Petrol,Divya Chopra,Gurugram,Active
+KA05ZY0663,Maruti Suzuki,Brezza,suv,silver,2023,Diesel,Sneha Khan,Bengaluru,Active
+DL8CT5793,Honda,Activa,two-wheeler,red,2016,Petrol,Meera Reddy,New Delhi,Active
+MH12DD2358,Maruti Suzuki,Eeco,van,silver,2023,Diesel,Vihaan Chopra,Pune,Active
+TN38X8822,Volkswagen,Virtus,car,blue,2012,Diesel,Arjun Rao,Chennai,Active
+GJ05S0029,Hyundai,Venue,suv,white,2023,Diesel,Rahul Menon,Ahmedabad,Active
+KA01NS3711,Mahindra,Bolero Pickup,truck,yellow,2024,Petrol,Arjun Khan,Bengaluru,Active
+HR51CN1646,Mahindra,XUV700,suv,red,2021,Petrol,Rohan Menon,Gurugram,Active
+MH02R8243,Maruti Suzuki,Swift,car,silver,2016,Petrol,Ishaan Reddy,Pune,Active
+GJ18VM8760,Honda,Amaze,car,yellow,2016,Diesel,Ananya Banerjee,Ahmedabad,Active
+HR51NY8100,Hero,Splendor,two-wheeler,grey,2016,Petrol,Ishaan Iyer,Gurugram,Active
+MH04K6514,Bajaj,RE,auto-rickshaw,blue,2010,Diesel,Kavya Chopra,Pune,Active
+TN22L3151,Hyundai,i20,car,silver,2012,Petrol,Aditya Pillai,Chennai,Active
+DL3CAH7046,Royal Enfield,Classic 350,two-wheeler,blue,2017,Petrol,Imran Gupta,New Delhi,Active
+TN07SN1258,Toyota,Fortuner,suv,black,2011,Diesel,Priya Shaikh,Chennai,Active
+RJ27MS2243,Hyundai,Grand i10,car,white,2016,Diesel,Karthik Reddy,Jaipur,Active
+UP14H2285,Mahindra,XUV700,suv,beige,2011,Petrol,Vihaan Shaikh,Lucknow,Active
+MH01ET5655,Honda,Activa,two-wheeler,white,2016,Petrol,Priya Rao,Pune,Active
+WB02JL1017,Maruti Suzuki,Brezza,suv,red,2014,Diesel,Priya Desai,Kolkata,Active
+TS09L7665,Honda,Amaze,car,white,2018,CNG,Arjun Rao,Hyderabad,Active
+HR26N3707,Maruti Suzuki,Alto,car,red,2020,CNG,Gurpreet Sharma,Gurugram,Active
+HR26BZ5539,Bajaj,Pulsar,two-wheeler,blue,2016,Petrol,Aarav Rao,Gurugram,Active
+MH43WX9478,Mahindra,Thar,suv,green,2017,Diesel,Aarav Patel,Pune,Active
+RJ27BE7667,Hyundai,Verna,car,white,2013,Diesel,Rohan Banerjee,Jaipur,Active
+UP16EM2743,Volkswagen,Virtus,car,blue,2019,Petrol,Rahul Banerjee,Lucknow,Active
+KL07A0966,Honda,Activa,two-wheeler,silver,2023,Petrol,Vihaan Singh,Kochi,Active
+RJ27UU2196,TVS,Apache,two-wheeler,white,2014,Petrol,Ishaan Rao,Jaipur,Active
+TS09MD5188,Mahindra,Thar,suv,black,2019,CNG,Meera Joshi,Hyderabad,Active
+GJ05L7475,Bajaj,RE,auto-rickshaw,green,2011,Diesel,Fatima Chopra,Ahmedabad,Active
+MH14CR0576,Maruti Suzuki,Baleno,car,red,2023,Petrol,Rohan Kulkarni,Pune,Active
+KA51U1941,Maruti Suzuki,Alto,car,silver,2025,Petrol,Fatima Patel,Bengaluru,Active
+DL1CHX2546,Bajaj,Pulsar,two-wheeler,white,2013,Petrol,Aditya Reddy,New Delhi,Active
+RJ14EH2128,Hyundai,i20,car,silver,2024,Petrol,Meera Singh,Jaipur,Active
+DL8CCG0516,Royal Enfield,Classic 350,two-wheeler,orange,2012,Petrol,Neha Iyer,New Delhi,Active
+DL3CUF2267,Tata,Nexon,suv,red,2021,Diesel,Siddharth Iyer,New Delhi,Active
+DL8CUV6822,Kia,Sonet,suv,brown,2022,CNG,Ananya Gupta,New Delhi,Active
+DL3CLD8414,Kia,Seltos,suv,white,2025,Petrol,Kavya Patel,New Delhi,Active
+HR51PU2530,Mahindra,Bolero Pickup,truck,green,2012,Petrol,Rahul Shaikh,Gurugram,Active
+KL07GK4273,Maruti Suzuki,Swift,car,grey,2024,CNG,Sneha Kulkarni,Kochi,Active
+GJ18VD9829,Royal Enfield,Classic 350,two-wheeler,white,2025,Petrol,Karthik Joshi,Ahmedabad,Active
+TS07Y8618,Maruti Suzuki,Ciaz,car,orange,2018,Petrol,Ishaan Gupta,Hyderabad,Active
+TS09RN1749,Kia,Sonet,suv,blue,2016,CNG,Divya Kulkarni,Hyderabad,Active
+HR55MV2396,Hyundai,Venue,suv,brown,2017,Diesel,Gurpreet Patel,Gurugram,Active
+KA05M6885,Tata,407,truck,red,2016,Petrol,Pooja Rao,Bengaluru,Active
+MH02GD3394,Honda,Activa,two-wheeler,white,2021,Petrol,Ananya Reddy,Pune,Active
+KA51ZJ6147,Hyundai,Grand i10,car,black,2024,Petrol,Ishaan Kulkarni,Bengaluru,Active
+GJ18DU8151,Royal Enfield,Classic 350,two-wheeler,red,2015,Petrol,Rahul Iyer,Ahmedabad,Active
+MH02CW6113,Piaggio,Ape,auto-rickshaw,yellow,2013,Petrol,Aarav Reddy,Pune,Active
+TS07XU7425,Maruti Suzuki,Ertiga,van,black,2014,CNG,Aarav Pillai,Hyderabad,Active
+MH43GG5937,Toyota,Innova Crysta,van,white,2011,Petrol,Imran Verma,Pune,Active
+TN07BF5459,Mahindra,Scorpio,suv,grey,2020,CNG,Kavya Iyer,Chennai,Active
+HR55LY3073,Honda,Activa,two-wheeler,white,2017,Petrol,Imran Das,Gurugram,Active
+UP14P9011,TVS,Jupiter,two-wheeler,blue,2014,Petrol,Neha Desai,Lucknow,Active
+GJ01X5895,Tata,LPT 1613,truck,red,2013,CNG,Fatima Kulkarni,Ahmedabad,Active
+KA03YN1479,Toyota,Fortuner,suv,blue,2020,Petrol,Imran Gupta,Bengaluru,Active
+DL2CYL3082,Tata,LPT 1613,truck,blue,2011,Diesel,Vihaan Singh,New Delhi,Active
+RJ27XH9703,Ashok Leyland,Dost,truck,white,2019,CNG,Kavya Reddy,Jaipur,Active
+TN01E8271,Royal Enfield,Classic 350,two-wheeler,maroon,2013,Petrol,Aarav Patel,Chennai,Active
+KA53KC7749,Tata,Altroz,car,white,2024,CNG,Aditya Nair,Bengaluru,Active
+WB02HU5846,Eicher,Pro 2049,truck,orange,2017,CNG,Priya Pillai,Kolkata,Active
+GJ18YT4347,Volkswagen,Virtus,car,grey,2012,Petrol,Kavya Desai,Ahmedabad,Active
+TS07HK5573,Mahindra,Bolero Pickup,truck,green,2017,Diesel,Fatima Nair,Hyderabad,Active
+UP16HJ4436,Royal Enfield,Classic 350,two-wheeler,grey,2014,Petrol,Sneha Kulkarni,Lucknow,Active
+UP14W7281,Bajaj,Pulsar,two-wheeler,brown,2012,Petrol,Ananya Iyer,Lucknow,Active
+MH01U6180,Mahindra,Thar,suv,silver,2024,Petrol,Rahul Chopra,Pune,Active
+TN22T5552,Honda,Activa,two-wheeler,grey,2025,Petrol,Rohan Shaikh,Chennai,Active
+HR51P6450,Ashok Leyland,Viking,bus,blue,2012,CNG,Neha Menon,Gurugram,Active
+MH01Z3197,Skoda,Slavia,car,beige,2017,Petrol,Ananya Das,Pune,Active
+RJ27KA4923,Hyundai,Creta,suv,white,2025,Petrol,Neha Shaikh,Jaipur,Active
+GJ01D6184,Hero,Splendor,two-wheeler,black,2010,Petrol,Divya Menon,Ahmedabad,Active
+UP16DS6561,Maruti Suzuki,Baleno,car,grey,2024,Diesel,Ananya Mehta,Lucknow,Active
+GJ18LM0604,Tata,Tiago,car,silver,2018,CNG,Aditya Singh,Ahmedabad,Active
+DL2CAP2233,Bajaj,Pulsar,two-wheeler,black,2017,Petrol,Neha Nair,New Delhi,Active
+WB02BF3839,Hyundai,Venue,suv,brown,2023,CNG,Imran Gupta,Kolkata,Active
+KA51L9062,Tata,Nexon,suv,silver,2011,Diesel,Ananya Singh,Bengaluru,Active
+DL2CPH3259,Skoda,Slavia,car,blue,2021,Petrol,Sneha Rao,New Delhi,Active
+DL2CNG1876,Honda,Activa,two-wheeler,red,2025,Petrol,Arjun Patel,New Delhi,Active
+TN38WF8333,Hyundai,i20,car,white,2025,Petrol,Aditya Joshi,Chennai,Active
+MH12BA3181,Toyota,Fortuner,suv,blue,2012,CNG,Meera Joshi,Pune,Active
+MH02TL3480,Tata,Altroz,car,grey,2024,Petrol,Rohan Reddy,Pune,Active
+MH43HX6632,Maruti Suzuki,Swift,car,beige,2012,Petrol,Ishaan Nair,Pune,Active
+HR26VL0206,Eicher,Pro 2049,truck,white,2012,Petrol,Fatima Banerjee,Gurugram,Active
+RJ27BU2086,Tata,Tiago,car,red,2019,CNG,Ishaan Desai,Jaipur,Active
+MH04K5695,Honda,Activa,two-wheeler,white,2018,Petrol,Priya Menon,Pune,Active
+GJ18K4799,Mahindra,Scorpio,suv,blue,2020,CNG,Siddharth Das,Ahmedabad,Active
+HR26XR1340,Honda,Amaze,car,white,2021,CNG,Siddharth Shaikh,Gurugram,Active
+TS09G4598,Bajaj,Pulsar,two-wheeler,white,2013,Petrol,Divya Chopra,Hyderabad,Active
+RJ14UA6893,Maruti Suzuki,Ertiga,van,white,2022,Petrol,Pooja Desai,Jaipur,Active
+MH43A3832,Maruti Suzuki,Ciaz,car,beige,2022,CNG,Neha Chopra,Pune,Active
+WB02CV6076,Hero,Splendor,two-wheeler,silver,2021,Petrol,Sneha Singh,Kolkata,Active
+TS07RX6584,Tata,Altroz,car,blue,2019,Petrol,Rahul Das,Hyderabad,Active
+MH43DT7933,Kia,Seltos,suv,white,2016,Petrol,Rohan Mehta,Pune,Active
+KA51X2583,Hero,Splendor,two-wheeler,grey,2013,Petrol,Vihaan Verma,Bengaluru,Active
+RJ14DP5330,Tata,Nexon,suv,brown,2017,Petrol,Aarav Singh,Jaipur,Active
+TN07M5927,Mahindra,Thar,suv,silver,2020,Diesel,Gurpreet Desai,Chennai,Active
+TN07HE4610,Piaggio,Ape,auto-rickshaw,yellow,2012,Petrol,Ishaan Gupta,Chennai,Active
+KA03EF7043,Tata,Tiago,car,white,2011,CNG,Ananya Nair,Bengaluru,Active
+UP14DN1675,Mahindra,XUV700,suv,yellow,2010,Petrol,Gurpreet Chopra,Lucknow,Active
+KA05MH7788,Hyundai,Creta,suv,white,2022,Petrol,Meera Patel,Bengaluru,Active
+DL3CLJ3963,Tata,Altroz,car,white,2025,Petrol,Arjun Khan,New Delhi,Active
+KA03J2017,Maruti Suzuki,Brezza,suv,yellow,2018,Petrol,Ananya Iyer,Bengaluru,Active
+HR55T5852,Maruti Suzuki,Ertiga,van,black,2014,Diesel,Pooja Shaikh,Gurugram,Active
+GJ01KR5604,Honda,Activa,two-wheeler,black,2020,Petrol,Rahul Das,Ahmedabad,Active
+HR51TB3375,Mahindra,Thar,suv,silver,2025,Diesel,Vihaan Pillai,Gurugram,Active
+GJ18SM3776,Tata,Tiago,car,grey,2023,Diesel,Divya Sharma,Ahmedabad,Active
+TS07VU1163,TVS,King,auto-rickshaw,black,2024,Petrol,Arjun Sharma,Hyderabad,Active
+TN01FP0022,Maruti Suzuki,Ertiga,van,white,2010,CNG,Divya Iyer,Chennai,Active
+HR51SC9799,Honda,Activa,two-wheeler,white,2018,Petrol,Rahul Verma,Gurugram,Active
+GJ05MH6776,Maruti Suzuki,Alto,car,white,2013,CNG,Ananya Menon,Ahmedabad,Active

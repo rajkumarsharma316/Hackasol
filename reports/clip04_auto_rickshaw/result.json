@@ -1,0 +1,7195 @@
+{
+ "video": {
+  "source_frames": 40,
+  "fps": 10.0,
+  "sampled": 40,
+  "resolution": "960x540",
+  "duration_s": 4.0,
+  "file": "clip04_auto_rickshaw.mp4"
+ },
+ "track": {
+  "id": 1,
+  "frames": 40,
+  "yolo_classes": {
+   "bus": 10.907056331634521,
+   "truck": 11.720648795366287
+  },
+  "fallback_whole_frame": false
+ },
+ "tracks": [
+  {
+   "id": 1,
+   "frames": 40,
+   "classes": {
+    "bus": 10.91,
+    "truck": 11.72
+   },
+   "prominence": 1.0,
+   "thumb": "crops/track1.jpg"
+  }
+ ],
+ "hints": {},
+ "frames": [
+  {
+   "frame": 0,
+   "source_frame": 0,
+   "time_s": 0.0,
+   "vehicle_box": [
+    227,
+    2,
+    709,
+    506
+   ],
+   "plate_box": [
+    407,
+    247,
+    432,
+    286
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "6E",
+   "mean_conf": 0.763,
+   "two_line": true,
+   "sharpness": 12.0,
+   "plate_height_px": 39,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "6",
+     "conf": 0.979,
+     "alts": [
+      [
+       "6",
+       0.979
+      ],
+      [
+       "5",
+       0.008
+      ],
+      [
+       "8",
+       0.003
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.547,
+     "alts": [
+      [
+       "E",
+       0.547
+      ],
+      [
+       "6",
+       0.243
+      ],
+      [
+       "F",
+       0.056
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p000.png",
+   "frame_img": "frames/f000.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 1,
+   "source_frame": 1,
+   "time_s": 0.1,
+   "vehicle_box": [
+    213,
+    2,
+    704,
+    504
+   ],
+   "plate_box": [
+    397,
+    246,
+    422,
+    285
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "232",
+   "mean_conf": 0.877,
+   "two_line": true,
+   "sharpness": 16.5,
+   "plate_height_px": 39,
+   "weight": 0.227,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "2",
+     "conf": 0.851,
+     "alts": [
+      [
+       "2",
+       0.851
+      ],
+      [
+       "E",
+       0.031
+      ],
+      [
+       "C",
+       0.023
+      ]
+     ]
+    },
+    {
+     "char": "3",
+     "conf": 0.857,
+     "alts": [
+      [
+       "3",
+       0.857
+      ],
+      [
+       "4",
+       0.132
+      ],
+      [
+       "2",
+       0.004
+      ]
+     ]
+    },
+    {
+     "char": "2",
+     "conf": 0.922,
+     "alts": [
+      [
+       "2",
+       0.922
+      ],
+      [
+       "E",
+       0.029
+      ],
+      [
+       "1",
+       0.015
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p001.png",
+   "frame_img": "frames/f001.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 2,
+   "source_frame": 2,
+   "time_s": 0.2,
+   "vehicle_box": [
+    208,
+    1,
+    699,
+    509
+   ],
+   "plate_box": [
+    391,
+    248,
+    416,
+    287
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "EEE",
+   "mean_conf": 0.383,
+   "two_line": true,
+   "sharpness": 32.8,
+   "plate_height_px": 39,
+   "weight": 0.0468,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.179,
+     "alts": [
+      [
+       "E",
+       0.299
+      ],
+      [
+       "B",
+       0.183
+      ],
+      [
+       "F",
+       0.166
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.341,
+     "alts": [
+      [
+       "E",
+       0.416
+      ],
+      [
+       "A",
+       0.201
+      ],
+      [
+       "S",
+       0.146
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.629,
+     "alts": [
+      [
+       "E",
+       0.629
+      ],
+      [
+       "B",
+       0.2
+      ],
+      [
+       "P",
+       0.049
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p002.png",
+   "frame_img": "frames/f002.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 3,
+   "source_frame": 3,
+   "time_s": 0.3,
+   "vehicle_box": [
+    203,
+    2,
+    699,
+    507
+   ],
+   "plate_box": [
+    389,
+    248,
+    414,
+    287
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "76",
+   "mean_conf": 0.776,
+   "two_line": true,
+   "sharpness": 25.8,
+   "plate_height_px": 39,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "7",
+     "conf": 0.895,
+     "alts": [
+      [
+       "7",
+       0.895
+      ],
+      [
+       "2",
+       0.029
+      ],
+      [
+       "3",
+       0.012
+      ]
+     ]
+    },
+    {
+     "char": "6",
+     "conf": 0.657,
+     "alts": [
+      [
+       "6",
+       0.657
+      ],
+      [
+       "0",
+       0.133
+      ],
+      [
+       "5",
+       0.087
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p003.png",
+   "frame_img": "frames/f003.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 4,
+   "source_frame": 4,
+   "time_s": 0.4,
+   "vehicle_box": [
+    208,
+    2,
+    685,
+    506
+   ],
+   "plate_box": [
+    386,
+    247,
+    411,
+    286
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "6E255",
+   "mean_conf": 0.364,
+   "two_line": true,
+   "sharpness": 34.4,
+   "plate_height_px": 39,
+   "weight": 0.0425,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "6",
+     "conf": 0.271,
+     "alts": [
+      [
+       "6",
+       0.413
+      ],
+      [
+       "L",
+       0.19
+      ],
+      [
+       "K",
+       0.079
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.782,
+     "alts": [
+      [
+       "E",
+       0.782
+      ],
+      [
+       "I",
+       0.066
+      ],
+      [
+       "1",
+       0.02
+      ]
+     ]
+    },
+    {
+     "char": "2",
+     "conf": 0.271,
+     "alts": [
+      [
+       "2",
+       0.372
+      ],
+      [
+       "3",
+       0.221
+      ],
+      [
+       "N",
+       0.073
+      ]
+     ]
+    },
+    {
+     "char": "5",
+     "conf": 0.231,
+     "alts": [
+      [
+       "5",
+       0.34
+      ],
+      [
+       "6",
+       0.321
+      ],
+      [
+       "S",
+       0.261
+      ]
+     ]
+    },
+    {
+     "char": "5",
+     "conf": 0.263,
+     "alts": [
+      [
+       "5",
+       0.362
+      ],
+      [
+       "3",
+       0.353
+      ],
+      [
+       "2",
+       0.211
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p004.png",
+   "frame_img": "frames/f004.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 5,
+   "source_frame": 5,
+   "time_s": 0.5,
+   "vehicle_box": [
+    196,
+    2,
+    686,
+    505
+   ],
+   "plate_box": [
+    626,
+    312,
+    661,
+    329
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "74N9KPERI",
+   "mean_conf": 0.477,
+   "two_line": true,
+   "sharpness": 51.1,
+   "plate_height_px": 17,
+   "weight": 0.0859,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "7",
+     "conf": 0.98,
+     "alts": [
+      [
+       "7",
+       0.98
+      ],
+      [
+       "R",
+       0.006
+      ],
+      [
+       "5",
+       0.003
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.705,
+     "alts": [
+      [
+       "4",
+       0.705
+      ],
+      [
+       "U",
+       0.082
+      ],
+      [
+       "X",
+       0.046
+      ]
+     ]
+    },
+    {
+     "char": "N",
+     "conf": 0.638,
+     "alts": [
+      [
+       "N",
+       0.638
+      ],
+      [
+       "O",
+       0.174
+      ],
+      [
+       "D",
+       0.074
+      ]
+     ]
+    },
+    {
+     "char": "9",
+     "conf": 0.998,
+     "alts": [
+      [
+       "9",
+       0.998
+      ],
+      [
+       "F",
+       0.001
+      ],
+      [
+       "8",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.289,
+     "alts": [
+      [
+       "K",
+       0.38
+      ],
+      [
+       "J",
+       0.083
+      ],
+      [
+       "L",
+       0.064
+      ]
+     ]
+    },
+    {
+     "char": "P",
+     "conf": 0.068,
+     "alts": [
+      [
+       "P",
+       0.2
+      ],
+      [
+       "Y",
+       0.128
+      ],
+      [
+       "X",
+       0.109
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.181,
+     "alts": [
+      [
+       "E",
+       0.309
+      ],
+      [
+       "S",
+       0.114
+      ],
+      [
+       "Y",
+       0.076
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.342,
+     "alts": [
+      [
+       "R",
+       0.416
+      ],
+      [
+       "E",
+       0.189
+      ],
+      [
+       "K",
+       0.095
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.097,
+     "alts": [
+      [
+       "I",
+       0.229
+      ],
+      [
+       "R",
+       0.167
+      ],
+      [
+       "E",
+       0.153
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p005.png",
+   "frame_img": "frames/f005.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 6,
+   "source_frame": 6,
+   "time_s": 0.6,
+   "vehicle_box": [
+    172,
+    3,
+    679,
+    507
+   ],
+   "plate_box": [
+    361,
+    248,
+    387,
+    287
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "EXE",
+   "mean_conf": 0.724,
+   "two_line": true,
+   "sharpness": 54.7,
+   "plate_height_px": 39,
+   "weight": 0.18,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.612,
+     "alts": [
+      [
+       "E",
+       0.612
+      ],
+      [
+       "B",
+       0.362
+      ],
+      [
+       "R",
+       0.017
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.7,
+     "alts": [
+      [
+       "X",
+       0.7
+      ],
+      [
+       "A",
+       0.088
+      ],
+      [
+       "H",
+       0.048
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.859,
+     "alts": [
+      [
+       "E",
+       0.859
+      ],
+      [
+       "F",
+       0.099
+      ],
+      [
+       "5",
+       0.025
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p006.png",
+   "frame_img": "frames/f006.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 7,
+   "source_frame": 7,
+   "time_s": 0.7,
+   "vehicle_box": [
+    165,
+    3,
+    677,
+    504
+   ],
+   "plate_box": [
+    356,
+    246,
+    383,
+    285
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "53E",
+   "mean_conf": 0.895,
+   "two_line": true,
+   "sharpness": 24.6,
+   "plate_height_px": 39,
+   "weight": 0.2469,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "5",
+     "conf": 0.914,
+     "alts": [
+      [
+       "5",
+       0.914
+      ],
+      [
+       "3",
+       0.048
+      ],
+      [
+       "6",
+       0.01
+      ]
+     ]
+    },
+    {
+     "char": "3",
+     "conf": 0.779,
+     "alts": [
+      [
+       "3",
+       0.779
+      ],
+      [
+       "4",
+       0.093
+      ],
+      [
+       "7",
+       0.056
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.993,
+     "alts": [
+      [
+       "E",
+       0.993
+      ],
+      [
+       "F",
+       0.003
+      ],
+      [
+       "B",
+       0.002
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p007.png",
+   "frame_img": "frames/f007.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 8,
+   "source_frame": 8,
+   "time_s": 0.8,
+   "vehicle_box": [
+    149,
+    3,
+    670,
+    508
+   ],
+   "plate_box": [
+    344,
+    248,
+    371,
+    287
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "62",
+   "mean_conf": 0.842,
+   "two_line": true,
+   "sharpness": 26.6,
+   "plate_height_px": 39,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "6",
+     "conf": 0.918,
+     "alts": [
+      [
+       "6",
+       0.918
+      ],
+      [
+       "0",
+       0.024
+      ],
+      [
+       "1",
+       0.014
+      ]
+     ]
+    },
+    {
+     "char": "2",
+     "conf": 0.766,
+     "alts": [
+      [
+       "2",
+       0.766
+      ],
+      [
+       "6",
+       0.083
+      ],
+      [
+       "3",
+       0.067
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p008.png",
+   "frame_img": "frames/f008.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 9,
+   "source_frame": 9,
+   "time_s": 0.9,
+   "vehicle_box": [
+    144,
+    1,
+    670,
+    505
+   ],
+   "plate_box": [
+    341,
+    246,
+    368,
+    285
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "B25",
+   "mean_conf": 0.528,
+   "two_line": true,
+   "sharpness": 60.9,
+   "plate_height_px": 39,
+   "weight": 0.0973,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.325,
+     "alts": [
+      [
+       "B",
+       0.403
+      ],
+      [
+       "5",
+       0.291
+      ],
+      [
+       "P",
+       0.081
+      ]
+     ]
+    },
+    {
+     "char": "2",
+     "conf": 0.872,
+     "alts": [
+      [
+       "2",
+       0.872
+      ],
+      [
+       "Z",
+       0.059
+      ],
+      [
+       "3",
+       0.025
+      ]
+     ]
+    },
+    {
+     "char": "5",
+     "conf": 0.386,
+     "alts": [
+      [
+       "5",
+       0.439
+      ],
+      [
+       "E",
+       0.172
+      ],
+      [
+       "2",
+       0.075
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p009.png",
+   "frame_img": "frames/f009.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 10,
+   "source_frame": 10,
+   "time_s": 1.0,
+   "vehicle_box": [
+    128,
+    3,
+    663,
+    510
+   ],
+   "plate_box": [
+    328,
+    249,
+    356,
+    288
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "7B22E",
+   "mean_conf": 0.435,
+   "two_line": true,
+   "sharpness": 90.0,
+   "plate_height_px": 39,
+   "weight": 0.0706,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "7",
+     "conf": 0.057,
+     "alts": [
+      [
+       "7",
+       0.174
+      ],
+      [
+       "6",
+       0.096
+      ],
+      [
+       "E",
+       0.062
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.083,
+     "alts": [
+      [
+       "B",
+       0.205
+      ],
+      [
+       "6",
+       0.165
+      ],
+      [
+       "8",
+       0.153
+      ]
+     ]
+    },
+    {
+     "char": "2",
+     "conf": 0.748,
+     "alts": [
+      [
+       "2",
+       0.748
+      ],
+      [
+       "8",
+       0.084
+      ],
+      [
+       "5",
+       0.034
+      ]
+     ]
+    },
+    {
+     "char": "2",
+     "conf": 0.8,
+     "alts": [
+      [
+       "2",
+       0.8
+      ],
+      [
+       "4",
+       0.172
+      ],
+      [
+       "7",
+       0.01
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.486,
+     "alts": [
+      [
+       "E",
+       0.493
+      ],
+      [
+       "2",
+       0.1
+      ],
+      [
+       "8",
+       0.096
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p010.png",
+   "frame_img": "frames/f010.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 11,
+   "source_frame": 11,
+   "time_s": 1.1,
+   "vehicle_box": [
+    120,
+    4,
+    665,
+    502
+   ],
+   "plate_box": [
+    595,
+    292,
+    636,
+    311
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "RUAEES",
+   "mean_conf": 0.547,
+   "two_line": true,
+   "sharpness": 16.9,
+   "plate_height_px": 19,
+   "weight": 0.1025,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "R",
+     "conf": 0.395,
+     "alts": [
+      [
+       "R",
+       0.445
+      ],
+      [
+       "E",
+       0.393
+      ],
+      [
+       "6",
+       0.043
+      ]
+     ]
+    },
+    {
+     "char": "U",
+     "conf": 0.644,
+     "alts": [
+      [
+       "U",
+       0.644
+      ],
+      [
+       "X",
+       0.22
+      ],
+      [
+       "Y",
+       0.052
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.941,
+     "alts": [
+      [
+       "A",
+       0.941
+      ],
+      [
+       "I",
+       0.023
+      ],
+      [
+       "S",
+       0.02
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.586,
+     "alts": [
+      [
+       "E",
+       0.586
+      ],
+      [
+       "A",
+       0.355
+      ],
+      [
+       "I",
+       0.024
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.63,
+     "alts": [
+      [
+       "E",
+       0.63
+      ],
+      [
+       "C",
+       0.117
+      ],
+      [
+       "A",
+       0.056
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.084,
+     "alts": [
+      [
+       "S",
+       0.205
+      ],
+      [
+       "K",
+       0.143
+      ],
+      [
+       "G",
+       0.139
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p011.png",
+   "frame_img": "frames/f011.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 12,
+   "source_frame": 12,
+   "time_s": 1.2,
+   "vehicle_box": [
+    96,
+    4,
+    649,
+    502
+   ],
+   "plate_box": [
+    303,
+    246,
+    331,
+    285
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "EDFL",
+   "mean_conf": 0.707,
+   "two_line": true,
+   "sharpness": 46.6,
+   "plate_height_px": 39,
+   "weight": 0.1676,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.634,
+     "alts": [
+      [
+       "E",
+       0.634
+      ],
+      [
+       "F",
+       0.147
+      ],
+      [
+       "B",
+       0.111
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.335,
+     "alts": [
+      [
+       "D",
+       0.412
+      ],
+      [
+       "4",
+       0.172
+      ],
+      [
+       "J",
+       0.081
+      ]
+     ]
+    },
+    {
+     "char": "F",
+     "conf": 0.875,
+     "alts": [
+      [
+       "F",
+       0.875
+      ],
+      [
+       "E",
+       0.098
+      ],
+      [
+       "T",
+       0.008
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.984,
+     "alts": [
+      [
+       "L",
+       0.984
+      ],
+      [
+       "Q",
+       0.005
+      ],
+      [
+       "D",
+       0.003
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p012.png",
+   "frame_img": "frames/f012.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 13,
+   "source_frame": 13,
+   "time_s": 1.3,
+   "vehicle_box": [
+    76,
+    2,
+    638,
+    505
+   ],
+   "plate_box": [
+    286,
+    247,
+    315,
+    286
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "6FEEA",
+   "mean_conf": 0.452,
+   "two_line": true,
+   "sharpness": 35.0,
+   "plate_height_px": 39,
+   "weight": 0.0658,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "6",
+     "conf": 0.113,
+     "alts": [
+      [
+       "6",
+       0.24
+      ],
+      [
+       "E",
+       0.12
+      ],
+      [
+       "0",
+       0.078
+      ]
+     ]
+    },
+    {
+     "char": "F",
+     "conf": 0.065,
+     "alts": [
+      [
+       "F",
+       0.184
+      ],
+      [
+       "E",
+       0.137
+      ],
+      [
+       "3",
+       0.114
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.542,
+     "alts": [
+      [
+       "E",
+       0.544
+      ],
+      [
+       "8",
+       0.118
+      ],
+      [
+       "A",
+       0.086
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.99,
+     "alts": [
+      [
+       "E",
+       0.99
+      ],
+      [
+       "B",
+       0.003
+      ],
+      [
+       "A",
+       0.002
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.549,
+     "alts": [
+      [
+       "A",
+       0.549
+      ],
+      [
+       "X",
+       0.279
+      ],
+      [
+       "N",
+       0.1
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p013.png",
+   "frame_img": "frames/f013.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 14,
+   "source_frame": 14,
+   "time_s": 1.4,
+   "vehicle_box": [
+    65,
+    2,
+    640,
+    503
+   ],
+   "plate_box": [
+    280,
+    246,
+    310,
+    284
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "3LA",
+   "mean_conf": 0.798,
+   "two_line": true,
+   "sharpness": 97.0,
+   "plate_height_px": 38,
+   "weight": 0.2374,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "3",
+     "conf": 0.861,
+     "alts": [
+      [
+       "3",
+       0.861
+      ],
+      [
+       "2",
+       0.101
+      ],
+      [
+       "9",
+       0.01
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.538,
+     "alts": [
+      [
+       "L",
+       0.538
+      ],
+      [
+       "C",
+       0.198
+      ],
+      [
+       "B",
+       0.117
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.993,
+     "alts": [
+      [
+       "A",
+       0.993
+      ],
+      [
+       "9",
+       0.005
+      ],
+      [
+       "Q",
+       0.001
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p014.png",
+   "frame_img": "frames/f014.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 15,
+   "source_frame": 15,
+   "time_s": 1.5,
+   "vehicle_box": [
+    57,
+    4,
+    641,
+    497
+   ],
+   "plate_box": [
+    244,
+    211,
+    419,
+    404
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.149,
+   "text": "1JEKAE",
+   "mean_conf": 0.481,
+   "two_line": true,
+   "sharpness": 2843.4,
+   "plate_height_px": 193,
+   "weight": 0.2309,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "1",
+     "conf": 0.658,
+     "alts": [
+      [
+       "1",
+       0.658
+      ],
+      [
+       "0",
+       0.105
+      ],
+      [
+       "D",
+       0.047
+      ]
+     ]
+    },
+    {
+     "char": "J",
+     "conf": 0.998,
+     "alts": [
+      [
+       "J",
+       0.998
+      ],
+      [
+       "7",
+       0.001
+      ],
+      [
+       "1",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.283,
+     "alts": [
+      [
+       "E",
+       0.381
+      ],
+      [
+       "3",
+       0.175
+      ],
+      [
+       "A",
+       0.123
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.237,
+     "alts": [
+      [
+       "K",
+       0.344
+      ],
+      [
+       "R",
+       0.173
+      ],
+      [
+       "E",
+       0.131
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.532,
+     "alts": [
+      [
+       "A",
+       0.532
+      ],
+      [
+       "E",
+       0.141
+      ],
+      [
+       "R",
+       0.059
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.175,
+     "alts": [
+      [
+       "E",
+       0.333
+      ],
+      [
+       "R",
+       0.236
+      ],
+      [
+       "A",
+       0.104
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p015.png",
+   "frame_img": "frames/f015.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 16,
+   "source_frame": 16,
+   "time_s": 1.6,
+   "vehicle_box": [
+    49,
+    4,
+    633,
+    497
+   ],
+   "plate_box": [
+    262,
+    265,
+    292,
+    292
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.118,
+   "text": "EADA",
+   "mean_conf": 0.79,
+   "two_line": true,
+   "sharpness": 24.6,
+   "plate_height_px": 27,
+   "weight": 0.262,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.98,
+     "alts": [
+      [
+       "E",
+       0.98
+      ],
+      [
+       "F",
+       0.009
+      ],
+      [
+       "L",
+       0.005
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.999,
+     "alts": [
+      [
+       "A",
+       0.999
+      ],
+      [
+       "9",
+       0.0
+      ],
+      [
+       "4",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.214,
+     "alts": [
+      [
+       "D",
+       0.327
+      ],
+      [
+       "E",
+       0.286
+      ],
+      [
+       "B",
+       0.197
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.967,
+     "alts": [
+      [
+       "A",
+       0.967
+      ],
+      [
+       "4",
+       0.017
+      ],
+      [
+       "3",
+       0.006
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p016.png",
+   "frame_img": "frames/f016.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 17,
+   "source_frame": 17,
+   "time_s": 1.7,
+   "vehicle_box": [
+    34,
+    4,
+    626,
+    498
+   ],
+   "plate_box": [
+    252,
+    262,
+    282,
+    293
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.135,
+   "text": "FALEA",
+   "mean_conf": 0.606,
+   "two_line": true,
+   "sharpness": 78.4,
+   "plate_height_px": 31,
+   "weight": 0.1958,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.188,
+     "alts": [
+      [
+       "F",
+       0.307
+      ],
+      [
+       "E",
+       0.196
+      ],
+      [
+       "R",
+       0.177
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.882,
+     "alts": [
+      [
+       "A",
+       0.882
+      ],
+      [
+       "N",
+       0.022
+      ],
+      [
+       "E",
+       0.02
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.995,
+     "alts": [
+      [
+       "L",
+       0.995
+      ],
+      [
+       "I",
+       0.003
+      ],
+      [
+       "B",
+       0.001
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.213,
+     "alts": [
+      [
+       "E",
+       0.326
+      ],
+      [
+       "B",
+       0.271
+      ],
+      [
+       "R",
+       0.225
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.751,
+     "alts": [
+      [
+       "A",
+       0.751
+      ],
+      [
+       "Z",
+       0.125
+      ],
+      [
+       "E",
+       0.044
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p017.png",
+   "frame_img": "frames/f017.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 18,
+   "source_frame": 18,
+   "time_s": 1.8,
+   "vehicle_box": [
+    4,
+    4,
+    607,
+    499
+   ],
+   "plate_box": [
+    228,
+    256,
+    258,
+    289
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.184,
+   "text": "F4BA",
+   "mean_conf": 0.634,
+   "two_line": true,
+   "sharpness": 38.0,
+   "plate_height_px": 33,
+   "weight": 0.1984,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.267,
+     "alts": [
+      [
+       "F",
+       0.366
+      ],
+      [
+       "6",
+       0.196
+      ],
+      [
+       "0",
+       0.113
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.937,
+     "alts": [
+      [
+       "4",
+       0.937
+      ],
+      [
+       "D",
+       0.018
+      ],
+      [
+       "A",
+       0.018
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.427,
+     "alts": [
+      [
+       "B",
+       0.462
+      ],
+      [
+       "R",
+       0.191
+      ],
+      [
+       "E",
+       0.147
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.906,
+     "alts": [
+      [
+       "A",
+       0.906
+      ],
+      [
+       "I",
+       0.06
+      ],
+      [
+       "D",
+       0.021
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p018.png",
+   "frame_img": "frames/f018.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 19,
+   "source_frame": 19,
+   "time_s": 1.9,
+   "vehicle_box": [
+    0,
+    3,
+    605,
+    502
+   ],
+   "plate_box": [
+    220,
+    250,
+    252,
+    285
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.201,
+   "text": "684B3",
+   "mean_conf": 0.619,
+   "two_line": true,
+   "sharpness": 77.0,
+   "plate_height_px": 35,
+   "weight": 0.2182,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "6",
+     "conf": 0.523,
+     "alts": [
+      [
+       "6",
+       0.523
+      ],
+      [
+       "1",
+       0.22
+      ],
+      [
+       "0",
+       0.133
+      ]
+     ]
+    },
+    {
+     "char": "8",
+     "conf": 0.857,
+     "alts": [
+      [
+       "8",
+       0.857
+      ],
+      [
+       "E",
+       0.041
+      ],
+      [
+       "3",
+       0.026
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.893,
+     "alts": [
+      [
+       "4",
+       0.893
+      ],
+      [
+       "A",
+       0.032
+      ],
+      [
+       "3",
+       0.027
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.605,
+     "alts": [
+      [
+       "B",
+       0.605
+      ],
+      [
+       "E",
+       0.317
+      ],
+      [
+       "R",
+       0.046
+      ]
+     ]
+    },
+    {
+     "char": "3",
+     "conf": 0.219,
+     "alts": [
+      [
+       "3",
+       0.334
+      ],
+      [
+       "Z",
+       0.252
+      ],
+      [
+       "2",
+       0.183
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p019.png",
+   "frame_img": "frames/f019.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 20,
+   "source_frame": 20,
+   "time_s": 2.0,
+   "vehicle_box": [
+    1,
+    4,
+    597,
+    499
+   ],
+   "plate_box": [
+    204,
+    244,
+    237,
+    279
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.118,
+   "text": "T84BZ",
+   "mean_conf": 0.598,
+   "two_line": true,
+   "sharpness": 112.4,
+   "plate_height_px": 35,
+   "weight": 0.2184,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "T",
+     "conf": 0.351,
+     "alts": [
+      [
+       "T",
+       0.419
+      ],
+      [
+       "6",
+       0.157
+      ],
+      [
+       "1",
+       0.098
+      ]
+     ]
+    },
+    {
+     "char": "8",
+     "conf": 0.819,
+     "alts": [
+      [
+       "8",
+       0.819
+      ],
+      [
+       "5",
+       0.045
+      ],
+      [
+       "0",
+       0.045
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.605,
+     "alts": [
+      [
+       "4",
+       0.605
+      ],
+      [
+       "A",
+       0.191
+      ],
+      [
+       "3",
+       0.077
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.449,
+     "alts": [
+      [
+       "B",
+       0.474
+      ],
+      [
+       "E",
+       0.305
+      ],
+      [
+       "R",
+       0.144
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.769,
+     "alts": [
+      [
+       "Z",
+       0.769
+      ],
+      [
+       "A",
+       0.068
+      ],
+      [
+       "I",
+       0.067
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p020.png",
+   "frame_img": "frames/f020.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 21,
+   "source_frame": 21,
+   "time_s": 2.1,
+   "vehicle_box": [
+    1,
+    4,
+    593,
+    501
+   ],
+   "plate_box": [
+    508,
+    252,
+    561,
+    281
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "FS??TXINOZJ",
+   "mean_conf": 0.447,
+   "two_line": true,
+   "sharpness": 98.0,
+   "plate_height_px": 29,
+   "weight": 0.1074,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.218,
+     "alts": [
+      [
+       "F",
+       0.33
+      ],
+      [
+       "B",
+       0.167
+      ],
+      [
+       "P",
+       0.106
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.086,
+     "alts": [
+      [
+       "S",
+       0.211
+      ],
+      [
+       "A",
+       0.179
+      ],
+      [
+       "E",
+       0.124
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "T",
+     "conf": 0.528,
+     "alts": [
+      [
+       "T",
+       0.528
+      ],
+      [
+       "4",
+       0.296
+      ],
+      [
+       "H",
+       0.023
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.581,
+     "alts": [
+      [
+       "X",
+       0.581
+      ],
+      [
+       "R",
+       0.17
+      ],
+      [
+       "T",
+       0.065
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.569,
+     "alts": [
+      [
+       "I",
+       0.569
+      ],
+      [
+       "T",
+       0.43
+      ],
+      [
+       "O",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "N",
+     "conf": 0.998,
+     "alts": [
+      [
+       "N",
+       0.998
+      ],
+      [
+       "H",
+       0.001
+      ],
+      [
+       "R",
+       0.001
+      ]
+     ]
+    },
+    {
+     "char": "O",
+     "conf": 0.863,
+     "alts": [
+      [
+       "O",
+       0.863
+      ],
+      [
+       "Q",
+       0.084
+      ],
+      [
+       "D",
+       0.022
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.147,
+     "alts": [
+      [
+       "Z",
+       0.272
+      ],
+      [
+       "R",
+       0.168
+      ],
+      [
+       "Q",
+       0.084
+      ]
+     ]
+    },
+    {
+     "char": "J",
+     "conf": 0.036,
+     "alts": [
+      [
+       "J",
+       0.134
+      ],
+      [
+       "A",
+       0.104
+      ],
+      [
+       "L",
+       0.102
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p021.png",
+   "frame_img": "frames/f021.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 22,
+   "source_frame": 22,
+   "time_s": 2.2,
+   "vehicle_box": [
+    0,
+    4,
+    583,
+    499
+   ],
+   "plate_box": [
+    176,
+    238,
+    210,
+    273
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BEAEZ",
+   "mean_conf": 0.539,
+   "two_line": true,
+   "sharpness": 53.4,
+   "plate_height_px": 35,
+   "weight": 0.1555,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.099,
+     "alts": [
+      [
+       "B",
+       0.224
+      ],
+      [
+       "E",
+       0.197
+      ],
+      [
+       "R",
+       0.186
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.618,
+     "alts": [
+      [
+       "E",
+       0.618
+      ],
+      [
+       "A",
+       0.153
+      ],
+      [
+       "7",
+       0.038
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.646,
+     "alts": [
+      [
+       "A",
+       0.646
+      ],
+      [
+       "Y",
+       0.113
+      ],
+      [
+       "Z",
+       0.097
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.367,
+     "alts": [
+      [
+       "E",
+       0.428
+      ],
+      [
+       "B",
+       0.198
+      ],
+      [
+       "F",
+       0.075
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.965,
+     "alts": [
+      [
+       "Z",
+       0.965
+      ],
+      [
+       "A",
+       0.015
+      ],
+      [
+       "S",
+       0.008
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p022.png",
+   "frame_img": "frames/f022.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 23,
+   "source_frame": 23,
+   "time_s": 2.3,
+   "vehicle_box": [
+    0,
+    4,
+    576,
+    496
+   ],
+   "plate_box": [
+    485,
+    238,
+    547,
+    273
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "BKITTNOR",
+   "mean_conf": 0.68,
+   "two_line": true,
+   "sharpness": 79.0,
+   "plate_height_px": 35,
+   "weight": 0.2639,
+   "excluded": null,
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.114,
+     "alts": [
+      [
+       "B",
+       0.238
+      ],
+      [
+       "E",
+       0.234
+      ],
+      [
+       "P",
+       0.176
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.901,
+     "alts": [
+      [
+       "K",
+       0.901
+      ],
+      [
+       "Z",
+       0.024
+      ],
+      [
+       "G",
+       0.017
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.708,
+     "alts": [
+      [
+       "I",
+       0.762
+      ],
+      [
+       "J",
+       0.228
+      ],
+      [
+       "D",
+       0.003
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.447,
+     "alts": [
+      [
+       "T",
+       0.473
+      ],
+      [
+       "7",
+       0.318
+      ],
+      [
+       "F",
+       0.042
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.812,
+     "alts": [
+      [
+       "T",
+       0.812
+      ],
+      [
+       "I",
+       0.122
+      ],
+      [
+       "O",
+       0.03
+      ]
+     ]
+    },
+    {
+     "char": "N",
+     "conf": 0.954,
+     "alts": [
+      [
+       "N",
+       0.954
+      ],
+      [
+       "W",
+       0.028
+      ],
+      [
+       "M",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "O",
+     "conf": 0.888,
+     "alts": [
+      [
+       "O",
+       0.888
+      ],
+      [
+       "P",
+       0.032
+      ],
+      [
+       "D",
+       0.026
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.612,
+     "alts": [
+      [
+       "R",
+       0.612
+      ],
+      [
+       "S",
+       0.086
+      ],
+      [
+       "E",
+       0.046
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p023.png",
+   "frame_img": "frames/f023.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 24,
+   "source_frame": 24,
+   "time_s": 2.4,
+   "vehicle_box": [
+    0,
+    3,
+    585,
+    505
+   ],
+   "plate_box": [
+    166,
+    240,
+    200,
+    275
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "FAEA",
+   "mean_conf": 0.833,
+   "two_line": true,
+   "sharpness": 38.5,
+   "plate_height_px": 35,
+   "weight": 0.3542,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.965,
+     "alts": [
+      [
+       "F",
+       0.965
+      ],
+      [
+       "E",
+       0.015
+      ],
+      [
+       "R",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.965,
+     "alts": [
+      [
+       "A",
+       0.965
+      ],
+      [
+       "J",
+       0.021
+      ],
+      [
+       "3",
+       0.006
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.564,
+     "alts": [
+      [
+       "E",
+       0.564
+      ],
+      [
+       "B",
+       0.181
+      ],
+      [
+       "F",
+       0.055
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.837,
+     "alts": [
+      [
+       "A",
+       0.837
+      ],
+      [
+       "3",
+       0.077
+      ],
+      [
+       "J",
+       0.031
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p024.png",
+   "frame_img": "frames/f024.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 25,
+   "source_frame": 25,
+   "time_s": 2.5,
+   "vehicle_box": [
+    0,
+    4,
+    586,
+    506
+   ],
+   "plate_box": [
+    493,
+    239,
+    555,
+    275
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "BAREINORA",
+   "mean_conf": 0.528,
+   "two_line": true,
+   "sharpness": 185.4,
+   "plate_height_px": 36,
+   "weight": 0.1921,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.181,
+     "alts": [
+      [
+       "B",
+       0.301
+      ],
+      [
+       "E",
+       0.268
+      ],
+      [
+       "D",
+       0.172
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.044,
+     "alts": [
+      [
+       "A",
+       0.158
+      ],
+      [
+       "E",
+       0.134
+      ],
+      [
+       "X",
+       0.095
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.508,
+     "alts": [
+      [
+       "R",
+       0.508
+      ],
+      [
+       "T",
+       0.125
+      ],
+      [
+       "E",
+       0.056
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.348,
+     "alts": [
+      [
+       "E",
+       0.417
+      ],
+      [
+       "C",
+       0.138
+      ],
+      [
+       "L",
+       0.123
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.824,
+     "alts": [
+      [
+       "I",
+       0.824
+      ],
+      [
+       "O",
+       0.089
+      ],
+      [
+       "T",
+       0.031
+      ]
+     ]
+    },
+    {
+     "char": "N",
+     "conf": 0.951,
+     "alts": [
+      [
+       "N",
+       0.951
+      ],
+      [
+       "W",
+       0.044
+      ],
+      [
+       "V",
+       0.003
+      ]
+     ]
+    },
+    {
+     "char": "O",
+     "conf": 0.972,
+     "alts": [
+      [
+       "O",
+       0.972
+      ],
+      [
+       "G",
+       0.019
+      ],
+      [
+       "E",
+       0.005
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.36,
+     "alts": [
+      [
+       "R",
+       0.426
+      ],
+      [
+       "E",
+       0.364
+      ],
+      [
+       "A",
+       0.045
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.562,
+     "alts": [
+      [
+       "A",
+       0.562
+      ],
+      [
+       "N",
+       0.067
+      ],
+      [
+       "Z",
+       0.066
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p025.png",
+   "frame_img": "frames/f025.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 26,
+   "source_frame": 26,
+   "time_s": 2.6,
+   "vehicle_box": [
+    0,
+    4,
+    591,
+    509
+   ],
+   "plate_box": [
+    497,
+    238,
+    559,
+    273
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "PR?RZRTNORA",
+   "mean_conf": 0.612,
+   "two_line": true,
+   "sharpness": 198.8,
+   "plate_height_px": 35,
+   "weight": 0.258,
+   "excluded": null,
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "P",
+     "conf": 0.449,
+     "alts": [
+      [
+       "P",
+       0.474
+      ],
+      [
+       "B",
+       0.177
+      ],
+      [
+       "D",
+       0.104
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.449,
+     "alts": [
+      [
+       "R",
+       0.488
+      ],
+      [
+       "X",
+       0.156
+      ],
+      [
+       "A",
+       0.102
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "R",
+     "conf": 0.211,
+     "alts": [
+      [
+       "R",
+       0.329
+      ],
+      [
+       "H",
+       0.258
+      ],
+      [
+       "4",
+       0.099
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.407,
+     "alts": [
+      [
+       "Z",
+       0.451
+      ],
+      [
+       "R",
+       0.275
+      ],
+      [
+       "K",
+       0.112
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.743,
+     "alts": [
+      [
+       "R",
+       0.743
+      ],
+      [
+       "F",
+       0.107
+      ],
+      [
+       "A",
+       0.049
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.995,
+     "alts": [
+      [
+       "T",
+       0.995
+      ],
+      [
+       "I",
+       0.003
+      ],
+      [
+       "O",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "N",
+     "conf": 0.976,
+     "alts": [
+      [
+       "N",
+       0.976
+      ],
+      [
+       "U",
+       0.011
+      ],
+      [
+       "W",
+       0.006
+      ]
+     ]
+    },
+    {
+     "char": "O",
+     "conf": 0.969,
+     "alts": [
+      [
+       "O",
+       0.969
+      ],
+      [
+       "D",
+       0.019
+      ],
+      [
+       "U",
+       0.007
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.836,
+     "alts": [
+      [
+       "R",
+       0.836
+      ],
+      [
+       "E",
+       0.053
+      ],
+      [
+       "Z",
+       0.035
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.081,
+     "alts": [
+      [
+       "A",
+       0.206
+      ],
+      [
+       "L",
+       0.196
+      ],
+      [
+       "G",
+       0.186
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p026.png",
+   "frame_img": "frames/f026.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 27,
+   "source_frame": 27,
+   "time_s": 2.7,
+   "vehicle_box": [
+    0,
+    5,
+    582,
+    518
+   ],
+   "plate_box": [
+    487,
+    242,
+    551,
+    277
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "PRXSTNORA",
+   "mean_conf": 0.506,
+   "two_line": true,
+   "sharpness": 115.0,
+   "plate_height_px": 35,
+   "weight": 0.1568,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "P",
+     "conf": 0.207,
+     "alts": [
+      [
+       "P",
+       0.321
+      ],
+      [
+       "E",
+       0.295
+      ],
+      [
+       "B",
+       0.101
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.27,
+     "alts": [
+      [
+       "R",
+       0.408
+      ],
+      [
+       "E",
+       0.146
+      ],
+      [
+       "K",
+       0.065
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.443,
+     "alts": [
+      [
+       "X",
+       0.476
+      ],
+      [
+       "R",
+       0.192
+      ],
+      [
+       "T",
+       0.097
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.07,
+     "alts": [
+      [
+       "S",
+       0.187
+      ],
+      [
+       "C",
+       0.161
+      ],
+      [
+       "K",
+       0.108
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.852,
+     "alts": [
+      [
+       "T",
+       0.852
+      ],
+      [
+       "I",
+       0.117
+      ],
+      [
+       "O",
+       0.021
+      ]
+     ]
+    },
+    {
+     "char": "N",
+     "conf": 0.98,
+     "alts": [
+      [
+       "N",
+       0.98
+      ],
+      [
+       "W",
+       0.009
+      ],
+      [
+       "M",
+       0.003
+      ]
+     ]
+    },
+    {
+     "char": "O",
+     "conf": 0.916,
+     "alts": [
+      [
+       "O",
+       0.916
+      ],
+      [
+       "E",
+       0.04
+      ],
+      [
+       "G",
+       0.017
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.511,
+     "alts": [
+      [
+       "R",
+       0.511
+      ],
+      [
+       "Z",
+       0.183
+      ],
+      [
+       "S",
+       0.086
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.303,
+     "alts": [
+      [
+       "A",
+       0.398
+      ],
+      [
+       "K",
+       0.107
+      ],
+      [
+       "Z",
+       0.081
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p027.png",
+   "frame_img": "frames/f027.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 28,
+   "source_frame": 28,
+   "time_s": 2.8,
+   "vehicle_box": [
+    1,
+    5,
+    576,
+    517
+   ],
+   "plate_box": [
+    135,
+    228,
+    171,
+    267
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "PAJBZ",
+   "mean_conf": 0.706,
+   "two_line": true,
+   "sharpness": 158.3,
+   "plate_height_px": 39,
+   "weight": 0.348,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "P",
+     "conf": 0.696,
+     "alts": [
+      [
+       "P",
+       0.696
+      ],
+      [
+       "F",
+       0.187
+      ],
+      [
+       "T",
+       0.033
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.795,
+     "alts": [
+      [
+       "A",
+       0.795
+      ],
+      [
+       "E",
+       0.195
+      ],
+      [
+       "Z",
+       0.004
+      ]
+     ]
+    },
+    {
+     "char": "J",
+     "conf": 0.722,
+     "alts": [
+      [
+       "J",
+       0.722
+      ],
+      [
+       "I",
+       0.261
+      ],
+      [
+       "Q",
+       0.008
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.447,
+     "alts": [
+      [
+       "B",
+       0.473
+      ],
+      [
+       "E",
+       0.276
+      ],
+      [
+       "R",
+       0.092
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.872,
+     "alts": [
+      [
+       "Z",
+       0.872
+      ],
+      [
+       "2",
+       0.096
+      ],
+      [
+       "E",
+       0.006
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p028.png",
+   "frame_img": "frames/f028.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 29,
+   "source_frame": 29,
+   "time_s": 2.9,
+   "vehicle_box": [
+    1,
+    5,
+    580,
+    520
+   ],
+   "plate_box": [
+    487,
+    237,
+    551,
+    273
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "P??ERRTNDRL",
+   "mean_conf": 0.437,
+   "two_line": true,
+   "sharpness": 92.4,
+   "plate_height_px": 36,
+   "weight": 0.1141,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "P",
+     "conf": 0.215,
+     "alts": [
+      [
+       "P",
+       0.328
+      ],
+      [
+       "B",
+       0.179
+      ],
+      [
+       "E",
+       0.118
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "E",
+     "conf": 0.098,
+     "alts": [
+      [
+       "E",
+       0.245
+      ],
+      [
+       "A",
+       0.159
+      ],
+      [
+       "N",
+       0.086
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.118,
+     "alts": [
+      [
+       "R",
+       0.255
+      ],
+      [
+       "K",
+       0.179
+      ],
+      [
+       "Z",
+       0.121
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.246,
+     "alts": [
+      [
+       "R",
+       0.351
+      ],
+      [
+       "X",
+       0.276
+      ],
+      [
+       "T",
+       0.115
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.984,
+     "alts": [
+      [
+       "T",
+       0.984
+      ],
+      [
+       "I",
+       0.014
+      ],
+      [
+       "O",
+       0.001
+      ]
+     ]
+    },
+    {
+     "char": "N",
+     "conf": 0.92,
+     "alts": [
+      [
+       "N",
+       0.92
+      ],
+      [
+       "R",
+       0.042
+      ],
+      [
+       "A",
+       0.027
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.811,
+     "alts": [
+      [
+       "D",
+       0.811
+      ],
+      [
+       "O",
+       0.148
+      ],
+      [
+       "U",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.486,
+     "alts": [
+      [
+       "R",
+       0.505
+      ],
+      [
+       "Z",
+       0.173
+      ],
+      [
+       "T",
+       0.051
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.054,
+     "alts": [
+      [
+       "L",
+       0.174
+      ],
+      [
+       "Z",
+       0.149
+      ],
+      [
+       "A",
+       0.146
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p029.png",
+   "frame_img": "frames/f029.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 30,
+   "source_frame": 30,
+   "time_s": 3.0,
+   "vehicle_box": [
+    1,
+    5,
+    576,
+    526
+   ],
+   "plate_box": [
+    481,
+    245,
+    543,
+    279
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "P??ETTKZ",
+   "mean_conf": 0.313,
+   "two_line": true,
+   "sharpness": 36.9,
+   "plate_height_px": 34,
+   "weight": 0.0489,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "P",
+     "conf": 0.257,
+     "alts": [
+      [
+       "P",
+       0.359
+      ],
+      [
+       "F",
+       0.218
+      ],
+      [
+       "N",
+       0.066
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "E",
+     "conf": 0.147,
+     "alts": [
+      [
+       "E",
+       0.273
+      ],
+      [
+       "R",
+       0.236
+      ],
+      [
+       "T",
+       0.146
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.174,
+     "alts": [
+      [
+       "T",
+       0.3
+      ],
+      [
+       "R",
+       0.215
+      ],
+      [
+       "I",
+       0.147
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.19,
+     "alts": [
+      [
+       "T",
+       0.313
+      ],
+      [
+       "N",
+       0.193
+      ],
+      [
+       "X",
+       0.151
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.209,
+     "alts": [
+      [
+       "K",
+       0.323
+      ],
+      [
+       "H",
+       0.177
+      ],
+      [
+       "Y",
+       0.117
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.902,
+     "alts": [
+      [
+       "Z",
+       0.902
+      ],
+      [
+       "A",
+       0.05
+      ],
+      [
+       "R",
+       0.026
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p030.png",
+   "frame_img": "frames/f030.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 31,
+   "source_frame": 31,
+   "time_s": 3.1,
+   "vehicle_box": [
+    1,
+    4,
+    597,
+    530
+   ],
+   "plate_box": [
+    127,
+    239,
+    166,
+    279
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "14BAL",
+   "mean_conf": 0.633,
+   "two_line": true,
+   "sharpness": 93.3,
+   "plate_height_px": 40,
+   "weight": 0.255,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "1",
+     "conf": 0.606,
+     "alts": [
+      [
+       "1",
+       0.606
+      ],
+      [
+       "6",
+       0.101
+      ],
+      [
+       "0",
+       0.1
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.541,
+     "alts": [
+      [
+       "4",
+       0.541
+      ],
+      [
+       "2",
+       0.285
+      ],
+      [
+       "F",
+       0.067
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.514,
+     "alts": [
+      [
+       "B",
+       0.514
+      ],
+      [
+       "E",
+       0.256
+      ],
+      [
+       "R",
+       0.177
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.544,
+     "alts": [
+      [
+       "A",
+       0.544
+      ],
+      [
+       "Z",
+       0.257
+      ],
+      [
+       "X",
+       0.066
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.959,
+     "alts": [
+      [
+       "L",
+       0.959
+      ],
+      [
+       "I",
+       0.025
+      ],
+      [
+       "K",
+       0.007
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p031.png",
+   "frame_img": "frames/f031.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 32,
+   "source_frame": 32,
+   "time_s": 3.2,
+   "vehicle_box": [
+    0,
+    4,
+    583,
+    483
+   ],
+   "plate_box": [
+    109,
+    234,
+    149,
+    273
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.229,
+   "text": "FAJEZ",
+   "mean_conf": 0.639,
+   "two_line": true,
+   "sharpness": 88.9,
+   "plate_height_px": 39,
+   "weight": 0.2534,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.568,
+     "alts": [
+      [
+       "F",
+       0.568
+      ],
+      [
+       "P",
+       0.201
+      ],
+      [
+       "E",
+       0.072
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.625,
+     "alts": [
+      [
+       "A",
+       0.625
+      ],
+      [
+       "E",
+       0.168
+      ],
+      [
+       "4",
+       0.167
+      ]
+     ]
+    },
+    {
+     "char": "J",
+     "conf": 0.998,
+     "alts": [
+      [
+       "J",
+       0.998
+      ],
+      [
+       "G",
+       0.001
+      ],
+      [
+       "Q",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.212,
+     "alts": [
+      [
+       "E",
+       0.325
+      ],
+      [
+       "B",
+       0.306
+      ],
+      [
+       "R",
+       0.237
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.79,
+     "alts": [
+      [
+       "Z",
+       0.79
+      ],
+      [
+       "A",
+       0.069
+      ],
+      [
+       "2",
+       0.067
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p032.png",
+   "frame_img": "frames/f032.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 33,
+   "source_frame": 33,
+   "time_s": 3.3,
+   "vehicle_box": [
+    0,
+    4,
+    588,
+    472
+   ],
+   "plate_box": [
+    106,
+    231,
+    147,
+    274
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "04RAL",
+   "mean_conf": 0.761,
+   "two_line": true,
+   "sharpness": 124.2,
+   "plate_height_px": 43,
+   "weight": 0.3898,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "0",
+     "conf": 0.618,
+     "alts": [
+      [
+       "0",
+       0.618
+      ],
+      [
+       "1",
+       0.251
+      ],
+      [
+       "7",
+       0.047
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.995,
+     "alts": [
+      [
+       "4",
+       0.995
+      ],
+      [
+       "H",
+       0.002
+      ],
+      [
+       "A",
+       0.002
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.36,
+     "alts": [
+      [
+       "R",
+       0.424
+      ],
+      [
+       "B",
+       0.334
+      ],
+      [
+       "E",
+       0.143
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.858,
+     "alts": [
+      [
+       "A",
+       0.858
+      ],
+      [
+       "I",
+       0.061
+      ],
+      [
+       "D",
+       0.049
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.974,
+     "alts": [
+      [
+       "L",
+       0.974
+      ],
+      [
+       "K",
+       0.012
+      ],
+      [
+       "H",
+       0.006
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p033.png",
+   "frame_img": "frames/f033.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 34,
+   "source_frame": 34,
+   "time_s": 3.4,
+   "vehicle_box": [
+    0,
+    5,
+    586,
+    503
+   ],
+   "plate_box": [
+    483,
+    242,
+    551,
+    279
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.312,
+   "text": "P?AIETGJ?EE",
+   "mean_conf": 0.346,
+   "two_line": true,
+   "sharpness": 35.0,
+   "plate_height_px": 37,
+   "weight": 0.0625,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "P",
+     "conf": 0.268,
+     "alts": [
+      [
+       "P",
+       0.366
+      ],
+      [
+       "B",
+       0.158
+      ],
+      [
+       "E",
+       0.091
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "A",
+     "conf": 0.099,
+     "alts": [
+      [
+       "A",
+       0.227
+      ],
+      [
+       "U",
+       0.191
+      ],
+      [
+       "O",
+       0.132
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.138,
+     "alts": [
+      [
+       "I",
+       0.264
+      ],
+      [
+       "O",
+       0.182
+      ],
+      [
+       "T",
+       0.139
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.493,
+     "alts": [
+      [
+       "E",
+       0.523
+      ],
+      [
+       "K",
+       0.259
+      ],
+      [
+       "R",
+       0.038
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.253,
+     "alts": [
+      [
+       "T",
+       0.384
+      ],
+      [
+       "U",
+       0.214
+      ],
+      [
+       "I",
+       0.107
+      ]
+     ]
+    },
+    {
+     "char": "G",
+     "conf": 0.064,
+     "alts": [
+      [
+       "G",
+       0.192
+      ],
+      [
+       "K",
+       0.173
+      ],
+      [
+       "J",
+       0.165
+      ]
+     ]
+    },
+    {
+     "char": "J",
+     "conf": 0.857,
+     "alts": [
+      [
+       "J",
+       0.857
+      ],
+      [
+       "T",
+       0.075
+      ],
+      [
+       "I",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "E",
+     "conf": 0.235,
+     "alts": [
+      [
+       "E",
+       0.378
+      ],
+      [
+       "R",
+       0.262
+      ],
+      [
+       "A",
+       0.12
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.711,
+     "alts": [
+      [
+       "E",
+       0.711
+      ],
+      [
+       "2",
+       0.132
+      ],
+      [
+       "Z",
+       0.072
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p034.png",
+   "frame_img": "frames/f034.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 35,
+   "source_frame": 35,
+   "time_s": 3.5,
+   "vehicle_box": [
+    0,
+    4,
+    588,
+    478
+   ],
+   "plate_box": [
+    89,
+    221,
+    131,
+    261
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.168,
+   "text": "1?44QBA",
+   "mean_conf": 0.554,
+   "two_line": true,
+   "sharpness": 68.9,
+   "plate_height_px": 40,
+   "weight": 0.185,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "1",
+     "conf": 0.569,
+     "alts": [
+      [
+       "1",
+       0.569
+      ],
+      [
+       "0",
+       0.086
+      ],
+      [
+       "F",
+       0.074
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "4",
+     "conf": 0.386,
+     "alts": [
+      [
+       "4",
+       0.477
+      ],
+      [
+       "5",
+       0.136
+      ],
+      [
+       "R",
+       0.087
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.991,
+     "alts": [
+      [
+       "4",
+       0.991
+      ],
+      [
+       "Q",
+       0.006
+      ],
+      [
+       "Y",
+       0.001
+      ]
+     ]
+    },
+    {
+     "char": "Q",
+     "conf": 0.371,
+     "alts": [
+      [
+       "Q",
+       0.462
+      ],
+      [
+       "3",
+       0.138
+      ],
+      [
+       "1",
+       0.115
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.284,
+     "alts": [
+      [
+       "B",
+       0.377
+      ],
+      [
+       "E",
+       0.341
+      ],
+      [
+       "R",
+       0.142
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.722,
+     "alts": [
+      [
+       "A",
+       0.722
+      ],
+      [
+       "D",
+       0.161
+      ],
+      [
+       "I",
+       0.066
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p035.png",
+   "frame_img": "frames/f035.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 36,
+   "source_frame": 36,
+   "time_s": 3.6,
+   "vehicle_box": [
+    0,
+    4,
+    599,
+    504
+   ],
+   "plate_box": [
+    512,
+    172,
+    547,
+    201
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.212,
+   "text": "EA7LA",
+   "mean_conf": 0.62,
+   "two_line": true,
+   "sharpness": 20.2,
+   "plate_height_px": 29,
+   "weight": 0.1636,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.63,
+     "alts": [
+      [
+       "E",
+       0.63
+      ],
+      [
+       "F",
+       0.138
+      ],
+      [
+       "6",
+       0.076
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.127,
+     "alts": [
+      [
+       "A",
+       0.256
+      ],
+      [
+       "E",
+       0.161
+      ],
+      [
+       "4",
+       0.092
+      ]
+     ]
+    },
+    {
+     "char": "7",
+     "conf": 0.907,
+     "alts": [
+      [
+       "7",
+       0.907
+      ],
+      [
+       "A",
+       0.051
+      ],
+      [
+       "T",
+       0.017
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.439,
+     "alts": [
+      [
+       "L",
+       0.469
+      ],
+      [
+       "R",
+       0.131
+      ],
+      [
+       "E",
+       0.123
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.995,
+     "alts": [
+      [
+       "A",
+       0.995
+      ],
+      [
+       "U",
+       0.001
+      ],
+      [
+       "Z",
+       0.001
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p036.png",
+   "frame_img": "frames/f036.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 37,
+   "source_frame": 37,
+   "time_s": 3.7,
+   "vehicle_box": [
+    0,
+    3,
+    606,
+    483
+   ],
+   "plate_box": [
+    520,
+    164,
+    555,
+    199
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.203,
+   "text": "FAPA",
+   "mean_conf": 0.633,
+   "two_line": true,
+   "sharpness": 36.5,
+   "plate_height_px": 35,
+   "weight": 0.2034,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.978,
+     "alts": [
+      [
+       "F",
+       0.978
+      ],
+      [
+       "E",
+       0.013
+      ],
+      [
+       "6",
+       0.004
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.672,
+     "alts": [
+      [
+       "A",
+       0.672
+      ],
+      [
+       "7",
+       0.15
+      ],
+      [
+       "3",
+       0.099
+      ]
+     ]
+    },
+    {
+     "char": "P",
+     "conf": 0.119,
+     "alts": [
+      [
+       "P",
+       0.244
+      ],
+      [
+       "B",
+       0.197
+      ],
+      [
+       "R",
+       0.17
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.764,
+     "alts": [
+      [
+       "A",
+       0.764
+      ],
+      [
+       "J",
+       0.165
+      ],
+      [
+       "I",
+       0.04
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p037.png",
+   "frame_img": "frames/f037.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 38,
+   "source_frame": 38,
+   "time_s": 3.8,
+   "vehicle_box": [
+    0,
+    4,
+    604,
+    485
+   ],
+   "plate_box": [
+    81,
+    223,
+    124,
+    270
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.208,
+   "text": "FABA",
+   "mean_conf": 0.779,
+   "two_line": true,
+   "sharpness": 83.7,
+   "plate_height_px": 47,
+   "weight": 0.379,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.513,
+     "alts": [
+      [
+       "F",
+       0.513
+      ],
+      [
+       "E",
+       0.35
+      ],
+      [
+       "T",
+       0.048
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.974,
+     "alts": [
+      [
+       "A",
+       0.974
+      ],
+      [
+       "3",
+       0.008
+      ],
+      [
+       "H",
+       0.007
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.636,
+     "alts": [
+      [
+       "B",
+       0.636
+      ],
+      [
+       "E",
+       0.189
+      ],
+      [
+       "D",
+       0.062
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.993,
+     "alts": [
+      [
+       "A",
+       0.993
+      ],
+      [
+       "I",
+       0.002
+      ],
+      [
+       "3",
+       0.002
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p038.png",
+   "frame_img": "frames/f038.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 39,
+   "source_frame": 39,
+   "time_s": 3.9,
+   "vehicle_box": [
+    1,
+    5,
+    604,
+    484
+   ],
+   "plate_box": [
+    75,
+    217,
+    119,
+    264
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.228,
+   "text": "FABA",
+   "mean_conf": 0.914,
+   "two_line": true,
+   "sharpness": 118.3,
+   "plate_height_px": 47,
+   "weight": 0.5571,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.969,
+     "alts": [
+      [
+       "F",
+       0.969
+      ],
+      [
+       "T",
+       0.013
+      ],
+      [
+       "R",
+       0.012
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.994,
+     "alts": [
+      [
+       "A",
+       0.994
+      ],
+      [
+       "4",
+       0.002
+      ],
+      [
+       "H",
+       0.001
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.826,
+     "alts": [
+      [
+       "B",
+       0.826
+      ],
+      [
+       "E",
+       0.063
+      ],
+      [
+       "R",
+       0.06
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.868,
+     "alts": [
+      [
+       "A",
+       0.868
+      ],
+      [
+       "I",
+       0.033
+      ],
+      [
+       "E",
+       0.029
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p039.png",
+   "frame_img": "frames/f039.jpg",
+   "used_in_fusion": true
+  }
+ ],
+ "fusion": {
+  "positions": [
+   {
+    "idx": 0,
+    "char": "?",
+    "best_guess": "F",
+    "conf": 0.317,
+    "known": false,
+    "n_frames": 14,
+    "alts": [
+     [
+      "F",
+      0.317
+     ],
+     [
+      "P",
+      0.108
+     ],
+     [
+      "E",
+      0.107
+     ]
+    ],
+    "dist": {
+     "F": 0.3173,
+     "P": 0.1085,
+     "E": 0.1071,
+     "1": 0.1053,
+     "0": 0.0714,
+     "T": 0.0614,
+     "5": 0.0556,
+     "2": 0.0464
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "F",
+      "conf": 0.969
+     },
+     {
+      "frame": 33,
+      "char": "0",
+      "conf": 0.618
+     },
+     {
+      "frame": 38,
+      "char": "F",
+      "conf": 0.513
+     },
+     {
+      "frame": 24,
+      "char": "F",
+      "conf": 0.965
+     },
+     {
+      "frame": 28,
+      "char": "P",
+      "conf": 0.696
+     },
+     {
+      "frame": 23,
+      "char": "T",
+      "conf": 0.447
+     },
+     {
+      "frame": 16,
+      "char": "E",
+      "conf": 0.98
+     },
+     {
+      "frame": 26,
+      "char": "P",
+      "conf": 0.449
+     },
+     {
+      "frame": 31,
+      "char": "1",
+      "conf": 0.606
+     },
+     {
+      "frame": 32,
+      "char": "F",
+      "conf": 0.568
+     },
+     {
+      "frame": 7,
+      "char": "5",
+      "conf": 0.914
+     },
+     {
+      "frame": 15,
+      "char": "1",
+      "conf": 0.658
+     },
+     {
+      "frame": 1,
+      "char": "2",
+      "conf": 0.851
+     },
+     {
+      "frame": 20,
+      "char": "T",
+      "conf": 0.351
+     }
+    ]
+   },
+   {
+    "idx": 1,
+    "char": "?",
+    "best_guess": "A",
+    "conf": 0.463,
+    "known": false,
+    "n_frames": 15,
+    "alts": [
+     [
+      "A",
+      0.463
+     ],
+     [
+      "4",
+      0.169
+     ],
+     [
+      "3",
+      0.147
+     ]
+    ],
+    "dist": {
+     "A": 0.4633,
+     "4": 0.1692,
+     "3": 0.1473,
+     "T": 0.0485,
+     "E": 0.0467,
+     "2": 0.0317,
+     "R": 0.0285,
+     "X": 0.0121
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "A",
+      "conf": 0.994
+     },
+     {
+      "frame": 33,
+      "char": "4",
+      "conf": 0.995
+     },
+     {
+      "frame": 38,
+      "char": "A",
+      "conf": 0.974
+     },
+     {
+      "frame": 24,
+      "char": "A",
+      "conf": 0.965
+     },
+     {
+      "frame": 28,
+      "char": "A",
+      "conf": 0.795
+     },
+     {
+      "frame": 23,
+      "char": "T",
+      "conf": 0.812
+     },
+     {
+      "frame": 16,
+      "char": "A",
+      "conf": 0.999
+     },
+     {
+      "frame": 26,
+      "char": "R",
+      "conf": 0.449
+     },
+     {
+      "frame": 31,
+      "char": "4",
+      "conf": 0.541
+     },
+     {
+      "frame": 32,
+      "char": "A",
+      "conf": 0.625
+     },
+     {
+      "frame": 7,
+      "char": "3",
+      "conf": 0.779
+     },
+     {
+      "frame": 14,
+      "char": "3",
+      "conf": 0.861
+     },
+     {
+      "frame": 15,
+      "char": "E",
+      "conf": 0.283
+     },
+     {
+      "frame": 1,
+      "char": "3",
+      "conf": 0.857
+     },
+     {
+      "frame": 20,
+      "char": "4",
+      "conf": 0.605
+     }
+    ]
+   },
+   {
+    "idx": 2,
+    "char": "?",
+    "best_guess": "B",
+    "conf": 0.351,
+    "known": false,
+    "n_frames": 14,
+    "alts": [
+     [
+      "B",
+      0.351
+     ],
+     [
+      "E",
+      0.244
+     ],
+     [
+      "R",
+      0.103
+     ]
+    ],
+    "dist": {
+     "B": 0.3509,
+     "E": 0.2441,
+     "R": 0.1032,
+     "N": 0.0662,
+     "2": 0.05,
+     "D": 0.0361,
+     "L": 0.0352,
+     "P": 0.0233
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "B",
+      "conf": 0.826
+     },
+     {
+      "frame": 33,
+      "char": "R",
+      "conf": 0.36
+     },
+     {
+      "frame": 38,
+      "char": "B",
+      "conf": 0.636
+     },
+     {
+      "frame": 24,
+      "char": "E",
+      "conf": 0.564
+     },
+     {
+      "frame": 28,
+      "char": "B",
+      "conf": 0.447
+     },
+     {
+      "frame": 23,
+      "char": "N",
+      "conf": 0.954
+     },
+     {
+      "frame": 16,
+      "char": "D",
+      "conf": 0.214
+     },
+     {
+      "frame": 26,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 31,
+      "char": "B",
+      "conf": 0.514
+     },
+     {
+      "frame": 32,
+      "char": "E",
+      "conf": 0.212
+     },
+     {
+      "frame": 7,
+      "char": "E",
+      "conf": 0.993
+     },
+     {
+      "frame": 14,
+      "char": "L",
+      "conf": 0.538
+     },
+     {
+      "frame": 15,
+      "char": "K",
+      "conf": 0.237
+     },
+     {
+      "frame": 1,
+      "char": "2",
+      "conf": 0.922
+     },
+     {
+      "frame": 20,
+      "char": "B",
+      "conf": 0.449
+     }
+    ]
+   },
+   {
+    "idx": 3,
+    "char": "A",
+    "best_guess": "A",
+    "conf": 0.582,
+    "known": true,
+    "n_frames": 13,
+    "alts": [
+     [
+      "A",
+      0.582
+     ],
+     [
+      "Z",
+      0.194
+     ],
+     [
+      "R",
+      0.045
+     ]
+    ],
+    "dist": {
+     "A": 0.5822,
+     "Z": 0.1942,
+     "R": 0.0452,
+     "E": 0.0213,
+     "I": 0.0197,
+     "2": 0.0151,
+     "G": 0.0137,
+     "L": 0.0134
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "A",
+      "conf": 0.868
+     },
+     {
+      "frame": 33,
+      "char": "A",
+      "conf": 0.858
+     },
+     {
+      "frame": 38,
+      "char": "A",
+      "conf": 0.993
+     },
+     {
+      "frame": 24,
+      "char": "A",
+      "conf": 0.837
+     },
+     {
+      "frame": 28,
+      "char": "Z",
+      "conf": 0.872
+     },
+     {
+      "frame": 23,
+      "char": "R",
+      "conf": 0.612
+     },
+     {
+      "frame": 16,
+      "char": "A",
+      "conf": 0.967
+     },
+     {
+      "frame": 26,
+      "char": "A",
+      "conf": 0.081
+     },
+     {
+      "frame": 31,
+      "char": "A",
+      "conf": 0.544
+     },
+     {
+      "frame": 32,
+      "char": "Z",
+      "conf": 0.79
+     },
+     {
+      "frame": 14,
+      "char": "A",
+      "conf": 0.993
+     },
+     {
+      "frame": 15,
+      "char": "A",
+      "conf": 0.532
+     },
+     {
+      "frame": 20,
+      "char": "Z",
+      "conf": 0.769
+     }
+    ]
+   }
+  ],
+  "text": "???A",
+  "n_frames": 15,
+  "reference_frame": 39,
+  "insertions": {
+   "3": 0.195,
+   "1": 0.134,
+   "2": 0.116,
+   "-1": 0.059,
+   "0": 0.1
+  }
+ },
+ "attributes": {
+  "colour": {
+   "green": 0.6268,
+   "black": 0.2462,
+   "yellow": 0.1056,
+   "brown": 0.0161,
+   "orange": 0.0053
+  },
+  "body_type": {
+   "truck": 0.4071,
+   "bus": 0.1854,
+   "auto-rickshaw": 0.1851,
+   "van": 0.1604,
+   "suv": 0.0609,
+   "two-wheeler": 0.0006,
+   "car": 0.0005
+  },
+  "body_type_clip": {
+   "auto-rickshaw": 0.3518,
+   "truck": 0.2186,
+   "van": 0.2156,
+   "suv": 0.109,
+   "bus": 0.0996,
+   "two-wheeler": 0.003,
+   "car": 0.0024
+  },
+  "make_model": {
+   "Tata 407": 0.4406,
+   "Ashok Leyland Dost": 0.2525,
+   "Tata LPT 1613": 0.1532,
+   "Eicher Pro 2049": 0.1001,
+   "Mahindra Bolero Pickup": 0.0537
+  },
+  "colour_hint": null,
+  "body_hint": null
+ },
+ "match": {
+  "status": "no_confident_match",
+  "message": "No confident match - plate evidence is too weak to single out a vehicle. Candidates below are investigative leads only.",
+  "p_not_in_registry": 47.2,
+  "n_registry": 600,
+  "n_plausible": 43,
+  "candidates": [
+   {
+    "rank": 1,
+    "vehicle": {
+     "reg_no": "HR55AJ8018",
+     "make": "Tata",
+     "model": "407",
+     "body_type": "truck",
+     "colour": "yellow",
+     "year": "2019",
+     "fuel": "Petrol",
+     "owner": "Sneha Kulkarni",
+     "city": "Gurugram",
+     "status": "Active"
+    },
+    "confidence": 4.6,
+    "score": {
+     "total_llr": 2.68,
+     "plate_llr": 0.77,
+     "colour_llr": 0.32,
+     "body_llr": 0.67,
+     "model_llr": 0.93
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": 0.77,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "H",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "R",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "5",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "5",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "A",
+        "conf": 0.582,
+        "reg": "A",
+        "rel": "exact",
+        "llr": 2.87
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "J",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "8",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "0",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "8",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 1,
+       "similar": 0,
+       "mismatch": 0,
+       "unknown": 3,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": 0.77,
+      "text": "Plate (video, multi-frame): read '???A' vs registry 'HR55AJ8018' - 1/1 readable characters match exactly, 3 unreadable position(s) left neutral, 6 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 0.32,
+      "text": "Observed colour 'green' (63%) conflicts with registered colour 'yellow'."
+     },
+     {
+      "factor": "body type",
+      "llr": 0.67,
+      "text": "Observed body type 'truck' (41%) matches registered 'truck'."
+     },
+     {
+      "factor": "make/model",
+      "llr": 0.93,
+      "text": "Make/model estimate 'Tata 407' (44%) vs registered 'Tata 407'."
+     }
+    ]
+   },
+   {
+    "rank": 2,
+    "vehicle": {
+     "reg_no": "KL07AR4976",
+     "make": "Tata",
+     "model": "Nexon",
+     "body_type": "suv",
+     "colour": "green",
+     "year": "2012",
+     "fuel": "Diesel",
+     "owner": "Aditya Verma",
+     "city": "Kochi",
+     "status": "Active"
+    },
+    "confidence": 2.6,
+    "score": {
+     "total_llr": 2.09,
+     "plate_llr": 0.77,
+     "colour_llr": 1.39,
+     "body_llr": -0.45,
+     "model_llr": 0.39
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": 0.77,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "K",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "L",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "0",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "7",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "A",
+        "conf": 0.582,
+        "reg": "A",
+        "rel": "exact",
+        "llr": 2.87
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "R",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "4",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "9",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "7",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "6",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 1,
+       "similar": 0,
+       "mismatch": 0,
+       "unknown": 3,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": 0.77,
+      "text": "Plate (video, multi-frame): read '???A' vs registry 'KL07AR4976' - 1/1 readable characters match exactly, 3 unreadable position(s) left neutral, 6 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 1.39,
+      "text": "Observed colour 'green' (63%) matches registered colour 'green'."
+     },
+     {
+      "factor": "body type",
+      "llr": -0.45,
+      "text": "Observed body type 'truck' (41%) conflicts with registered 'suv'."
+     },
+     {
+      "factor": "make/model",
+      "llr": 0.39,
+      "text": "Make/model estimate 'Tata 407' (44%) vs registered 'Tata Nexon'."
+     }
+    ]
+   },
+   {
+    "rank": 3,
+    "vehicle": {
+     "reg_no": "UP32AD4692",
+     "make": "Bajaj",
+     "model": "RE",
+     "body_type": "auto-rickshaw",
+     "colour": "green",
+     "year": "2013",
+     "fuel": "Petrol",
+     "owner": "Rahul Nair",
+     "city": "Lucknow",
+     "status": "Active"
+    },
+    "confidence": 1.9,
+    "score": {
+     "total_llr": 1.79,
+     "plate_llr": 0.77,
+     "colour_llr": 1.39,
+     "body_llr": 0.0,
+     "model_llr": -0.37
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": 0.77,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "U",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "P",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "3",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "2",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "A",
+        "conf": 0.582,
+        "reg": "A",
+        "rel": "exact",
+        "llr": 2.87
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "D",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "4",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "6",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "9",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "2",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 1,
+       "similar": 0,
+       "mismatch": 0,
+       "unknown": 3,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": 0.77,
+      "text": "Plate (video, multi-frame): read '???A' vs registry 'UP32AD4692' - 1/1 readable characters match exactly, 3 unreadable position(s) left neutral, 6 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 1.39,
+      "text": "Observed colour 'green' (63%) matches registered colour 'green'."
+     },
+     {
+      "factor": "body type",
+      "llr": 0.0,
+      "text": "Observed body type 'truck' (41%) conflicts with registered 'auto-rickshaw'."
+     },
+     {
+      "factor": "make/model",
+      "llr": -0.37,
+      "text": "Make/model estimate 'Tata 407' (44%) vs registered 'Bajaj RE'."
+     }
+    ]
+   },
+   {
+    "rank": 4,
+    "vehicle": {
+     "reg_no": "RJ14BP1435",
+     "make": "Eicher",
+     "model": "Pro 2049",
+     "body_type": "truck",
+     "colour": "green",
+     "year": "2010",
+     "fuel": "Petrol",
+     "owner": "Pooja Verma",
+     "city": "Jaipur",
+     "status": "Active"
+    },
+    "confidence": 1.4,
+    "score": {
+     "total_llr": 1.49,
+     "plate_llr": -0.84,
+     "colour_llr": 1.39,
+     "body_llr": 0.67,
+     "model_llr": 0.27
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": -0.84,
+      "rows": [
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "R",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "J",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "1",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "A",
+        "conf": 0.582,
+        "reg": "4",
+        "rel": "similar",
+        "llr": 1.26
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "B",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "P",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "4",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "3",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "5",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 0,
+       "similar": 1,
+       "mismatch": 0,
+       "unknown": 3,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": -0.84,
+      "text": "Plate (video, multi-frame): read '???A' vs registry 'RJ14BP1435' - 0/1 readable characters match exactly, 1 visually similar (A~4), 3 unreadable position(s) left neutral, 6 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 1.39,
+      "text": "Observed colour 'green' (63%) matches registered colour 'green'."
+     },
+     {
+      "factor": "body type",
+      "llr": 0.67,
+      "text": "Observed body type 'truck' (41%) matches registered 'truck'."
+     },
+     {
+      "factor": "make/model",
+      "llr": 0.27,
+      "text": "Make/model estimate 'Tata 407' (44%) vs registered 'Eicher Pro 2049'."
+     }
+    ]
+   },
+   {
+    "rank": 5,
+    "vehicle": {
+     "reg_no": "HR55CA6710",
+     "make": "Tata",
+     "model": "LPT 1613",
+     "body_type": "truck",
+     "colour": "orange",
+     "year": "2018",
+     "fuel": "Diesel",
+     "owner": "Kavya Verma",
+     "city": "Gurugram",
+     "status": "Active"
+    },
+    "confidence": 1.1,
+    "score": {
+     "total_llr": 1.24,
+     "plate_llr": 0.77,
+     "colour_llr": -0.84,
+     "body_llr": 0.67,
+     "model_llr": 0.65
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": 0.77,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "H",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "R",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "5",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "5",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "C",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "A",
+        "conf": 0.582,
+        "reg": "A",
+        "rel": "exact",
+        "llr": 2.87
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "6",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "7",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "0",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 1,
+       "similar": 0,
+       "mismatch": 0,
+       "unknown": 3,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": 0.77,
+      "text": "Plate (video, multi-frame): read '???A' vs registry 'HR55CA6710' - 1/1 readable characters match exactly, 3 unreadable position(s) left neutral, 6 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": -0.84,
+      "text": "Observed colour 'green' (63%) conflicts with registered colour 'orange'."
+     },
+     {
+      "factor": "body type",
+      "llr": 0.67,
+      "text": "Observed body type 'truck' (41%) matches registered 'truck'."
+     },
+     {
+      "factor": "make/model",
+      "llr": 0.65,
+      "text": "Make/model estimate 'Tata 407' (44%) vs registered 'Tata LPT 1613'."
+     }
+    ]
+   }
+  ]
+ },
+ "signature": {
+  "embedding": [
+   0.018950000405311584,
+   0.02135000005364418,
+   -0.007739999797195196,
+   0.00547999981790781,
+   0.02751999907195568,
+   -0.029820000752806664,
+   0.011769999749958515,
+   0.025210000574588776,
+   -0.05857999995350838,
+   -0.03167000040411949,
+   0.04496999830007553,
+   0.021080000326037407,
+   0.060109999030828476,
+   -0.013880000449717045,
+   -0.0003000000142492354,
+   -0.05488000065088272,
+   0.07081999629735947,
+   -0.008550000376999378,
+   -0.029069999232888222,
+   -0.04092999920248985,
+   0.016499999910593033,
+   0.0003600000054575503,
+   -0.01510000042617321,
+   -0.020670000463724136,
+   0.017470000311732292,
+   0.01874000020325184,
+   0.01840999908745289,
+   -0.02442999929189682,
+   -0.0357699990272522,
+   -0.03240000084042549,
+   -0.03068999946117401,
+   0.002259999979287386,
+   -0.026189999654889107,
+   -0.0018100000452250242,
+   0.052549999207258224,
+   0.0015999999595806003,
+   -0.028999999165534973,
+   0.027089999988675117,
+   0.0037799999117851257,
+   0.04098000004887581,
+   0.02889999933540821,
+   0.016119999811053276,
+   0.003530000103637576,
+   -0.017980000004172325,
+   -0.043129999190568924,
+   0.09703999757766724,
+   0.010160000063478947,
+   -0.0022899999748915434,
+   -0.030559999868273735,
+   -0.043719999492168427,
+   -0.013340000063180923,
+   -0.04185999929904938,
+   -0.02150999940931797,
+   -0.025930000469088554,
+   -0.013279999606311321,
+   -0.041510000824928284,
+   0.01785999909043312,
+   0.027489999309182167,
+   0.03967000171542168,
+   -0.036090001463890076,
+   0.06730999797582626,
+   -0.03020000085234642,
+   -0.013269999995827675,
+   0.010089999996125698,
+   0.030150000005960464,
+   -0.04295000061392784,
+   0.0052200001664459705,
+   0.0688600018620491,
+   0.01858000084757805,
+   -0.0081599997356534,
+   -0.0012700000079348683,
+   -0.043779999017715454,
+   0.0042500002309679985,
+   -0.026930000633001328,
+   -0.0370200015604496,
+   0.011540000326931477,
+   0.009030000306665897,
+   -0.04772999882698059,
+   0.017740000039339066,
+   -0.013790000230073929,
+   -0.0008200000156648457,
+   0.024900000542402267,
+   -0.06007000058889389,
+   -0.04002000018954277,
+   0.005960000213235617,
+   0.022760000079870224,
+   -0.08810000121593475,
+   0.024289999157190323,
+   0.0587100014090538,
+   -0.03610000014305115,
+   0.04628000035881996,
+   -0.015329999849200249,
+   -0.5921300053596497,
+   0.087459996342659,
+   -0.031139999628067017,
+   0.052060000598430634,
+   0.022430000826716423,
+   -0.012729999609291553,
+   0.026599999517202377,
+   0.063230000436306,
+   0.02239999920129776,
+   0.08122000098228455,
+   0.001560000004246831,
+   0.059709999710321426,
+   -0.020649999380111694,
+   -0.01576000079512596,
+   -0.12695999443531036,
+   0.030069999396800995,
+   0.0017600000137463212,
+   -0.01155999954789877,
+   -0.02232999913394451,
+   -0.00041000000783242285,
+   0.018389999866485596,
+   -0.036490000784397125,
+   0.020250000059604645,
+   -0.027459999546408653,
+   0.021940000355243683,
+   -0.0027199999894946814,
+   0.027140000835061073,
+   -0.017740000039339066,
+   -0.01665000058710575,
+   -0.05280999839305878,
+   -0.029689999297261238,
+   -0.024140000343322754,
+   -0.016419999301433563,
+   -0.031300000846385956,
+   0.007120000198483467,
+   -0.010820000432431698,
+   0.005280000157654285,
+   0.03894000127911568,
+   -0.014030000194907188,
+   -0.043699998408555984,
+   0.03728000074625015,
+   0.08194000273942947,
+   0.050680000334978104,
+   -0.02020999975502491,
+   0.020759999752044678,
+   -0.08064000308513641,
+   -0.02377999946475029,
+   0.0282600000500679,
+   -0.019349999725818634,
+   -0.005400000140070915,
+   -0.03826000168919563,
+   -0.012860000133514404,
+   -0.032680001109838486,
+   0.011819999665021896,
+   0.021209999918937683,
+   0.052390001714229584,
+   -0.013609999790787697,
+   0.010089999996125698,
+   0.02353000082075596,
+   0.03220000118017197,
+   0.05561000108718872,
+   0.048420000821352005,
+   0.02735999971628189,
+   -0.016790000721812248,
+   0.04763999953866005,
+   -0.06338000297546387,
+   0.00041000000783242285,
+   -0.009920000098645687,
+   -0.038589999079704285,
+   -0.021320000290870667,
+   -0.07700999826192856,
+   -0.015610000118613243,
+   0.02053000032901764,
+   -0.013989999890327454,
+   0.026429999619722366,
+   -0.004639999940991402,
+   0.03748000040650368,
+   -0.023339999839663506,
+   0.007470000069588423,
+   0.012659999541938305,
+   0.03505000099539757,
+   -0.029890000820159912,
+   0.016790000721812248,
+   -0.02078999951481819,
+   0.121799997985363,
+   -0.027249999344348907,
+   0.003229999914765358,
+   -0.022619999945163727,
+   0.026399999856948853,
+   -0.014240000396966934,
+   -0.028060000389814377,
+   -0.07767000049352646,
+   -0.020589999854564667,
+   -0.006219999864697456,
+   -0.027540000155568123,
+   -0.03164000064134598,
+   -0.04016999900341034,
+   0.006899999920278788,
+   0.016659999266266823,
+   -0.013580000028014183,
+   0.019060000777244568,
+   -0.00875999964773655,
+   -0.03787999972701073,
+   -0.01489999983459711,
+   -0.007770000025629997,
+   0.03238999843597412,
+   -0.0820000022649765,
+   0.026690000668168068,
+   0.021479999646544456,
+   -0.015390000306069851,
+   -0.0088900001719594,
+   0.04238000139594078,
+   0.020989999175071716,
+   0.01785999909043312,
+   -0.020010000094771385,
+   0.011239999905228615,
+   -0.04293999820947647,
+   -0.055720001459121704,
+   -0.01425000000745058,
+   -0.004800000227987766,
+   0.03020000085234642,
+   0.05209999904036522,
+   -0.034710001200437546,
+   -0.01616000011563301,
+   0.018239999189972878,
+   0.013100000098347664,
+   -0.05451999977231026,
+   0.028780000284314156,
+   -0.011909999884665012,
+   -0.022390000522136688,
+   -0.0001500000071246177,
+   -0.039889998733997345,
+   0.023739999160170555,
+   0.009320000186562538,
+   0.016620000824332237,
+   -0.005799999926239252,
+   0.019999999552965164,
+   -0.04726000130176544,
+   -0.04355999827384949,
+   0.005890000145882368,
+   0.0011099999537691474,
+   0.0970500037074089,
+   -0.0016599999507889152,
+   0.03085000067949295,
+   -0.0010300000431016088,
+   -0.005210000090301037,
+   -0.029109999537467957,
+   -0.030950000509619713,
+   0.014499999582767487,
+   0.014770000241696835,
+   0.03249000012874603,
+   -0.024240000173449516,
+   -0.015429999679327011,
+   0.03214000165462494,
+   0.01882000081241131,
+   0.002689999993890524,
+   0.029600000008940697,
+   -0.005270000081509352,
+   -0.0033100000582635403,
+   0.01792999915778637,
+   -0.038100000470876694,
+   -0.025539999827742577,
+   -0.02548000030219555,
+   -0.006500000134110451,
+   0.010420000180602074,
+   0.03413999825716019,
+   0.13683000206947327,
+   -0.0684100016951561,
+   -0.04072999954223633,
+   0.028950000181794167,
+   0.038679998368024826,
+   0.15207000076770782,
+   0.05733000114560127,
+   -0.01858000084757805,
+   0.028519999235868454,
+   -0.011859999969601631,
+   0.026669999584555626,
+   -0.002749999985098839,
+   0.0065899998880922794,
+   -0.010409999638795853,
+   0.009639999829232693,
+   -0.03548000007867813,
+   0.01143999956548214,
+   -0.0021299999207258224,
+   0.016899999231100082,
+   0.0006399999838322401,
+   -0.023150000721216202,
+   -0.001339999958872795,
+   -0.027529999613761902,
+   0.0030300000216811895,
+   -0.07824999839067459,
+   -0.03457999974489212,
+   0.013729999773204327,
+   -0.009720000438392162,
+   0.03288000077009201,
+   -0.0029100000392645597,
+   -0.02442999929189682,
+   0.005030000116676092,
+   0.03643999993801117,
+   -0.029190000146627426,
+   0.032669998705387115,
+   0.03929999843239784,
+   -0.007019999902695417,
+   0.013969999738037586,
+   0.015159999951720238,
+   -0.01107999961823225,
+   0.061080001294612885,
+   0.027629999443888664,
+   0.012889999896287918,
+   0.01143999956548214,
+   -0.00791999977082014,
+   -0.019819999113678932,
+   0.02913999930024147,
+   -0.000539999979082495,
+   -0.03084000013768673,
+   0.009479999542236328,
+   0.0003699999942909926,
+   0.010639999993145466,
+   0.003980000037699938,
+   -0.016540000215172768,
+   0.0819299966096878,
+   0.06106000021100044,
+   0.027559999376535416,
+   -0.008440000005066395,
+   -0.0021299999207258224,
+   0.020400000736117363,
+   0.02314000017940998,
+   0.02418000064790249,
+   0.04746000096201897,
+   0.06503999978303909,
+   -0.018769999966025352,
+   -0.0012700000079348683,
+   -0.025620000436902046,
+   0.03223999962210655,
+   0.024490000680088997,
+   0.009390000253915787,
+   0.009479999542236328,
+   -0.02157999947667122,
+   0.01947999931871891,
+   0.010490000247955322,
+   0.023770000785589218,
+   0.04789000004529953,
+   0.006550000049173832,
+   -0.018139999359846115,
+   0.012629999779164791,
+   -0.041680000722408295,
+   -0.024660000577569008,
+   0.009770000353455544,
+   -0.06397999823093414,
+   -0.060989998281002045,
+   0.030629999935626984,
+   -0.013690000399947166,
+   0.03269999846816063,
+   0.03683000057935715,
+   0.05494000017642975,
+   0.012900000438094139,
+   0.022339999675750732,
+   -0.01083999965339899,
+   -0.02855999954044819,
+   0.032519999891519547,
+   0.007269999943673611,
+   0.001829999964684248,
+   -0.02019999921321869,
+   0.004739999771118164,
+   -0.009689999744296074,
+   0.04974000155925751,
+   -0.021609999239444733,
+   -0.010529999621212482,
+   0.06162000074982643,
+   -0.005880000069737434,
+   0.03584999963641167,
+   -0.012520000338554382,
+   -0.05536999925971031,
+   0.03931000083684921,
+   0.008220000192523003,
+   0.07680000364780426,
+   0.03288000077009201,
+   -0.03167000040411949,
+   -0.01592000015079975,
+   0.02775000035762787,
+   0.00827999971807003,
+   -0.00786999985575676,
+   0.0075599998235702515,
+   0.026669999584555626,
+   0.05779999867081642,
+   -0.026000000536441803,
+   0.027659999206662178,
+   0.01795000024139881,
+   -0.02043999917805195,
+   0.0538799986243248,
+   0.005539999809116125,
+   -0.033900000154972076,
+   0.018130000680685043,
+   0.0857900008559227,
+   0.048330001533031464,
+   -0.0007999999797903001,
+   -0.014240000396966934,
+   -0.06894999742507935,
+   -0.014259999617934227,
+   0.01278000045567751,
+   -0.029090000316500664,
+   -0.016699999570846558,
+   -0.0021100000012665987,
+   0.02013999968767166,
+   -0.03671000152826309,
+   -0.015060000121593475,
+   0.00039999998989515007,
+   -0.02321000024676323,
+   0.019950000569224358,
+   0.02493000030517578,
+   0.0254100002348423,
+   -0.0027799999807029963,
+   0.029479999095201492,
+   0.006920000072568655,
+   0.05257999897003174,
+   -0.004900000058114529,
+   0.02985999919474125,
+   -0.050450000911951065,
+   0.05696000158786774,
+   0.0013699999544769526,
+   0.0047599999234080315,
+   0.04608000069856644,
+   -0.02022000029683113,
+   -0.02206999994814396,
+   0.015449999831616879,
+   -0.021700000390410423,
+   0.005789999850094318,
+   0.0010900000343099236,
+   -0.05793999880552292,
+   0.011099999770522118,
+   0.043800000101327896,
+   0.003809999907389283,
+   -0.004579999949783087,
+   0.0021100000012665987,
+   -0.02250000089406967,
+   0.043480001389980316,
+   -0.09423000365495682,
+   0.01696999929845333,
+   -0.020349999889731407,
+   0.03584999963641167,
+   -0.0371600016951561,
+   -0.03757999837398529,
+   -0.009050000458955765,
+   0.008899999782443047,
+   0.03448000177741051,
+   -0.008070000447332859,
+   -0.009039999917149544,
+   0.032010000199079514,
+   -0.012919999659061432,
+   0.07590000331401825,
+   0.0551999993622303,
+   -0.016690000891685486,
+   -0.01865999959409237,
+   -0.025270000100135803,
+   0.007180000189691782,
+   0.015390000306069851,
+   -0.004339999984949827,
+   -0.06345999985933304,
+   0.06558000296354294,
+   0.003650000086054206,
+   0.011029999703168869,
+   -0.05607999861240387,
+   0.03523999825119972,
+   0.020020000636577606,
+   0.06922999769449234,
+   -0.02522999979555607,
+   0.004480000119656324,
+   0.012369999662041664,
+   -0.022369999438524246,
+   0.024970000609755516,
+   -0.027639999985694885,
+   -0.014440000057220459,
+   0.029580000787973404,
+   0.0040699997916817665,
+   0.05538000166416168,
+   -0.028620000928640366,
+   -0.011579999700188637,
+   0.009379999712109566,
+   0.025180000811815262,
+   -0.004360000137239695,
+   -0.023649999871850014,
+   -0.0003100000030826777,
+   0.03229000046849251,
+   -0.02937999926507473,
+   0.0013699999544769526,
+   0.010080000385642052,
+   -0.030889999121427536,
+   -0.023719999939203262,
+   0.031550001353025436,
+   -0.016750000417232513,
+   -0.006130000110715628,
+   0.01761999912559986,
+   -0.006289999932050705,
+   0.005789999850094318,
+   0.011300000362098217,
+   0.00016999999934341758,
+   0.009089999832212925,
+   -0.008589999750256538,
+   0.001129999989643693,
+   -0.015720000490546227,
+   0.008910000324249268,
+   -0.015259999781847,
+   -0.025350000709295273,
+   -0.0022899999748915434,
+   0.0035099999513477087,
+   -0.013690000399947166,
+   -0.04958000034093857,
+   -0.030880000442266464,
+   -0.014480000361800194,
+   -0.015110000036656857,
+   0.02582000009715557,
+   0.017890000715851784,
+   0.07131999731063843,
+   0.001990000018849969,
+   -0.004660000093281269,
+   0.004809999838471413,
+   -0.0185100007802248,
+   0.04323999956250191,
+   0.005789999850094318,
+   0.060180000960826874
+  ],
+  "colour": {
+   "green": 0.6268,
+   "black": 0.2462,
+   "yellow": 0.1056,
+   "brown": 0.0161,
+   "orange": 0.0053
+  },
+  "body": {
+   "truck": 0.4071,
+   "bus": 0.1854,
+   "auto-rickshaw": 0.1851,
+   "van": 0.1604,
+   "suv": 0.0609,
+   "two-wheeler": 0.0006,
+   "car": 0.0005
+  },
+  "plate_positions": [
+   {
+    "idx": 0,
+    "char": "?",
+    "best_guess": "F",
+    "conf": 0.317,
+    "known": false,
+    "n_frames": 14,
+    "alts": [
+     [
+      "F",
+      0.317
+     ],
+     [
+      "P",
+      0.108
+     ],
+     [
+      "E",
+      0.107
+     ]
+    ],
+    "dist": {
+     "F": 0.3173,
+     "P": 0.1085,
+     "E": 0.1071,
+     "1": 0.1053,
+     "0": 0.0714,
+     "T": 0.0614,
+     "5": 0.0556,
+     "2": 0.0464
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "F",
+      "conf": 0.969
+     },
+     {
+      "frame": 33,
+      "char": "0",
+      "conf": 0.618
+     },
+     {
+      "frame": 38,
+      "char": "F",
+      "conf": 0.513
+     },
+     {
+      "frame": 24,
+      "char": "F",
+      "conf": 0.965
+     },
+     {
+      "frame": 28,
+      "char": "P",
+      "conf": 0.696
+     },
+     {
+      "frame": 23,
+      "char": "T",
+      "conf": 0.447
+     },
+     {
+      "frame": 16,
+      "char": "E",
+      "conf": 0.98
+     },
+     {
+      "frame": 26,
+      "char": "P",
+      "conf": 0.449
+     },
+     {
+      "frame": 31,
+      "char": "1",
+      "conf": 0.606
+     },
+     {
+      "frame": 32,
+      "char": "F",
+      "conf": 0.568
+     },
+     {
+      "frame": 7,
+      "char": "5",
+      "conf": 0.914
+     },
+     {
+      "frame": 15,
+      "char": "1",
+      "conf": 0.658
+     },
+     {
+      "frame": 1,
+      "char": "2",
+      "conf": 0.851
+     },
+     {
+      "frame": 20,
+      "char": "T",
+      "conf": 0.351
+     }
+    ]
+   },
+   {
+    "idx": 1,
+    "char": "?",
+    "best_guess": "A",
+    "conf": 0.463,
+    "known": false,
+    "n_frames": 15,
+    "alts": [
+     [
+      "A",
+      0.463
+     ],
+     [
+      "4",
+      0.169
+     ],
+     [
+      "3",
+      0.147
+     ]
+    ],
+    "dist": {
+     "A": 0.4633,
+     "4": 0.1692,
+     "3": 0.1473,
+     "T": 0.0485,
+     "E": 0.0467,
+     "2": 0.0317,
+     "R": 0.0285,
+     "X": 0.0121
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "A",
+      "conf": 0.994
+     },
+     {
+      "frame": 33,
+      "char": "4",
+      "conf": 0.995
+     },
+     {
+      "frame": 38,
+      "char": "A",
+      "conf": 0.974
+     },
+     {
+      "frame": 24,
+      "char": "A",
+      "conf": 0.965
+     },
+     {
+      "frame": 28,
+      "char": "A",
+      "conf": 0.795
+     },
+     {
+      "frame": 23,
+      "char": "T",
+      "conf": 0.812
+     },
+     {
+      "frame": 16,
+      "char": "A",
+      "conf": 0.999
+     },
+     {
+      "frame": 26,
+      "char": "R",
+      "conf": 0.449
+     },
+     {
+      "frame": 31,
+      "char": "4",
+      "conf": 0.541
+     },
+     {
+      "frame": 32,
+      "char": "A",
+      "conf": 0.625
+     },
+     {
+      "frame": 7,
+      "char": "3",
+      "conf": 0.779
+     },
+     {
+      "frame": 14,
+      "char": "3",
+      "conf": 0.861
+     },
+     {
+      "frame": 15,
+      "char": "E",
+      "conf": 0.283
+     },
+     {
+      "frame": 1,
+      "char": "3",
+      "conf": 0.857
+     },
+     {
+      "frame": 20,
+      "char": "4",
+      "conf": 0.605
+     }
+    ]
+   },
+   {
+    "idx": 2,
+    "char": "?",
+    "best_guess": "B",
+    "conf": 0.351,
+    "known": false,
+    "n_frames": 14,
+    "alts": [
+     [
+      "B",
+      0.351
+     ],
+     [
+      "E",
+      0.244
+     ],
+     [
+      "R",
+      0.103
+     ]
+    ],
+    "dist": {
+     "B": 0.3509,
+     "E": 0.2441,
+     "R": 0.1032,
+     "N": 0.0662,
+     "2": 0.05,
+     "D": 0.0361,
+     "L": 0.0352,
+     "P": 0.0233
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "B",
+      "conf": 0.826
+     },
+     {
+      "frame": 33,
+      "char": "R",
+      "conf": 0.36
+     },
+     {
+      "frame": 38,
+      "char": "B",
+      "conf": 0.636
+     },
+     {
+      "frame": 24,
+      "char": "E",
+      "conf": 0.564
+     },
+     {
+      "frame": 28,
+      "char": "B",
+      "conf": 0.447
+     },
+     {
+      "frame": 23,
+      "char": "N",
+      "conf": 0.954
+     },
+     {
+      "frame": 16,
+      "char": "D",
+      "conf": 0.214
+     },
+     {
+      "frame": 26,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 31,
+      "char": "B",
+      "conf": 0.514
+     },
+     {
+      "frame": 32,
+      "char": "E",
+      "conf": 0.212
+     },
+     {
+      "frame": 7,
+      "char": "E",
+      "conf": 0.993
+     },
+     {
+      "frame": 14,
+      "char": "L",
+      "conf": 0.538
+     },
+     {
+      "frame": 15,
+      "char": "K",
+      "conf": 0.237
+     },
+     {
+      "frame": 1,
+      "char": "2",
+      "conf": 0.922
+     },
+     {
+      "frame": 20,
+      "char": "B",
+      "conf": 0.449
+     }
+    ]
+   },
+   {
+    "idx": 3,
+    "char": "A",
+    "best_guess": "A",
+    "conf": 0.582,
+    "known": true,
+    "n_frames": 13,
+    "alts": [
+     [
+      "A",
+      0.582
+     ],
+     [
+      "Z",
+      0.194
+     ],
+     [
+      "R",
+      0.045
+     ]
+    ],
+    "dist": {
+     "A": 0.5822,
+     "Z": 0.1942,
+     "R": 0.0452,
+     "E": 0.0213,
+     "I": 0.0197,
+     "2": 0.0151,
+     "G": 0.0137,
+     "L": 0.0134
+    },
+    "votes": [
+     {
+      "frame": 39,
+      "char": "A",
+      "conf": 0.868
+     },
+     {
+      "frame": 33,
+      "char": "A",
+      "conf": 0.858
+     },
+     {
+      "frame": 38,
+      "char": "A",
+      "conf": 0.993
+     },
+     {
+      "frame": 24,
+      "char": "A",
+      "conf": 0.837
+     },
+     {
+      "frame": 28,
+      "char": "Z",
+      "conf": 0.872
+     },
+     {
+      "frame": 23,
+      "char": "R",
+      "conf": 0.612
+     },
+     {
+      "frame": 16,
+      "char": "A",
+      "conf": 0.967
+     },
+     {
+      "frame": 26,
+      "char": "A",
+      "conf": 0.081
+     },
+     {
+      "frame": 31,
+      "char": "A",
+      "conf": 0.544
+     },
+     {
+      "frame": 32,
+      "char": "Z",
+      "conf": 0.79
+     },
+     {
+      "frame": 14,
+      "char": "A",
+      "conf": 0.993
+     },
+     {
+      "frame": 15,
+      "char": "A",
+      "conf": 0.532
+     },
+     {
+      "frame": 20,
+      "char": "Z",
+      "conf": 0.769
+     }
+    ]
+   }
+  ]
+ },
+ "keyframe": "keyframe.jpg",
+ "elapsed_s": 7.2
+}

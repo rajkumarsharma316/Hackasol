@@ -1,0 +1,13 @@
+# Pretrained model weights cache (auto-downloaded via tools/setup_models.py)
+models/
+
+# Runtime / scratch job directories
+jobs/
+scratch_jobs/
+
+# Python caches & virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env

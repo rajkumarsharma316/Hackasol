@@ -1,0 +1,50 @@
+{
+  "clip01_white_hatchback_camA": {
+    "plate": "MH12DE4521",
+    "source_image": "white_hatchback",
+    "note": "Daylight, moderate blur, approaching vehicle",
+    "in_registry": true
+  },
+  "clip02_red_suv_mud": {
+    "plate": "KA05MN7788",
+    "source_image": "red_suv",
+    "note": "Mud smear hides characters 5-6 (series letters)",
+    "in_registry": true
+  },
+  "clip03_black_sedan_lowlight": {
+    "plate": "DL3CAF0912",
+    "source_image": "black_sedan",
+    "note": "Dusk / low light, strong sensor noise",
+    "in_registry": true
+  },
+  "clip04_auto_rickshaw": {
+    "plate": "TN09BX3307",
+    "source_image": "auto_rickshaw",
+    "note": "Commercial yellow two-line plate",
+    "in_registry": true
+  },
+  "clip05_scooter_motionblur": {
+    "plate": "GJ01KQ5604",
+    "source_image": "scooter",
+    "note": "Fast two-wheeler, heavy motion blur, passing occluder",
+    "in_registry": true
+  },
+  "clip06_truck": {
+    "plate": "HR55AJ8016",
+    "source_image": "truck",
+    "note": "Goods truck, dirty yellow plate",
+    "in_registry": true
+  },
+  "clip07_silver_suv_unregistered": {
+    "plate": "UP32ZZ9087",
+    "source_image": "silver_suv",
+    "note": "Vehicle NOT in registry - expected 'no confident match'",
+    "in_registry": false
+  },
+  "clip08_white_hatchback_camB": {
+    "plate": "MH12DE4521",
+    "source_image": "white_hatchback",
+    "note": "Second camera: lower resolution, blue cast, last 2 characters cut off by a tow-hook/bracket",
+    "in_registry": true
+  }
+}

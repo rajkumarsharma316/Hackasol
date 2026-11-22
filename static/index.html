@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VTrace — CCTV Vehicle Identification & Traceability</title>
+  <style>
+    :root {
+      --bg: #0f1420;
+      --panel: #171e2e;
+      --panel-2: #1e273b;
+      --border: #2c3854;
+      --text: #e8edf7;
+      --muted: #9aa7c2;
+      --accent: #4c8dff;
+      --accent-2: #2563eb;
+      --ok: #10b981;
+      --ok-bg: rgba(16, 185, 129, 0.14);
+      --warn: #f59e0b;
+      --warn-bg: rgba(245, 158, 11, 0.14);
+      --danger: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(90deg, #121a2b 0%, #19243b 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-badge {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 8px;
+      letter-spacing: 0.8px;
+      font-size: 14px;
+    }
+    .brand h1 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 700;
+    }
+    .brand small {
+      color: var(--muted);
+      font-size: 12px;
+      display: block;
+    }
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: var(--panel-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover { border-color: var(--accent); }
+    .tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .container {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 20px 24px 48px;
+    }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .card h2, .card h3 {
+      margin: 0 0 10px 0;
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .muted { color: var(--muted); font-size: 12.5px; }
+    label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 8px 0 4px;
+      font-weight: 600;
+    }
+    input[type="text"], input[type="file"], select {
+      width: 100%;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 10px;
+      border-radius: 7px;
+      font-size: 13px;
+    }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--accent-2); }
+    .btn-sec {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-sec:hover { border-color: var(--accent); background: #25314a; }
+    .clip-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 520px;
+      overflow-y: auto;
+    }
+    .clip-item {
+      display: flex;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 9px;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      align-items: center;
+      transition: border-color 0.15s;
+    }
+    .clip-item:hover, .clip-item.active {
+      border-color: var(--accent);
+      background: #232f49;
+    }
+    .clip-item img {
+      width: 84px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .clip-meta b { font-size: 12.5px; display: block; word-break: break-all; }
+    .clip-meta span { font-size: 11.5px; color: var(--muted); }
+    .banner {
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .banner.match {
+      background: var(--ok-bg);
+      border: 1px solid var(--ok);
+      color: #6ee7b7;
+    }
+    .banner.no_confident_match {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn);
+      color: #fcd34d;
+    }
+    .plate-strip {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+    .plate-char {
+      width: 44px;
+      background: #fef9e7;
+      color: #111;
+      border: 2px solid #222;
+      border-radius: 7px;
+      text-align: center;
+      padding: 5px 0 3px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+    }
+    .plate-char b {
+      display: block;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 25px;
+      line-height: 1.05;
+    }
+    .plate-char small {
+      font-size: 10px;
+      font-weight: 700;
+      display: block;
+    }
+    .plate-char.unk {
+      background: #2b354b;
+      color: #a3b1cc;
+      border: 2px dashed #687899;
+    }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      margin: 4px 0;
+    }
+    .bar-label { width: 125px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bar-track {
+      flex: 1;
+      height: 9px;
+      background: #0f1523;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      border-radius: 5px;
+    }
+    .bar-val { width: 42px; text-align: right; color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 7px 8px;
+      text-align: left;
+      vertical-align: middle;
+    }
+    th { background: var(--panel-2); color: var(--muted); font-weight: 600; }
+    .ch-badge {
+      display: inline-block;
+      min-width: 22px;
+      text-align: center;
+      padding: 2px 4px;
+      margin: 1px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      font-weight: 700;
+      color: #fff;
+      font-size: 12px;
+    }
+    .ch-badge sub {
+      display: block;
+      font-size: 9px;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+    .cand-card {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .cand-card.top-match { border-left-color: var(--ok); }
+    .align-table {
+      width: auto;
+      margin-top: 6px;
+      border: 1px solid var(--border);
+    }
+    .align-table td, .align-table th {
+      padding: 3px 7px;
+      text-align: center;
+      font-family: Consolas, monospace;
+      font-size: 12.5px;
+    }
+    .rel-exact { background: rgba(16, 185, 129, 0.25); color: #a7f3d0; }
+    .rel-similar { background: rgba(245, 158, 11, 0.25); color: #fde68a; }
+    .rel-mismatch { background: rgba(239, 68, 68, 0.28); color: #fecaca; }
+    .rel-unknown { background: rgba(148, 163, 184, 0.2); color: #cbd5e1; }
+    .rel-not-visible { background: rgba(51, 65, 85, 0.3); color: #64748b; }
+    .rel-extra, .rel-missed { background: rgba(249, 115, 22, 0.25); color: #fed7aa; }
+    .llr-pos { color: #34d399; font-weight: 700; }
+    .llr-neg { color: #f87171; font-weight: 700; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+    .canvas-wrap {
+      position: relative;
+      width: 100%;
+      background: #090d16;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    #roiCanvas {
+      width: 100%;
+      display: block;
+      cursor: crosshair;
+    }
+    .prog-box {
+      padding: 20px;
+      text-align: center;
+    }
+    .prog-bar {
+      height: 10px;
+      background: var(--panel-2);
+      border-radius: 6px;
+      overflow: hidden;
+      max-width: 420px;
+      margin: 10px auto;
+    }
+    .prog-fill {
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.25s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="brand-badge">VTRACE</span>
+      <div>
+        <h1>Vehicle Identification & Traceability from CCTV Footage</h1>
+        <small>Multi-Frame Plate Recovery &middot; Attribute Fusion &middot; Probabilistic TRACE Matcher &middot; Cross-Camera Re-ID</small>
+      </div>
+    </div>
+    <nav>
+      <button class="tab-btn active" onclick="switchTab('investigate', this)">1. CCTV Clip Investigation</button>
+      <button class="tab-btn" onclick="switchTab('reid', this)">2. Two-Camera Tracking (Re-ID)</button>
+      <button class="tab-btn" onclick="switchTab('query', this)">3. Partial Plate & Attribute Sandbox</button>
+      <button class="tab-btn" onclick="switchTab('registry', this)">4. Vehicle Registry (<span id="regCount">600</span>)</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- TAB 1: CCTV CLIP INVESTIGATION -->
+    <div id="tab-investigate" class="tab-pane active">
+      <div class="grid-2">
+        <!-- LEFT SIDEBAR -->
+        <div>
+          <div class="card">
+            <h2>Upload CCTV Clip</h2>
+            <form id="uploadForm" onsubmit="handleUpload(event)">
+              <label>Video file (.mp4, .avi, .mov, .mkv)</label>
+              <input type="file" id="uploadFile" accept="video/*" required />
+              <label>Optional Witness / Investigator Plate Hint (e.g. MH12??45*)</label>
+              <input type="text" id="uploadPlateHint" placeholder="Use ? for 1 unknown, * for any run" />
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <div>
+                  <label>Colour Hint</label>
+                  <select id="uploadColour"><option value="">Auto-detect</option></select>
+                </div>
+                <div>
+                  <label>Body Type Hint</label>
+                  <select id="uploadBody"><option value="">Auto-detect</option></select>
+                </div>
+              </div>
+              <button type="submit" class="btn" style="width:100%;margin-top:12px">Upload & Analyse Clip</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <h2>
+              <span>Synthetic Benchmark Clips (8)</span>
+              <span class="muted" style="font-weight:400">Click to inspect</span>
+            </h2>
+            <div id="clipList" class="clip-list"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT MAIN RESULT PANE -->
+        <div id="resultPane">
+          <div class="card">
+            <div class="muted">Select a benchmark CCTV clip on the left or upload a video clip to begin analysis.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: CROSS-CAMERA RE-ID -->
+    <div id="tab-reid" class="tab-pane">
+      <div class="card">
+        <h2>Cross-Camera Vehicle Tracking & Joint Evidence Fusion (Bonus)</h2>
+        <div class="muted" style="margin-bottom:12px">
+          Compare two CCTV clips from different cameras (e.g., Camera A with moderate blur and Camera B with lower resolution, colour cast, and cut-off plate end) to test whether they show the same vehicle and combine their partial evidence against the registry.
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end">
+          <div>
+            <label>Camera Clip A</label>
+            <select id="reidSelectA"></select>
+          </div>
+          <div>
+            <label>Camera Clip B</label>
+            <select id="reidSelectB"></select>
+          </div>
+          <button class="btn" onclick="runComparison()">Compare & Fuse Cameras</button>
+        </div>
+      </div>
+      <div id="reidResult"></div>
+    </div>
+
+    <!-- TAB 3: DIRECT QUERY SANDBOX -->
+    <div id="tab-query" class="tab-pane">
+      <div class="card">
+        <h2>Direct Partial-Plate & Attribute Matcher Sandbox</h2>
+        <div class="muted" style="margin-bottom:12px">
+          Test the TRACE probabilistic matching and ranking algorithm directly with partial registration patterns (<code>?</code> = single unknown character, <code>*</code> = any number of unknown characters), visually confusable characters (<code>8/B</code>, <code>0/O/D</code>, <code>5/S</code>, <code>1/I</code>, <code>2/Z</code>), vehicle colour, body type, and make/model.
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr auto;gap:10px;align-items:end">
+          <div>
+            <label>Partial Plate Pattern</label>
+            <input type="text" id="qPlate" value="MH12??452?" placeholder="e.g. MH12??45* or KA05??7788" />
+          </div>
+          <div>
+            <label>Observed Colour</label>
+            <select id="qColour"><option value="">Any / Unknown</option></select>
+          </div>
+          <div>
+            <label>Observed Body Type</label>
+            <select id="qBody"><option value="">Any / Unknown</option></select>
+          </div>
+          <div>
+            <label>Estimated Make / Model</label>
+            <select id="qModel"><option value="">Any / Unknown</option></select>
+          </div>
+          <button class="btn" onclick="runQuickQuery()">Match Registry</button>
+        </div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <span class="muted">Quick presets:</span>
+          <button class="btn btn-sec" style="padding:4px 9px;font-size:11.5px" onclick="setPreset('MH12??4521','white','car','')">MH12??4521 + white car</button>
+          <button class="btn btn-sec" style="padding:4px 9px;font-size:11.5px" onclick="setPreset('KA05??7788','red','suv','')">KA05??7788 + red SUV (mud on series)</button>
+          <button class="btn btn-sec" style="padding:4px 9px;font-size:11.5px" onclick="setPreset('TN09BX3807','green','auto-rickshaw','')">TN09BX3807 (8/3 OCR confusion)</button>
+          <button class="btn btn-sec" style="padding:4px 9px;font-size:11.5px" onclick="setPreset('UP32ZZ9087','silver','suv','')">UP32ZZ9087 (Unregistered -> No Match)</button>
+          <button class="btn btn-sec" style="padding:4px 9px;font-size:11.5px" onclick="setPreset('????','white','car','')">Only white car, no plate -> No Match</button>
+        </div>
+      </div>
+      <div id="queryResult"></div>
+    </div>
+
+    <!-- TAB 4: REGISTRY BROWSER -->
+    <div id="tab-registry" class="tab-pane">
+      <div class="card">
+        <h2>Sample Vehicle Registry Browser</h2>
+        <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:10px;align-items:end;margin-bottom:12px">
+          <div>
+            <label>Search Registration, Make, Model, Owner, or City</label>
+            <input type="text" id="regSearch" placeholder="e.g. MH12, Swift, Creta, Bengaluru..." oninput="loadRegistry()" />
+          </div>
+          <div>
+            <label>Filter Colour</label>
+            <select id="regColour" onchange="loadRegistry()"><option value="">All colours</option></select>
+          </div>
+          <div>
+            <label>Filter Body Type</label>
+            <select id="regBody" onchange="loadRegistry()"><option value="">All body types</option></select>
+          </div>
+          <button class="btn btn-sec" onclick="loadRegistry()">Refresh</button>
+        </div>
+        <div id="regTableWrap"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let META = null;
+    let CURRENT_JOB_ID = null;
+    let CURRENT_JOB = null;
+    let ROI_MODE = false;
+    let ROI_START = null;
+    let ROI_BOX = null;
+    let ACTIVE_FRAME_IDX = 0;
+
+    function esc(s) {
+      return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function confColor(c) {
+      if (c >= 0.8) return '#10b981';
+      if (c >= 0.55) return '#f59e0b';
+      return '#ef4444';
+    }
+
+    function switchTab(name, btn) {
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + name).classList.add('active');
+      if (btn) btn.classList.add('active');
+      if (name === 'registry') loadRegistry();
+      if (name === 'query' && !document.getElementById('queryResult').innerHTML) runQuickQuery();
+    }
+
+    async function init() {
+      const r = await fetch('/api/meta');
+      META = await r.json();
+      document.getElementById('regCount').textContent = META.registry_size;
+      for (const id of ['uploadColour', 'qColour', 'regColour']) {
+        const el = document.getElementById(id);
+        META.colours.forEach(c => el.insertAdjacentHTML('beforeend', `<option value="${c}">${c}</option>`));
+      }
+      for (const id of ['uploadBody', 'qBody', 'regBody']) {
+        const el = document.getElementById(id);
+        META.body_types.forEach(b => el.insertAdjacentHTML('beforeend', `<option value="${b}">${b}</option>`));
+      }
+      const qm = document.getElementById('qModel');
+      META.models.forEach(m => qm.insertAdjacentHTML('beforeend', `<option value="${esc(m)}">${esc(m)}</option>`));
+
+      renderClipList();
+      populateReidDropdowns();
+      if (META.test_clips.length > 0) {
+        selectSampleClip(META.test_clips[0].id);
+      }
+    }
+
+    function renderClipList() {
+      const wrap = document.getElementById('clipList');
+      wrap.innerHTML = META.test_clips.map(c => `
+        <div class="clip-item" id="clip-item-${c.id}" onclick="selectSampleClip('${c.id}')">
+          <img src="${c.preview_url}" alt="${esc(c.id)}" />
+          <div class="clip-meta">
+            <b>${esc(c.id)}</b>
+            <span>${esc(c.note)}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function populateReidDropdowns() {
+      const sa = document.getElementById('reidSelectA');
+      const sb = document.getElementById('reidSelectB');
+      const jobs = META.jobs || [];
+      const opts = jobs.map(j => `<option value="${j.job_id}">${esc(j.filename)} (${esc(j.plate || 'analysed')})</option>`).join('');
+      sa.innerHTML = opts;
+      sb.innerHTML = opts;
+      const camA = jobs.find(j => j.filename.includes('clip01'));
+      const camB = jobs.find(j => j.filename.includes('clip08'));
+      if (camA) sa.value = camA.job_id;
+      if (camB) sb.value = camB.job_id;
+    }
+
+    async function selectSampleClip(clipId, force=false) {
+      document.querySelectorAll('.clip-item').forEach(el => el.classList.remove('active'));
+      const item = document.getElementById('clip-item-' + clipId);
+      if (item) item.classList.add('active');
+      const r = await fetch(`/api/analyse/sample/${clipId}?force=${force}`, { method: 'POST' });
+      const data = await r.json();
+      pollJob(data.job_id);
+    }
+
+    async function handleUpload(e) {
+      e.preventDefault();
+      const f = document.getElementById('uploadFile').files[0];
+      if (!f) return;
+      const fd = new FormData();
+      fd.append('file', f);
+      fd.append('plate_pattern', document.getElementById('uploadPlateHint').value);
+      fd.append('colour', document.getElementById('uploadColour').value);
+      fd.append('body_type', document.getElementById('uploadBody').value);
+      const r = await fetch('/api/analyse/upload', { method: 'POST', body: fd });
+      const data = await r.json();
+      pollJob(data.job_id);
+    }
+
+    async function pollJob(jobId) {
+      CURRENT_JOB_ID = jobId;
+      const pane = document.getElementById('resultPane');
+      while (CURRENT_JOB_ID === jobId) {
+        const r = await fetch(`/api/jobs/${jobId}`);
+        const job = await r.json();
+        if (job.status === 'running') {
+          pane.innerHTML = `
+            <div class="card prog-box">
+              <h3>Analysing ${esc(job.filename)}...</h3>
+              <div class="prog-bar"><div class="prog-fill" style="width:${job.progress}%"></div></div>
+              <div class="muted">${job.progress}% &middot; ${esc(job.message)}</div>
+            </div>
+          `;
+          await new Promise(res => setTimeout(res, 650));
+        } else if (job.status === 'error') {
+          pane.innerHTML = `<div class="card"><b style="color:var(--danger)">${esc(job.message)}</b></div>`;
+          break;
+        } else {
+          CURRENT_JOB = job;
+          renderJobResult(job);
+          const mr = await fetch('/api/meta');
+          META = await mr.json();
+          populateReidDropdowns();
+          break;
+        }
+      }
+    }
+
+    function renderBars(dist, maxItems=5) {
+      if (!dist || Object.keys(dist).length === 0) return '<div class="muted">None</div>';
+      return Object.entries(dist).slice(0, maxItems).map(([k, v]) => `
+        <div class="bar-row">
+          <span class="bar-label" title="${esc(k)}">${esc(k)}</span>
+          <span class="bar-track"><span class="bar-fill" style="width:${(v*100).toFixed(0)}%"></span></span>
+          <span class="bar-val">${(v*100).toFixed(0)}%</span>
+        </div>
+      `).join('');
+    }
+
+    function renderPlateStrip(positions) {
+      if (!positions || positions.length === 0) {
+        return '<div class="muted">No readable plate characters recovered.</div>';
+      }
+      return `<div class="plate-strip">` + positions.map(p => {
+        const alts = (p.alts || []).map(([c, pr]) => `${c}: ${(pr*100).toFixed(0)}%`).join(', ');
+        if (p.known) {
+          return `<div class="plate-char" title="Pos ${p.idx+1} | ${esc(alts)} | seen in ${p.n_frames} frames">
+            <b>${esc(p.char)}</b>
+            <small style="color:${confColor(p.conf)}">${(p.conf*100).toFixed(0)}%</small>
+          </div>`;
+        } else {
+          return `<div class="plate-char unk" title="Pos ${p.idx+1} marked UNKNOWN (never invented) | Top raw guesses: ${esc(alts || 'none')}">
+            <b>?</b>
+            <small>unk</small>
+          </div>`;
+        }
+      }).join('') + `</div>`;
+    }
+
+    function renderCandidates(matchObj) {
+      if (!matchObj || !matchObj.candidates || matchObj.candidates.length === 0) {
+        return '<div class="muted">No candidates found.</div>';
+      }
+      return matchObj.candidates.map(c => {
+        const v = c.vehicle;
+        const sc = c.score;
+        const isTop = c.rank === 1 && matchObj.status === 'match';
+        const alignHtml = (c.plate_alignment || []).map(pa => `
+          <table class="align-table">
+            <tr>
+              <th>${esc(pa.source)}</th>
+              ${pa.rows.map(x => `<td class="rel-${x.rel}" title="${esc(x.rel)} (LLR ${x.llr >= 0 ? '+' : ''}${x.llr})">${x.obs ? esc(x.obs) : '&middot;'}</td>`).join('')}
+            </tr>
+            <tr>
+              <th>registry</th>
+              ${pa.rows.map(x => `<td class="rel-${x.rel}"><b>${x.reg ? esc(x.reg) : '-'}</b></td>`).join('')}
+            </tr>
+          </table>
+        `).join('');
+
+        return `
+          <div class="cand-card ${isTop ? 'top-match' : ''}">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+              <div>
+                <div style="font-size:17px;font-weight:800">
+                  #${c.rank} &nbsp;<span style="font-family:Consolas,monospace;letter-spacing:0.5px">${esc(v.reg_no)}</span>
+                  &nbsp;<span style="font-weight:600;font-size:14px;color:var(--muted)">${esc(v.make)} ${esc(v.model)} &middot; ${esc(v.colour)} &middot; ${esc(v.body_type)} &middot; ${esc(v.year)}</span>
+                </div>
+                <div class="muted">Owner: <b>${esc(v.owner)}</b> (${esc(v.city)}) &middot; Fuel: ${esc(v.fuel)} &middot; Status: <b>${esc(v.status)}</b></div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:22px;font-weight:800;color:${isTop ? '#34d399' : '#60a5fa'}">${c.confidence}%</div>
+                <div class="muted">posterior confidence</div>
+              </div>
+            </div>
+            <div class="muted" style="margin:6px 0">
+              Log-Likelihood Ratios:
+              Total <span class="${sc.total_llr >= 0 ? 'llr-pos' : 'llr-neg'}">${sc.total_llr >= 0 ? '+' : ''}${sc.total_llr}</span> &middot;
+              Plate <span class="${sc.plate_llr >= 0 ? 'llr-pos' : 'llr-neg'}">${sc.plate_llr >= 0 ? '+' : ''}${sc.plate_llr}</span> &middot;
+              Colour <span class="${sc.colour_llr >= 0 ? 'llr-pos' : 'llr-neg'}">${sc.colour_llr >= 0 ? '+' : ''}${sc.colour_llr}</span> &middot;
+              Body <span class="${sc.body_llr >= 0 ? 'llr-pos' : 'llr-neg'}">${sc.body_llr >= 0 ? '+' : ''}${sc.body_llr}</span> &middot;
+              Make/Model <span class="${sc.model_llr >= 0 ? 'llr-pos' : 'llr-neg'}">${sc.model_llr >= 0 ? '+' : ''}${sc.model_llr}</span>
+            </div>
+            ${alignHtml}
+            <ul style="margin:8px 0 0 18px;padding:0;font-size:12.5px">
+              ${c.reasons.map(r => `<li><span class="${r.llr > 0 ? 'llr-pos' : r.llr < 0 ? 'llr-neg' : 'muted'}">[${r.llr >= 0 ? '+' : ''}${r.llr}]</span> ${esc(r.text)}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderJobResult(job) {
+      const res = job.result;
+      const v = res.video;
+      const fu = res.fusion;
+      const at = res.attributes;
+      const m = res.match;
+      const hints = res.hints || {};
+      const gt = job.ground_truth;
+      ACTIVE_FRAME_IDX = fu.reference_frame ?? 0;
+      ROI_BOX = null;
+      ROI_MODE = false;
+
+      const usedFrames = res.frames.filter(f => f.used_in_fusion);
+      const excludedFrames = res.frames.filter(f => !f.used_in_fusion);
+
+      const pane = document.getElementById('resultPane');
+      pane.innerHTML = `
+        <div class="banner ${m.status}">
+          <div>
+            <div>${esc(m.message)}</div>
+            <div style="font-size:12px;font-weight:400;opacity:0.9;margin-top:2px">
+              Null hypothesis P(not in registry / no fit): <b>${m.p_not_in_registry}%</b> &middot;
+              ${m.n_plausible} of ${m.n_registry} registry vehicles have positive evidence support
+              ${gt ? ` &middot; Benchmark Ground Truth: <code>${esc(gt.plate)}</code> (${gt.in_registry ? 'registered' : 'unregistered'})` : ''}
+            </div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <a class="btn" href="/api/jobs/${job.job_id}/report" target="_blank">Open HTML / Print PDF Report</a>
+            <a class="btn btn-sec" href="/api/jobs/${job.job_id}/report?download=true">Download Report (.html)</a>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <!-- LEFT: VIDEO / KEYFRAME / MANUAL ROI -->
+          <div class="card">
+            <h3>
+              <span>Clip & Frame Inspector (${esc(v.file)})</span>
+              <span class="muted" style="font-weight:400">${v.resolution} &middot; ${v.sampled} frames &middot; ${res.elapsed_s}s</span>
+            </h3>
+            <div class="canvas-wrap">
+              <canvas id="roiCanvas" width="960" height="540"></canvas>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap">
+              <label style="margin:0">Frame:</label>
+              <input type="range" id="frameSlider" min="0" max="${Math.max(0, res.frames.length - 1)}" value="0" style="flex:1" oninput="onFrameSlide(this.value)" />
+              <span id="frameLabel" class="muted">#${ACTIVE_FRAME_IDX}</span>
+              <button class="btn btn-sec" style="padding:5px 10px;font-size:12px" id="roiBtn" onclick="toggleRoiMode()">Draw Manual Plate ROI</button>
+            </div>
+            <details style="margin-top:8px">
+              <summary class="muted" style="cursor:pointer">Play original uploaded video clip</summary>
+              <video src="/api/jobs/${job.job_id}/video" controls style="width:100%;margin-top:8px;border-radius:8px"></video>
+            </details>
+          </div>
+
+          <!-- RIGHT: FUSED PLATE + ATTRIBUTES + HINTS -->
+          <div>
+            <div class="card">
+              <h3>
+                <span>Multi-Frame Recovered Number Plate</span>
+                <span class="muted" style="font-weight:400">Fused across ${fu.n_frames} frames</span>
+              </h3>
+              ${renderPlateStrip(fu.positions)}
+              <div class="muted">
+                Consensus string: <code style="font-size:14px;color:#fff">${esc(fu.text || 'none')}</code>
+                &middot; Positions below 55% confidence or 18% margin are marked <b>?</b> (unknown, never guessed).
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Extracted Vehicle Attributes</h3>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                <div>
+                  <div class="muted" style="font-weight:700;margin-bottom:4px">Colour (LAB K-Means)</div>
+                  ${renderBars(at.colour, 4)}
+                </div>
+                <div>
+                  <div class="muted" style="font-weight:700;margin-bottom:4px">Body Type (YOLO + CLIP)</div>
+                  ${renderBars(at.body_type, 4)}
+                </div>
+              </div>
+              <div style="margin-top:10px">
+                <div class="muted" style="font-weight:700;margin-bottom:4px">Make & Model (Zero-Shot CLIP Estimate — Bonus)</div>
+                ${renderBars(at.make_model, 3)}
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Investigator Controls & Instant Re-Match</h3>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px">
+                <div>
+                  <label>Witness / Manual Plate Hint</label>
+                  <input type="text" id="hintPlate" value="${esc(hints.plate_pattern || '')}" placeholder="e.g. MH12??45*" />
+                </div>
+                <div>
+                  <label>Colour Override</label>
+                  <select id="hintColour">
+                    <option value="">Auto (${esc(Object.keys(at.colour || {})[0] || 'n/a')})</option>
+                    ${META.colours.map(c => `<option value="${c}" ${hints.colour === c ? 'selected' : ''}>${c}</option>`).join('')}
+                  </select>
+                </div>
+                <div>
+                  <label>Body Type Override</label>
+                  <select id="hintBody">
+                    <option value="">Auto (${esc(Object.keys(at.body_type || {})[0] || 'n/a')})</option>
+                    ${META.body_types.map(b => `<option value="${b}" ${hints.body_type === b ? 'selected' : ''}>${b}</option>`).join('')}
+                  </select>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+                <button class="btn" onclick="applyHints(false)">Instant Re-Match</button>
+                <button class="btn btn-sec" id="applyRoiBtn" style="display:none" onclick="applyHints(true)">Re-Run OCR on Drawn Plate Box</button>
+                <button class="btn btn-sec" onclick="resetHints()">Reset Overrides</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RANKED SHORTLIST -->
+        <div class="card">
+          <h2>
+            <span>Ranked Candidate Shortlist (Top 5 of ${m.n_registry} Registry Vehicles)</span>
+            <span class="muted" style="font-weight:400">Sorted by Bayesian posterior probability</span>
+          </h2>
+          ${renderCandidates(m)}
+        </div>
+
+        <!-- POSITION-BY-POSITION FUSION TABLE -->
+        <div class="card">
+          <h2>Multi-Frame Character Fusion Breakdown (Per Plate Position)</h2>
+          <div style="overflow-x:auto">
+            <table>
+              <tr>
+                <th>Slot</th>
+                <th>Fused Decision</th>
+                <th>Confidence</th>
+                <th>Frames Observing</th>
+                <th>Top Pooled Alternatives</th>
+                <th>Individual Frame Votes (char<sub>conf%</sub>)</th>
+              </tr>
+              ${fu.positions.map(p => `
+                <tr>
+                  <td>#${p.idx + 1}</td>
+                  <td>${p.known ? `<b style="color:#34d399;font-size:15px">${esc(p.char)}</b>` : `<b style="color:#fcd34d">? (unknown)</b>`}</td>
+                  <td>${(p.conf * 100).toFixed(1)}%</td>
+                  <td>${p.n_frames} / ${fu.n_frames}</td>
+                  <td>${(p.alts || []).map(([c, pr]) => `<code>${esc(c)}</code> ${(pr*100).toFixed(0)}%`).join(' &middot; ')}</td>
+                  <td style="font-family:Consolas,monospace">${(p.votes || []).map(v => `${esc(v.char)}<sub class="muted">${(v.conf*100).toFixed(0)}</sub>`).join(' ')}</td>
+                </tr>
+              `).join('')}
+            </table>
+          </div>
+        </div>
+
+        <!-- PER-FRAME OCR EVIDENCE TABLE -->
+        <div class="card">
+          <h2>
+            <span>Frames Examined & Per-Frame Character Recovery (${usedFrames.length} fused, ${excludedFrames.length} excluded)</span>
+            <span class="muted" style="font-weight:400">Click any frame row to preview on canvas</span>
+          </h2>
+          <div style="overflow-x:auto;max-height:420px;overflow-y:auto">
+            <table>
+              <tr>
+                <th>Frame</th>
+                <th>Time</th>
+                <th>Plate Crop</th>
+                <th>Recovered Characters (Per-Char Confidence)</th>
+                <th>Mean Conf</th>
+                <th>Sharpness</th>
+                <th>Fusion Weight</th>
+                <th>Status / Note</th>
+              </tr>
+              ${[...usedFrames, ...excludedFrames].map(f => `
+                <tr style="cursor:pointer" onclick="jumpToFrame(${f.frame})">
+                  <td><b>#${f.frame}</b><br><span class="muted">src ${f.source_frame}</span></td>
+                  <td>${f.time_s}s</td>
+                  <td><img src="/api/jobs/${job.job_id}/asset/${f.plate_img}" style="height:34px;border-radius:4px;border:1px solid var(--border)" /></td>
+                  <td>
+                    ${(f.chars || []).map(c => `
+                      <span class="ch-badge" style="background:${c.char === '?' ? '#64748b' : confColor(c.conf)}"
+                            title="Alts: ${(c.alts || []).map(([a,p]) => a + ' ' + Math.round(p*100) + '%').join(', ')}">
+                        ${esc(c.char)}<sub>${(c.conf*100).toFixed(0)}%</sub>
+                      </span>
+                    `).join('') || '<span class="muted">none</span>'}
+                  </td>
+                  <td>${(f.mean_conf * 100).toFixed(0)}%</td>
+                  <td>${f.sharpness}</td>
+                  <td><b>${f.weight.toFixed(3)}</b></td>
+                  <td>${f.used_in_fusion ? '<span style="color:#34d399;font-weight:600">Used in fusion</span>' : `<span class="muted">${esc(f.excluded || 'excluded')}</span>`}</td>
+                </tr>
+              `).join('')}
+            </table>
+          </div>
+        </div>
+      `;
+
+      initFrameCanvas(job);
+    }
+
+    function initFrameCanvas(job) {
+      const res = job.result;
+      const frames = res.frames;
+      if (!frames || frames.length === 0) return;
+      const refIdx = frames.findIndex(f => f.frame === (res.fusion.reference_frame ?? frames[0].frame));
+      const slider = document.getElementById('frameSlider');
+      slider.value = refIdx >= 0 ? refIdx : 0;
+      drawFrameAtIndex(Number(slider.value));
+
+      const canvas = document.getElementById('roiCanvas');
+      canvas.onmousedown = e => {
+        if (!ROI_MODE) return;
+        const r = canvas.getBoundingClientRect();
+        ROI_START = {
+          x: (e.clientX - r.left) * (canvas.width / r.width),
+          y: (e.clientY - r.top) * (canvas.height / r.height)
+        };
+      };
+      canvas.onmousemove = e => {
+        if (!ROI_MODE || !ROI_START) return;
+        const r = canvas.getBoundingClientRect();
+        const x = (e.clientX - r.left) * (canvas.width / r.width);
+        const y = (e.clientY - r.top) * (canvas.height / r.height);
+        ROI_BOX = {
+          frame: ACTIVE_FRAME_IDX,
+          x1: Math.round(Math.min(ROI_START.x, x)),
+          y1: Math.round(Math.min(ROI_START.y, y)),
+          x2: Math.round(Math.max(ROI_START.x, x)),
+          y2: Math.round(Math.max(ROI_START.y, y))
+        };
+        drawFrameAtIndex(Number(document.getElementById('frameSlider').value));
+      };
+      canvas.onmouseup = () => {
+        if (!ROI_MODE) return;
+        ROI_START = null;
+        if (ROI_BOX && (ROI_BOX.x2 - ROI_BOX.x1) > 8) {
+          document.getElementById('applyRoiBtn').style.display = 'inline-flex';
+        }
+      };
+    }
+
+    function onFrameSlide(idx) {
+      drawFrameAtIndex(Number(idx));
+    }
+
+    function jumpToFrame(frameNum) {
+      const frames = CURRENT_JOB.result.frames;
+      const idx = frames.findIndex(f => f.frame === frameNum);
+      if (idx >= 0) {
+        document.getElementById('frameSlider').value = idx;
+        drawFrameAtIndex(idx);
+      }
+    }
+
+    function drawFrameAtIndex(idx) {
+      const job = CURRENT_JOB;
+      const f = job.result.frames[idx];
+      if (!f) return;
+      ACTIVE_FRAME_IDX = f.frame;
+      document.getElementById('frameLabel').textContent = `Frame #${f.frame} (${f.time_s}s) — read: ${f.text || 'n/a'}`;
+      const canvas = document.getElementById('roiCanvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.onload = () => {
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        ctx.drawImage(img, 0, 0);
+        if (f.vehicle_box) {
+          const [x1, y1, x2, y2] = f.vehicle_box;
+          ctx.strokeStyle = '#f59e0b';
+          ctx.lineWidth = 3;
+          ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+        }
+        if (f.plate_box) {
+          const [x1, y1, x2, y2] = f.plate_box;
+          ctx.strokeStyle = '#10b981';
+          ctx.lineWidth = 3;
+          ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+        }
+        if (ROI_BOX) {
+          ctx.strokeStyle = '#ec4899';
+          ctx.lineWidth = 3;
+          ctx.strokeRect(ROI_BOX.x1, ROI_BOX.y1, ROI_BOX.x2 - ROI_BOX.x1, ROI_BOX.y2 - ROI_BOX.y1);
+        }
+      };
+      img.src = `/api/jobs/${job.job_id}/asset/${f.frame_img}`;
+    }
+
+    function toggleRoiMode() {
+      ROI_MODE = !ROI_MODE;
+      const btn = document.getElementById('roiBtn');
+      btn.textContent = ROI_MODE ? 'Drag on Image to Box Plate (Click to Cancel)' : 'Draw Manual Plate ROI';
+      btn.style.borderColor = ROI_MODE ? '#ec4899' : '';
+    }
+
+    async function applyHints(withRoi) {
+      const body = {
+        plate_pattern: document.getElementById('hintPlate').value.trim() || null,
+        colour: document.getElementById('hintColour').value || null,
+        body_type: document.getElementById('hintBody').value || null,
+        roi: withRoi ? ROI_BOX : null
+      };
+      const r = await fetch(`/api/jobs/${CURRENT_JOB_ID}/reanalyse`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const data = await r.json();
+      if (data.instant) {
+        CURRENT_JOB.result = data.result;
+        renderJobResult(CURRENT_JOB);
+      } else {
+        pollJob(CURRENT_JOB_ID);
+      }
+    }
+
+    function resetHints() {
+      document.getElementById('hintPlate').value = '';
+      document.getElementById('hintColour').value = '';
+      document.getElementById('hintBody').value = '';
+      ROI_BOX = null;
+      applyHints(false);
+    }
+
+    async function runComparison() {
+      const ja = document.getElementById('reidSelectA').value;
+      const jb = document.getElementById('reidSelectB').value;
+      if (!ja || !jb) return;
+      const wrap = document.getElementById('reidResult');
+      wrap.innerHTML = `<div class="card">Comparing clips...</div>`;
+      const [ra, rb, rc] = await Promise.all([
+        fetch(`/api/jobs/${ja}`).then(r => r.json()),
+        fetch(`/api/jobs/${jb}`).then(r => r.json()),
+        fetch('/api/compare', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ job_a: ja, job_b: jb })
+        }).then(r => r.json())
+      ]);
+
+      const bannerCls = rc.verdict === 'same_vehicle' ? 'match' : 'no_confident_match';
+      const pa = rc.plate_alignment;
+      wrap.innerHTML = `
+        <div class="banner ${bannerCls}">
+          <div>${esc(rc.summary)}</div>
+          <div>Same-Vehicle Confidence: <b>${rc.confidence}%</b> (Total LLR ${rc.scores.total_llr >= 0 ? '+' : ''}${rc.scores.total_llr})</div>
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <h3>Camera A: ${esc(ra.filename)}</h3>
+            <img src="/api/jobs/${ja}/asset/${ra.result.keyframe}" style="width:100%;border-radius:8px;margin-bottom:8px" />
+            ${renderPlateStrip(ra.result.fusion.positions)}
+          </div>
+          <div class="card">
+            <h3>Camera B: ${esc(rb.filename)}</h3>
+            <img src="/api/jobs/${jb}/asset/${rb.result.keyframe}" style="width:100%;border-radius:8px;margin-bottom:8px" />
+            ${renderPlateStrip(rb.result.fusion.positions)}
+          </div>
+        </div>
+        <div class="card">
+          <h3>Cross-Camera Compatibility Breakdown</h3>
+          <table class="align-table" style="margin-bottom:10px">
+            <tr><th>Camera A</th>${pa.rows.map(r => `<td class="rel-${r.rel}">${esc(r.cam_a || '·')}</td>`).join('')}</tr>
+            <tr><th>Camera B</th>${pa.rows.map(r => `<td class="rel-${r.rel}">${esc(r.cam_b || '·')}</td>`).join('')}</tr>
+          </table>
+          <ul style="margin:6px 0 0 18px;font-size:13px">
+            ${rc.reasons.map(r => `<li><span class="${r.llr >= 0 ? 'llr-pos' : 'llr-neg'}">[${r.llr >= 0 ? '+' : ''}${r.llr}]</span> ${esc(r.text)}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Joint Registry Shortlist (Combining Camera A + Camera B Evidence)</h2>
+          ${renderCandidates(rc.joint_match)}
+        </div>
+      `;
+    }
+
+    function setPreset(p, c, b, m) {
+      document.getElementById('qPlate').value = p;
+      document.getElementById('qColour').value = c;
+      document.getElementById('qBody').value = b;
+      document.getElementById('qModel').value = m;
+      runQuickQuery();
+    }
+
+    async function runQuickQuery() {
+      const body = {
+        plate_pattern: document.getElementById('qPlate').value,
+        colour: document.getElementById('qColour').value || null,
+        body_type: document.getElementById('qBody').value || null,
+        make_model: document.getElementById('qModel').value || null
+      };
+      const r = await fetch('/api/match', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      const m = await r.json();
+      document.getElementById('queryResult').innerHTML = `
+        <div class="banner ${m.status}">
+          <div>${esc(m.message)}</div>
+          <div>P(not in registry / no fit): <b>${m.p_not_in_registry}%</b></div>
+        </div>
+        <div class="card">
+          <h2>Ranked Shortlist (Top 5)</h2>
+          ${renderCandidates(m)}
+        </div>
+      `;
+    }
+
+    async function loadRegistry() {
+      const q = encodeURIComponent(document.getElementById('regSearch').value);
+      const c = encodeURIComponent(document.getElementById('regColour').value);
+      const b = encodeURIComponent(document.getElementById('regBody').value);
+      const r = await fetch(`/api/registry?q=${q}&colour=${c}&body_type=${b}&limit=100`);
+      const data = await r.json();
+      document.getElementById('regTableWrap').innerHTML = `
+        <div class="muted" style="margin-bottom:8px">Showing ${data.rows.length} of ${data.total} registered vehicles</div>
+        <div style="overflow-x:auto;max-height:540px;overflow-y:auto">
+          <table>
+            <tr>
+              <th>Registration</th>
+              <th>Make & Model</th>
+              <th>Body Type</th>
+              <th>Colour</th>
+              <th>Year</th>
+              <th>Fuel</th>
+              <th>Owner</th>
+              <th>City</th>
+              <th>Status</th>
+            </tr>
+            ${data.rows.map(v => `
+              <tr>
+                <td><b style="font-family:Consolas,monospace">${esc(v.reg_no)}</b></td>
+                <td>${esc(v.make)} ${esc(v.model)}</td>
+                <td>${esc(v.body_type)}</td>
+                <td>${esc(v.colour)}</td>
+                <td>${esc(v.year)}</td>
+                <td>${esc(v.fuel)}</td>
+                <td>${esc(v.owner)}</td>
+                <td>${esc(v.city)}</td>
+                <td>${esc(v.status)}</td>
+              </tr>
+            `).join('')}
+          </table>
+        </div>
+      `;
+    }
+
+    init();
+  </script>
+</body>
+</html>

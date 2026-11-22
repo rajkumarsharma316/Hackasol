@@ -1,0 +1,7101 @@
+{
+ "video": {
+  "source_frames": 40,
+  "fps": 10.0,
+  "sampled": 40,
+  "resolution": "960x540",
+  "duration_s": 4.0,
+  "file": "clip07_silver_suv_unregistered.mp4"
+ },
+ "track": {
+  "id": 1,
+  "frames": 40,
+  "yolo_classes": {
+   "car": 20.139439582824707,
+   "truck": 6.277118653059006
+  },
+  "fallback_whole_frame": false
+ },
+ "tracks": [
+  {
+   "id": 1,
+   "frames": 40,
+   "classes": {
+    "car": 20.14,
+    "truck": 6.28
+   },
+   "prominence": 0.941,
+   "thumb": "crops/track1.jpg"
+  },
+  {
+   "id": 6,
+   "frames": 11,
+   "classes": {
+    "motorcycle": 3.69
+   },
+   "prominence": 0.015,
+   "thumb": "crops/track6.jpg"
+  },
+  {
+   "id": 10,
+   "frames": 9,
+   "classes": {
+    "motorcycle": 4.79
+   },
+   "prominence": 0.013,
+   "thumb": "crops/track10.jpg"
+  },
+  {
+   "id": 3,
+   "frames": 7,
+   "classes": {
+    "motorcycle": 3.24
+   },
+   "prominence": 0.011,
+   "thumb": "crops/track3.jpg"
+  },
+  {
+   "id": 11,
+   "frames": 6,
+   "classes": {
+    "motorcycle": 2.09
+   },
+   "prominence": 0.005,
+   "thumb": "crops/track11.jpg"
+  },
+  {
+   "id": 2,
+   "frames": 3,
+   "classes": {
+    "motorcycle": 1.48
+   },
+   "prominence": 0.004,
+   "thumb": "crops/track2.jpg"
+  },
+  {
+   "id": 12,
+   "frames": 4,
+   "classes": {
+    "motorcycle": 1.66
+   },
+   "prominence": 0.003,
+   "thumb": "crops/track12.jpg"
+  },
+  {
+   "id": 17,
+   "frames": 3,
+   "classes": {
+    "motorcycle": 1.16
+   },
+   "prominence": 0.003,
+   "thumb": "crops/track17.jpg"
+  }
+ ],
+ "hints": {},
+ "frames": [
+  {
+   "frame": 0,
+   "source_frame": 0,
+   "time_s": 0.0,
+   "vehicle_box": [
+    190,
+    149,
+    688,
+    533
+   ],
+   "plate_box": [
+    432,
+    394,
+    455,
+    407
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "KLAKA",
+   "mean_conf": 0.446,
+   "two_line": true,
+   "sharpness": 1.6,
+   "plate_height_px": 13,
+   "weight": 0.0306,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "K",
+     "conf": 0.217,
+     "alts": [
+      [
+       "K",
+       0.329
+      ],
+      [
+       "B",
+       0.256
+      ],
+      [
+       "R",
+       0.143
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.867,
+     "alts": [
+      [
+       "L",
+       0.867
+      ],
+      [
+       "E",
+       0.048
+      ],
+      [
+       "D",
+       0.036
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.87,
+     "alts": [
+      [
+       "A",
+       0.87
+      ],
+      [
+       "F",
+       0.088
+      ],
+      [
+       "E",
+       0.015
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.053,
+     "alts": [
+      [
+       "K",
+       0.163
+      ],
+      [
+       "R",
+       0.155
+      ],
+      [
+       "E",
+       0.132
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.222,
+     "alts": [
+      [
+       "A",
+       0.335
+      ],
+      [
+       "I",
+       0.167
+      ],
+      [
+       "D",
+       0.147
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p000.png",
+   "frame_img": "frames/f000.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 1,
+   "source_frame": 1,
+   "time_s": 0.1,
+   "vehicle_box": [
+    181,
+    145,
+    686,
+    532
+   ],
+   "plate_box": [
+    427,
+    392,
+    450,
+    405
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "BKEBII",
+   "mean_conf": 0.539,
+   "two_line": true,
+   "sharpness": 2.1,
+   "plate_height_px": 13,
+   "weight": 0.0452,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.765,
+     "alts": [
+      [
+       "B",
+       0.765
+      ],
+      [
+       "E",
+       0.17
+      ],
+      [
+       "F",
+       0.02
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.451,
+     "alts": [
+      [
+       "K",
+       0.475
+      ],
+      [
+       "R",
+       0.231
+      ],
+      [
+       "I",
+       0.091
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.489,
+     "alts": [
+      [
+       "E",
+       0.585
+      ],
+      [
+       "K",
+       0.207
+      ],
+      [
+       "T",
+       0.07
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.239,
+     "alts": [
+      [
+       "B",
+       0.346
+      ],
+      [
+       "M",
+       0.19
+      ],
+      [
+       "N",
+       0.169
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.632,
+     "alts": [
+      [
+       "I",
+       0.632
+      ],
+      [
+       "L",
+       0.236
+      ],
+      [
+       "E",
+       0.092
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.658,
+     "alts": [
+      [
+       "I",
+       0.658
+      ],
+      [
+       "G",
+       0.254
+      ],
+      [
+       "E",
+       0.031
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p001.png",
+   "frame_img": "frames/f001.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 2,
+   "source_frame": 2,
+   "time_s": 0.2,
+   "vehicle_box": [
+    174,
+    149,
+    685,
+    533
+   ],
+   "plate_box": [
+    401,
+    472,
+    445,
+    490
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BSS",
+   "mean_conf": 0.344,
+   "two_line": false,
+   "sharpness": 6.0,
+   "plate_height_px": 18,
+   "weight": 0.0462,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.329,
+     "alts": [
+      [
+       "B",
+       0.406
+      ],
+      [
+       "E",
+       0.268
+      ],
+      [
+       "P",
+       0.063
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.4,
+     "alts": [
+      [
+       "S",
+       0.521
+      ],
+      [
+       "A",
+       0.087
+      ],
+      [
+       "9",
+       0.072
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.302,
+     "alts": [
+      [
+       "S",
+       0.408
+      ],
+      [
+       "A",
+       0.195
+      ],
+      [
+       "J",
+       0.168
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p002.png",
+   "frame_img": "frames/f002.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 3,
+   "source_frame": 3,
+   "time_s": 0.3,
+   "vehicle_box": [
+    173,
+    140,
+    688,
+    531
+   ],
+   "plate_box": [
+    404,
+    462,
+    446,
+    484
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BDE1",
+   "mean_conf": 0.636,
+   "two_line": true,
+   "sharpness": 5.0,
+   "plate_height_px": 22,
+   "weight": 0.1341,
+   "excluded": null,
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.23,
+     "alts": [
+      [
+       "B",
+       0.339
+      ],
+      [
+       "E",
+       0.333
+      ],
+      [
+       "D",
+       0.165
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.606,
+     "alts": [
+      [
+       "D",
+       0.606
+      ],
+      [
+       "A",
+       0.091
+      ],
+      [
+       "T",
+       0.055
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.83,
+     "alts": [
+      [
+       "E",
+       0.83
+      ],
+      [
+       "B",
+       0.052
+      ],
+      [
+       "C",
+       0.021
+      ]
+     ]
+    },
+    {
+     "char": "1",
+     "conf": 0.876,
+     "alts": [
+      [
+       "1",
+       0.876
+      ],
+      [
+       "A",
+       0.059
+      ],
+      [
+       "4",
+       0.045
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p003.png",
+   "frame_img": "frames/f003.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 4,
+   "source_frame": 4,
+   "time_s": 0.4,
+   "vehicle_box": [
+    156,
+    125,
+    680,
+    533
+   ],
+   "plate_box": [
+    412,
+    385,
+    436,
+    399
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "BLAR?TIA",
+   "mean_conf": 0.657,
+   "two_line": true,
+   "sharpness": 3.1,
+   "plate_height_px": 14,
+   "weight": 0.0699,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.722,
+     "alts": [
+      [
+       "B",
+       0.722
+      ],
+      [
+       "E",
+       0.131
+      ],
+      [
+       "R",
+       0.104
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.952,
+     "alts": [
+      [
+       "L",
+       0.952
+      ],
+      [
+       "I",
+       0.016
+      ],
+      [
+       "E",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.961,
+     "alts": [
+      [
+       "A",
+       0.961
+      ],
+      [
+       "G",
+       0.016
+      ],
+      [
+       "S",
+       0.01
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.13,
+     "alts": [
+      [
+       "R",
+       0.255
+      ],
+      [
+       "E",
+       0.201
+      ],
+      [
+       "B",
+       0.19
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "T",
+     "conf": 0.577,
+     "alts": [
+      [
+       "T",
+       0.577
+      ],
+      [
+       "I",
+       0.323
+      ],
+      [
+       "O",
+       0.031
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.807,
+     "alts": [
+      [
+       "I",
+       0.807
+      ],
+      [
+       "T",
+       0.065
+      ],
+      [
+       "A",
+       0.034
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.446,
+     "alts": [
+      [
+       "A",
+       0.472
+      ],
+      [
+       "S",
+       0.445
+      ],
+      [
+       "E",
+       0.014
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p004.png",
+   "frame_img": "frames/f004.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 5,
+   "source_frame": 5,
+   "time_s": 0.5,
+   "vehicle_box": [
+    156,
+    123,
+    688,
+    531
+   ],
+   "plate_box": [
+    415,
+    383,
+    439,
+    396
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "BRAB44",
+   "mean_conf": 0.63,
+   "two_line": true,
+   "sharpness": 2.1,
+   "plate_height_px": 13,
+   "weight": 0.0617,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.334,
+     "alts": [
+      [
+       "B",
+       0.409
+      ],
+      [
+       "E",
+       0.191
+      ],
+      [
+       "F",
+       0.175
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.955,
+     "alts": [
+      [
+       "R",
+       0.955
+      ],
+      [
+       "I",
+       0.031
+      ],
+      [
+       "C",
+       0.004
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.691,
+     "alts": [
+      [
+       "A",
+       0.691
+      ],
+      [
+       "E",
+       0.293
+      ],
+      [
+       "C",
+       0.005
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.421,
+     "alts": [
+      [
+       "B",
+       0.459
+      ],
+      [
+       "N",
+       0.199
+      ],
+      [
+       "M",
+       0.096
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.865,
+     "alts": [
+      [
+       "4",
+       0.865
+      ],
+      [
+       "9",
+       0.025
+      ],
+      [
+       "X",
+       0.024
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.513,
+     "alts": [
+      [
+       "4",
+       0.513
+      ],
+      [
+       "D",
+       0.095
+      ],
+      [
+       "R",
+       0.073
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p005.png",
+   "frame_img": "frames/f005.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 6,
+   "source_frame": 6,
+   "time_s": 0.6,
+   "vehicle_box": [
+    149,
+    112,
+    685,
+    533
+   ],
+   "plate_box": [
+    410,
+    380,
+    435,
+    394
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "BKIBPAA",
+   "mean_conf": 0.504,
+   "two_line": true,
+   "sharpness": 3.3,
+   "plate_height_px": 14,
+   "weight": 0.0414,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.626,
+     "alts": [
+      [
+       "B",
+       0.626
+      ],
+      [
+       "E",
+       0.225
+      ],
+      [
+       "K",
+       0.034
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.544,
+     "alts": [
+      [
+       "K",
+       0.544
+      ],
+      [
+       "U",
+       0.155
+      ],
+      [
+       "E",
+       0.085
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.124,
+     "alts": [
+      [
+       "I",
+       0.271
+      ],
+      [
+       "E",
+       0.169
+      ],
+      [
+       "A",
+       0.144
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.6,
+     "alts": [
+      [
+       "B",
+       0.6
+      ],
+      [
+       "E",
+       0.257
+      ],
+      [
+       "D",
+       0.053
+      ]
+     ]
+    },
+    {
+     "char": "P",
+     "conf": 0.514,
+     "alts": [
+      [
+       "P",
+       0.514
+      ],
+      [
+       "F",
+       0.457
+      ],
+      [
+       "E",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.429,
+     "alts": [
+      [
+       "A",
+       0.463
+      ],
+      [
+       "E",
+       0.115
+      ],
+      [
+       "F",
+       0.105
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.693,
+     "alts": [
+      [
+       "A",
+       0.693
+      ],
+      [
+       "X",
+       0.068
+      ],
+      [
+       "T",
+       0.031
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p006.png",
+   "frame_img": "frames/f006.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 7,
+   "source_frame": 7,
+   "time_s": 0.7,
+   "vehicle_box": [
+    140,
+    105,
+    685,
+    532
+   ],
+   "plate_box": [
+    405,
+    378,
+    430,
+    392
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "NEABEA",
+   "mean_conf": 0.62,
+   "two_line": true,
+   "sharpness": 3.3,
+   "plate_height_px": 14,
+   "weight": 0.0625,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "N",
+     "conf": 0.148,
+     "alts": [
+      [
+       "N",
+       0.273
+      ],
+      [
+       "A",
+       0.187
+      ],
+      [
+       "B",
+       0.117
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.945,
+     "alts": [
+      [
+       "E",
+       0.945
+      ],
+      [
+       "B",
+       0.016
+      ],
+      [
+       "R",
+       0.01
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.595,
+     "alts": [
+      [
+       "A",
+       0.595
+      ],
+      [
+       "4",
+       0.217
+      ],
+      [
+       "H",
+       0.097
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.485,
+     "alts": [
+      [
+       "B",
+       0.492
+      ],
+      [
+       "E",
+       0.213
+      ],
+      [
+       "L",
+       0.072
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.838,
+     "alts": [
+      [
+       "E",
+       0.838
+      ],
+      [
+       "F",
+       0.08
+      ],
+      [
+       "R",
+       0.055
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.706,
+     "alts": [
+      [
+       "A",
+       0.706
+      ],
+      [
+       "Z",
+       0.133
+      ],
+      [
+       "G",
+       0.049
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p007.png",
+   "frame_img": "frames/f007.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 8,
+   "source_frame": 8,
+   "time_s": 0.8,
+   "vehicle_box": [
+    127,
+    96,
+    677,
+    531
+   ],
+   "plate_box": [
+    395,
+    374,
+    420,
+    388
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "ALRAEEED",
+   "mean_conf": 0.585,
+   "two_line": true,
+   "sharpness": 2.5,
+   "plate_height_px": 14,
+   "weight": 0.0549,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "A",
+     "conf": 0.43,
+     "alts": [
+      [
+       "A",
+       0.464
+      ],
+      [
+       "B",
+       0.241
+      ],
+      [
+       "E",
+       0.074
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.283,
+     "alts": [
+      [
+       "L",
+       0.376
+      ],
+      [
+       "I",
+       0.366
+      ],
+      [
+       "K",
+       0.112
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.776,
+     "alts": [
+      [
+       "R",
+       0.776
+      ],
+      [
+       "3",
+       0.043
+      ],
+      [
+       "8",
+       0.036
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.38,
+     "alts": [
+      [
+       "A",
+       0.436
+      ],
+      [
+       "1",
+       0.112
+      ],
+      [
+       "3",
+       0.1
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.851,
+     "alts": [
+      [
+       "E",
+       0.851
+      ],
+      [
+       "B",
+       0.073
+      ],
+      [
+       "F",
+       0.034
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.724,
+     "alts": [
+      [
+       "E",
+       0.724
+      ],
+      [
+       "R",
+       0.096
+      ],
+      [
+       "F",
+       0.094
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.425,
+     "alts": [
+      [
+       "E",
+       0.461
+      ],
+      [
+       "A",
+       0.205
+      ],
+      [
+       "U",
+       0.096
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.811,
+     "alts": [
+      [
+       "D",
+       0.811
+      ],
+      [
+       "A",
+       0.08
+      ],
+      [
+       "J",
+       0.066
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p008.png",
+   "frame_img": "frames/f008.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 9,
+   "source_frame": 9,
+   "time_s": 0.9,
+   "vehicle_box": [
+    119,
+    93,
+    681,
+    531
+   ],
+   "plate_box": [
+    367,
+    456,
+    417,
+    475
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "ESH",
+   "mean_conf": 0.69,
+   "two_line": false,
+   "sharpness": 9.1,
+   "plate_height_px": 19,
+   "weight": 0.1973,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.653,
+     "alts": [
+      [
+       "E",
+       0.653
+      ],
+      [
+       "B",
+       0.153
+      ],
+      [
+       "F",
+       0.077
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.669,
+     "alts": [
+      [
+       "S",
+       0.669
+      ],
+      [
+       "E",
+       0.089
+      ],
+      [
+       "A",
+       0.037
+      ]
+     ]
+    },
+    {
+     "char": "H",
+     "conf": 0.747,
+     "alts": [
+      [
+       "H",
+       0.747
+      ],
+      [
+       "S",
+       0.129
+      ],
+      [
+       "A",
+       0.027
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p009.png",
+   "frame_img": "frames/f009.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 10,
+   "source_frame": 10,
+   "time_s": 1.0,
+   "vehicle_box": [
+    104,
+    86,
+    680,
+    530
+   ],
+   "plate_box": [
+    385,
+    369,
+    411,
+    384
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "MDBLA",
+   "mean_conf": 0.586,
+   "two_line": true,
+   "sharpness": 2.4,
+   "plate_height_px": 15,
+   "weight": 0.0564,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "M",
+     "conf": 0.934,
+     "alts": [
+      [
+       "M",
+       0.934
+      ],
+      [
+       "N",
+       0.033
+      ],
+      [
+       "W",
+       0.008
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.27,
+     "alts": [
+      [
+       "D",
+       0.367
+      ],
+      [
+       "E",
+       0.215
+      ],
+      [
+       "C",
+       0.162
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.784,
+     "alts": [
+      [
+       "B",
+       0.784
+      ],
+      [
+       "R",
+       0.044
+      ],
+      [
+       "3",
+       0.038
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.212,
+     "alts": [
+      [
+       "L",
+       0.374
+      ],
+      [
+       "I",
+       0.148
+      ],
+      [
+       "7",
+       0.108
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.731,
+     "alts": [
+      [
+       "A",
+       0.731
+      ],
+      [
+       "4",
+       0.099
+      ],
+      [
+       "E",
+       0.049
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p010.png",
+   "frame_img": "frames/f010.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 11,
+   "source_frame": 11,
+   "time_s": 1.1,
+   "vehicle_box": [
+    98,
+    82,
+    676,
+    527
+   ],
+   "plate_box": [
+    380,
+    366,
+    406,
+    381
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "MKZABLE",
+   "mean_conf": 0.427,
+   "two_line": true,
+   "sharpness": 2.2,
+   "plate_height_px": 15,
+   "weight": 0.0298,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "M",
+     "conf": 0.882,
+     "alts": [
+      [
+       "M",
+       0.882
+      ],
+      [
+       "B",
+       0.046
+      ],
+      [
+       "D",
+       0.037
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.273,
+     "alts": [
+      [
+       "K",
+       0.369
+      ],
+      [
+       "E",
+       0.289
+      ],
+      [
+       "G",
+       0.129
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.111,
+     "alts": [
+      [
+       "Z",
+       0.237
+      ],
+      [
+       "K",
+       0.206
+      ],
+      [
+       "A",
+       0.172
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.913,
+     "alts": [
+      [
+       "A",
+       0.913
+      ],
+      [
+       "E",
+       0.028
+      ],
+      [
+       "H",
+       0.014
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.437,
+     "alts": [
+      [
+       "B",
+       0.468
+      ],
+      [
+       "E",
+       0.443
+      ],
+      [
+       "F",
+       0.02
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.122,
+     "alts": [
+      [
+       "L",
+       0.271
+      ],
+      [
+       "E",
+       0.198
+      ],
+      [
+       "I",
+       0.124
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.249,
+     "alts": [
+      [
+       "E",
+       0.369
+      ],
+      [
+       "Z",
+       0.253
+      ],
+      [
+       "A",
+       0.16
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p011.png",
+   "frame_img": "frames/f011.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 12,
+   "source_frame": 12,
+   "time_s": 1.2,
+   "vehicle_box": [
+    93,
+    68,
+    683,
+    529
+   ],
+   "plate_box": [
+    380,
+    362,
+    407,
+    377
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "MIS4D4",
+   "mean_conf": 0.438,
+   "two_line": true,
+   "sharpness": 2.1,
+   "plate_height_px": 15,
+   "weight": 0.0314,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "M",
+     "conf": 0.209,
+     "alts": [
+      [
+       "M",
+       0.323
+      ],
+      [
+       "N",
+       0.157
+      ],
+      [
+       "D",
+       0.111
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.671,
+     "alts": [
+      [
+       "I",
+       0.704
+      ],
+      [
+       "T",
+       0.177
+      ],
+      [
+       "L",
+       0.054
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.479,
+     "alts": [
+      [
+       "S",
+       0.569
+      ],
+      [
+       "Z",
+       0.09
+      ],
+      [
+       "A",
+       0.061
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.532,
+     "alts": [
+      [
+       "4",
+       0.575
+      ],
+      [
+       "A",
+       0.094
+      ],
+      [
+       "I",
+       0.036
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.147,
+     "alts": [
+      [
+       "D",
+       0.271
+      ],
+      [
+       "E",
+       0.267
+      ],
+      [
+       "F",
+       0.106
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.594,
+     "alts": [
+      [
+       "4",
+       0.638
+      ],
+      [
+       "A",
+       0.095
+      ],
+      [
+       "3",
+       0.089
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p012.png",
+   "frame_img": "frames/f012.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 13,
+   "source_frame": 13,
+   "time_s": 1.3,
+   "vehicle_box": [
+    74,
+    53,
+    678,
+    532
+   ],
+   "plate_box": [
+    368,
+    359,
+    396,
+    374
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "NKFGBI4",
+   "mean_conf": 0.44,
+   "two_line": true,
+   "sharpness": 5.1,
+   "plate_height_px": 15,
+   "weight": 0.0331,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "N",
+     "conf": 0.312,
+     "alts": [
+      [
+       "N",
+       0.395
+      ],
+      [
+       "E",
+       0.132
+      ],
+      [
+       "B",
+       0.099
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.531,
+     "alts": [
+      [
+       "K",
+       0.531
+      ],
+      [
+       "I",
+       0.106
+      ],
+      [
+       "U",
+       0.091
+      ]
+     ]
+    },
+    {
+     "char": "F",
+     "conf": 0.187,
+     "alts": [
+      [
+       "F",
+       0.307
+      ],
+      [
+       "Z",
+       0.162
+      ],
+      [
+       "R",
+       0.147
+      ]
+     ]
+    },
+    {
+     "char": "G",
+     "conf": 0.418,
+     "alts": [
+      [
+       "G",
+       0.457
+      ],
+      [
+       "E",
+       0.348
+      ],
+      [
+       "S",
+       0.072
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.947,
+     "alts": [
+      [
+       "B",
+       0.947
+      ],
+      [
+       "R",
+       0.017
+      ],
+      [
+       "N",
+       0.012
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.099,
+     "alts": [
+      [
+       "I",
+       0.223
+      ],
+      [
+       "7",
+       0.168
+      ],
+      [
+       "T",
+       0.106
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.585,
+     "alts": [
+      [
+       "4",
+       0.585
+      ],
+      [
+       "A",
+       0.099
+      ],
+      [
+       "H",
+       0.098
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p013.png",
+   "frame_img": "frames/f013.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 14,
+   "source_frame": 14,
+   "time_s": 1.4,
+   "vehicle_box": [
+    51,
+    52,
+    673,
+    530
+   ],
+   "plate_box": [
+    354,
+    357,
+    383,
+    373
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "SKALMMEG",
+   "mean_conf": 0.534,
+   "two_line": true,
+   "sharpness": 3.6,
+   "plate_height_px": 16,
+   "weight": 0.0488,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "S",
+     "conf": 0.349,
+     "alts": [
+      [
+       "S",
+       0.418
+      ],
+      [
+       "G",
+       0.338
+      ],
+      [
+       "K",
+       0.061
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.346,
+     "alts": [
+      [
+       "K",
+       0.418
+      ],
+      [
+       "I",
+       0.181
+      ],
+      [
+       "E",
+       0.165
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.834,
+     "alts": [
+      [
+       "A",
+       0.834
+      ],
+      [
+       "D",
+       0.149
+      ],
+      [
+       "C",
+       0.004
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.602,
+     "alts": [
+      [
+       "L",
+       0.602
+      ],
+      [
+       "W",
+       0.109
+      ],
+      [
+       "V",
+       0.102
+      ]
+     ]
+    },
+    {
+     "char": "M",
+     "conf": 0.179,
+     "alts": [
+      [
+       "M",
+       0.299
+      ],
+      [
+       "R",
+       0.215
+      ],
+      [
+       "A",
+       0.177
+      ]
+     ]
+    },
+    {
+     "char": "M",
+     "conf": 0.217,
+     "alts": [
+      [
+       "M",
+       0.348
+      ],
+      [
+       "S",
+       0.215
+      ],
+      [
+       "N",
+       0.181
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.997,
+     "alts": [
+      [
+       "E",
+       0.997
+      ],
+      [
+       "I",
+       0.001
+      ],
+      [
+       "L",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "G",
+     "conf": 0.745,
+     "alts": [
+      [
+       "G",
+       0.745
+      ],
+      [
+       "4",
+       0.074
+      ],
+      [
+       "H",
+       0.044
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p014.png",
+   "frame_img": "frames/f014.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 15,
+   "source_frame": 15,
+   "time_s": 1.5,
+   "vehicle_box": [
+    57,
+    37,
+    681,
+    528
+   ],
+   "plate_box": [
+    328,
+    436,
+    388,
+    458
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "ECS",
+   "mean_conf": 0.531,
+   "two_line": false,
+   "sharpness": 24.7,
+   "plate_height_px": 22,
+   "weight": 0.1396,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.687,
+     "alts": [
+      [
+       "E",
+       0.687
+      ],
+      [
+       "F",
+       0.162
+      ],
+      [
+       "B",
+       0.084
+      ]
+     ]
+    },
+    {
+     "char": "C",
+     "conf": 0.205,
+     "alts": [
+      [
+       "C",
+       0.329
+      ],
+      [
+       "S",
+       0.25
+      ],
+      [
+       "E",
+       0.19
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.701,
+     "alts": [
+      [
+       "S",
+       0.701
+      ],
+      [
+       "X",
+       0.19
+      ],
+      [
+       "N",
+       0.023
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p015.png",
+   "frame_img": "frames/f015.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 16,
+   "source_frame": 16,
+   "time_s": 1.6,
+   "vehicle_box": [
+    51,
+    35,
+    683,
+    531
+   ],
+   "plate_box": [
+    326,
+    439,
+    385,
+    462
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "ESS",
+   "mean_conf": 0.918,
+   "two_line": false,
+   "sharpness": 13.8,
+   "plate_height_px": 23,
+   "weight": 0.4036,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.827,
+     "alts": [
+      [
+       "E",
+       0.827
+      ],
+      [
+       "F",
+       0.099
+      ],
+      [
+       "B",
+       0.018
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.939,
+     "alts": [
+      [
+       "S",
+       0.939
+      ],
+      [
+       "O",
+       0.018
+      ],
+      [
+       "T",
+       0.008
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.989,
+     "alts": [
+      [
+       "S",
+       0.989
+      ],
+      [
+       "5",
+       0.007
+      ],
+      [
+       "H",
+       0.001
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p016.png",
+   "frame_img": "frames/f016.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 17,
+   "source_frame": 17,
+   "time_s": 1.7,
+   "vehicle_box": [
+    27,
+    25,
+    679,
+    528
+   ],
+   "plate_box": [
+    345,
+    346,
+    374,
+    362
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "BRIEBXIG",
+   "mean_conf": 0.667,
+   "two_line": true,
+   "sharpness": 4.3,
+   "plate_height_px": 16,
+   "weight": 0.0769,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.62,
+     "alts": [
+      [
+       "B",
+       0.62
+      ],
+      [
+       "E",
+       0.201
+      ],
+      [
+       "M",
+       0.139
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.857,
+     "alts": [
+      [
+       "R",
+       0.857
+      ],
+      [
+       "X",
+       0.084
+      ],
+      [
+       "A",
+       0.03
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.833,
+     "alts": [
+      [
+       "I",
+       0.833
+      ],
+      [
+       "T",
+       0.122
+      ],
+      [
+       "L",
+       0.029
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.647,
+     "alts": [
+      [
+       "E",
+       0.647
+      ],
+      [
+       "K",
+       0.295
+      ],
+      [
+       "H",
+       0.027
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.675,
+     "alts": [
+      [
+       "B",
+       0.675
+      ],
+      [
+       "C",
+       0.107
+      ],
+      [
+       "E",
+       0.073
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.81,
+     "alts": [
+      [
+       "X",
+       0.81
+      ],
+      [
+       "H",
+       0.071
+      ],
+      [
+       "U",
+       0.027
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.827,
+     "alts": [
+      [
+       "I",
+       0.827
+      ],
+      [
+       "T",
+       0.158
+      ],
+      [
+       "L",
+       0.008
+      ]
+     ]
+    },
+    {
+     "char": "G",
+     "conf": 0.065,
+     "alts": [
+      [
+       "G",
+       0.19
+      ],
+      [
+       "I",
+       0.179
+      ],
+      [
+       "4",
+       0.144
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p017.png",
+   "frame_img": "frames/f017.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 18,
+   "source_frame": 18,
+   "time_s": 1.8,
+   "vehicle_box": [
+    13,
+    14,
+    673,
+    524
+   ],
+   "plate_box": [
+    303,
+    432,
+    365,
+    456
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BS",
+   "mean_conf": 0.762,
+   "two_line": false,
+   "sharpness": 12.3,
+   "plate_height_px": 24,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.901,
+     "alts": [
+      [
+       "B",
+       0.901
+      ],
+      [
+       "E",
+       0.051
+      ],
+      [
+       "D",
+       0.033
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.622,
+     "alts": [
+      [
+       "S",
+       0.622
+      ],
+      [
+       "A",
+       0.141
+      ],
+      [
+       "E",
+       0.068
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p018.png",
+   "frame_img": "frames/f018.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 19,
+   "source_frame": 19,
+   "time_s": 1.9,
+   "vehicle_box": [
+    12,
+    4,
+    681,
+    525
+   ],
+   "plate_box": [
+    338,
+    337,
+    369,
+    354
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "BEABLI1",
+   "mean_conf": 0.438,
+   "two_line": true,
+   "sharpness": 2.8,
+   "plate_height_px": 17,
+   "weight": 0.0332,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.39,
+     "alts": [
+      [
+       "B",
+       0.443
+      ],
+      [
+       "E",
+       0.129
+      ],
+      [
+       "C",
+       0.096
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.466,
+     "alts": [
+      [
+       "E",
+       0.521
+      ],
+      [
+       "L",
+       0.203
+      ],
+      [
+       "F",
+       0.096
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.368,
+     "alts": [
+      [
+       "A",
+       0.429
+      ],
+      [
+       "Z",
+       0.28
+      ],
+      [
+       "F",
+       0.053
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.452,
+     "alts": [
+      [
+       "B",
+       0.476
+      ],
+      [
+       "L",
+       0.183
+      ],
+      [
+       "K",
+       0.14
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.716,
+     "alts": [
+      [
+       "L",
+       0.716
+      ],
+      [
+       "I",
+       0.151
+      ],
+      [
+       "E",
+       0.118
+      ]
+     ]
+    },
+    {
+     "char": "I",
+     "conf": 0.374,
+     "alts": [
+      [
+       "I",
+       0.499
+      ],
+      [
+       "F",
+       0.225
+      ],
+      [
+       "S",
+       0.16
+      ]
+     ]
+    },
+    {
+     "char": "1",
+     "conf": 0.3,
+     "alts": [
+      [
+       "1",
+       0.407
+      ],
+      [
+       "Q",
+       0.114
+      ],
+      [
+       "I",
+       0.076
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p019.png",
+   "frame_img": "frames/f019.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 20,
+   "source_frame": 20,
+   "time_s": 2.0,
+   "vehicle_box": [
+    3,
+    3,
+    683,
+    523
+   ],
+   "plate_box": [
+    294,
+    426,
+    357,
+    450
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BS",
+   "mean_conf": 0.674,
+   "two_line": false,
+   "sharpness": 13.5,
+   "plate_height_px": 24,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.704,
+     "alts": [
+      [
+       "B",
+       0.704
+      ],
+      [
+       "E",
+       0.253
+      ],
+      [
+       "D",
+       0.017
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.645,
+     "alts": [
+      [
+       "S",
+       0.645
+      ],
+      [
+       "E",
+       0.147
+      ],
+      [
+       "F",
+       0.063
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p020.png",
+   "frame_img": "frames/f020.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 21,
+   "source_frame": 21,
+   "time_s": 2.1,
+   "vehicle_box": [
+    1,
+    2,
+    678,
+    518
+   ],
+   "plate_box": [
+    286,
+    419,
+    350,
+    444
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "ES",
+   "mean_conf": 0.634,
+   "two_line": false,
+   "sharpness": 14.1,
+   "plate_height_px": 25,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.766,
+     "alts": [
+      [
+       "E",
+       0.766
+      ],
+      [
+       "B",
+       0.112
+      ],
+      [
+       "L",
+       0.046
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.501,
+     "alts": [
+      [
+       "S",
+       0.501
+      ],
+      [
+       "X",
+       0.433
+      ],
+      [
+       "5",
+       0.014
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p021.png",
+   "frame_img": "frames/f021.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 22,
+   "source_frame": 22,
+   "time_s": 2.2,
+   "vehicle_box": [
+    1,
+    1,
+    675,
+    519
+   ],
+   "plate_box": [
+    330,
+    332,
+    360,
+    348
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "ERRDP",
+   "mean_conf": 0.462,
+   "two_line": true,
+   "sharpness": 11.3,
+   "plate_height_px": 16,
+   "weight": 0.0395,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.631,
+     "alts": [
+      [
+       "E",
+       0.631
+      ],
+      [
+       "D",
+       0.195
+      ],
+      [
+       "B",
+       0.088
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.201,
+     "alts": [
+      [
+       "R",
+       0.32
+      ],
+      [
+       "E",
+       0.232
+      ],
+      [
+       "U",
+       0.218
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.708,
+     "alts": [
+      [
+       "R",
+       0.708
+      ],
+      [
+       "K",
+       0.202
+      ],
+      [
+       "N",
+       0.025
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.423,
+     "alts": [
+      [
+       "D",
+       0.46
+      ],
+      [
+       "P",
+       0.312
+      ],
+      [
+       "E",
+       0.073
+      ]
+     ]
+    },
+    {
+     "char": "P",
+     "conf": 0.346,
+     "alts": [
+      [
+       "P",
+       0.418
+      ],
+      [
+       "R",
+       0.345
+      ],
+      [
+       "E",
+       0.054
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p022.png",
+   "frame_img": "frames/f022.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 23,
+   "source_frame": 23,
+   "time_s": 2.3,
+   "vehicle_box": [
+    1,
+    2,
+    676,
+    522
+   ],
+   "plate_box": [
+    269,
+    421,
+    337,
+    446
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BS",
+   "mean_conf": 0.677,
+   "two_line": false,
+   "sharpness": 22.3,
+   "plate_height_px": 25,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.536,
+     "alts": [
+      [
+       "B",
+       0.536
+      ],
+      [
+       "E",
+       0.419
+      ],
+      [
+       "F",
+       0.021
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.818,
+     "alts": [
+      [
+       "S",
+       0.818
+      ],
+      [
+       "X",
+       0.075
+      ],
+      [
+       "I",
+       0.018
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p023.png",
+   "frame_img": "frames/f023.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 24,
+   "source_frame": 24,
+   "time_s": 2.4,
+   "vehicle_box": [
+    0,
+    2,
+    670,
+    525
+   ],
+   "plate_box": [
+    327,
+    336,
+    358,
+    353
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "DAEXRA",
+   "mean_conf": 0.484,
+   "two_line": true,
+   "sharpness": 16.5,
+   "plate_height_px": 17,
+   "weight": 0.0461,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "D",
+     "conf": 0.256,
+     "alts": [
+      [
+       "D",
+       0.358
+      ],
+      [
+       "B",
+       0.144
+      ],
+      [
+       "S",
+       0.119
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.782,
+     "alts": [
+      [
+       "A",
+       0.782
+      ],
+      [
+       "9",
+       0.055
+      ],
+      [
+       "8",
+       0.027
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.616,
+     "alts": [
+      [
+       "E",
+       0.616
+      ],
+      [
+       "D",
+       0.103
+      ],
+      [
+       "R",
+       0.08
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.163,
+     "alts": [
+      [
+       "X",
+       0.328
+      ],
+      [
+       "A",
+       0.188
+      ],
+      [
+       "R",
+       0.097
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.096,
+     "alts": [
+      [
+       "R",
+       0.239
+      ],
+      [
+       "S",
+       0.148
+      ],
+      [
+       "A",
+       0.115
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.993,
+     "alts": [
+      [
+       "A",
+       0.993
+      ],
+      [
+       "E",
+       0.002
+      ],
+      [
+       "D",
+       0.001
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p024.png",
+   "frame_img": "frames/f024.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 25,
+   "source_frame": 25,
+   "time_s": 2.5,
+   "vehicle_box": [
+    1,
+    1,
+    682,
+    523
+   ],
+   "plate_box": [
+    333,
+    334,
+    364,
+    351
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "CLE????3EA",
+   "mean_conf": 0.449,
+   "two_line": true,
+   "sharpness": 9.4,
+   "plate_height_px": 17,
+   "weight": 0.0377,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "C",
+     "conf": 0.086,
+     "alts": [
+      [
+       "C",
+       0.21
+      ],
+      [
+       "L",
+       0.139
+      ],
+      [
+       "E",
+       0.073
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.547,
+     "alts": [
+      [
+       "L",
+       0.547
+      ],
+      [
+       "W",
+       0.222
+      ],
+      [
+       "U",
+       0.079
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.966,
+     "alts": [
+      [
+       "E",
+       0.966
+      ],
+      [
+       "I",
+       0.01
+      ],
+      [
+       "B",
+       0.005
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "3",
+     "conf": 0.394,
+     "alts": [
+      [
+       "3",
+       0.444
+      ],
+      [
+       "4",
+       0.133
+      ],
+      [
+       "9",
+       0.071
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.527,
+     "alts": [
+      [
+       "E",
+       0.527
+      ],
+      [
+       "B",
+       0.241
+      ],
+      [
+       "F",
+       0.095
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.176,
+     "alts": [
+      [
+       "A",
+       0.307
+      ],
+      [
+       "Z",
+       0.131
+      ],
+      [
+       "K",
+       0.099
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p025.png",
+   "frame_img": "frames/f025.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 26,
+   "source_frame": 26,
+   "time_s": 2.6,
+   "vehicle_box": [
+    1,
+    2,
+    685,
+    522
+   ],
+   "plate_box": [
+    334,
+    334,
+    366,
+    351
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "RASARD",
+   "mean_conf": 0.601,
+   "two_line": true,
+   "sharpness": 10.8,
+   "plate_height_px": 17,
+   "weight": 0.0683,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "R",
+     "conf": 0.292,
+     "alts": [
+      [
+       "R",
+       0.382
+      ],
+      [
+       "A",
+       0.088
+      ],
+      [
+       "K",
+       0.086
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.863,
+     "alts": [
+      [
+       "A",
+       0.863
+      ],
+      [
+       "4",
+       0.127
+      ],
+      [
+       "G",
+       0.002
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.266,
+     "alts": [
+      [
+       "S",
+       0.365
+      ],
+      [
+       "5",
+       0.118
+      ],
+      [
+       "N",
+       0.097
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.913,
+     "alts": [
+      [
+       "A",
+       0.923
+      ],
+      [
+       "E",
+       0.044
+      ],
+      [
+       "T",
+       0.006
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.753,
+     "alts": [
+      [
+       "R",
+       0.753
+      ],
+      [
+       "X",
+       0.208
+      ],
+      [
+       "A",
+       0.019
+      ]
+     ]
+    },
+    {
+     "char": "D",
+     "conf": 0.522,
+     "alts": [
+      [
+       "D",
+       0.522
+      ],
+      [
+       "A",
+       0.466
+      ],
+      [
+       "U",
+       0.005
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p026.png",
+   "frame_img": "frames/f026.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 27,
+   "source_frame": 27,
+   "time_s": 2.7,
+   "vehicle_box": [
+    1,
+    2,
+    690,
+    523
+   ],
+   "plate_box": [
+    251,
+    378,
+    312,
+    396
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "LA",
+   "mean_conf": 0.459,
+   "two_line": false,
+   "sharpness": 5.4,
+   "plate_height_px": 18,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "L",
+     "conf": 0.138,
+     "alts": [
+      [
+       "L",
+       0.262
+      ],
+      [
+       "C",
+       0.261
+      ],
+      [
+       "B",
+       0.123
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.78,
+     "alts": [
+      [
+       "A",
+       0.78
+      ],
+      [
+       "E",
+       0.102
+      ],
+      [
+       "I",
+       0.02
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p027.png",
+   "frame_img": "frames/f027.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 28,
+   "source_frame": 28,
+   "time_s": 2.8,
+   "vehicle_box": [
+    2,
+    2,
+    688,
+    523
+   ],
+   "plate_box": [
+    336,
+    334,
+    367,
+    351
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "LBXXE?QEABX",
+   "mean_conf": 0.567,
+   "two_line": true,
+   "sharpness": 10.4,
+   "plate_height_px": 17,
+   "weight": 0.0605,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "L",
+     "conf": 0.048,
+     "alts": [
+      [
+       "L",
+       0.155
+      ],
+      [
+       "P",
+       0.132
+      ],
+      [
+       "A",
+       0.115
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.557,
+     "alts": [
+      [
+       "B",
+       0.557
+      ],
+      [
+       "E",
+       0.375
+      ],
+      [
+       "R",
+       0.032
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.462,
+     "alts": [
+      [
+       "X",
+       0.603
+      ],
+      [
+       "E",
+       0.211
+      ],
+      [
+       "C",
+       0.034
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.787,
+     "alts": [
+      [
+       "X",
+       0.787
+      ],
+      [
+       "I",
+       0.085
+      ],
+      [
+       "R",
+       0.035
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.551,
+     "alts": [
+      [
+       "E",
+       0.551
+      ],
+      [
+       "A",
+       0.199
+      ],
+      [
+       "R",
+       0.047
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "Q",
+     "conf": 0.216,
+     "alts": [
+      [
+       "Q",
+       0.329
+      ],
+      [
+       "M",
+       0.175
+      ],
+      [
+       "P",
+       0.118
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.838,
+     "alts": [
+      [
+       "E",
+       0.838
+      ],
+      [
+       "A",
+       0.11
+      ],
+      [
+       "U",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.653,
+     "alts": [
+      [
+       "A",
+       0.653
+      ],
+      [
+       "D",
+       0.206
+      ],
+      [
+       "Z",
+       0.08
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.722,
+     "alts": [
+      [
+       "B",
+       0.722
+      ],
+      [
+       "E",
+       0.256
+      ],
+      [
+       "R",
+       0.009
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.835,
+     "alts": [
+      [
+       "X",
+       0.835
+      ],
+      [
+       "K",
+       0.088
+      ],
+      [
+       "A",
+       0.033
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p028.png",
+   "frame_img": "frames/f028.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 29,
+   "source_frame": 29,
+   "time_s": 2.9,
+   "vehicle_box": [
+    2,
+    2,
+    693,
+    523
+   ],
+   "plate_box": [
+    339,
+    335,
+    370,
+    352
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "CETVABA",
+   "mean_conf": 0.565,
+   "two_line": true,
+   "sharpness": 9.5,
+   "plate_height_px": 17,
+   "weight": 0.0597,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "C",
+     "conf": 0.133,
+     "alts": [
+      [
+       "C",
+       0.259
+      ],
+      [
+       "L",
+       0.1
+      ],
+      [
+       "K",
+       0.063
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.983,
+     "alts": [
+      [
+       "E",
+       0.983
+      ],
+      [
+       "C",
+       0.004
+      ],
+      [
+       "L",
+       0.003
+      ]
+     ]
+    },
+    {
+     "char": "T",
+     "conf": 0.219,
+     "alts": [
+      [
+       "T",
+       0.331
+      ],
+      [
+       "E",
+       0.118
+      ],
+      [
+       "R",
+       0.108
+      ]
+     ]
+    },
+    {
+     "char": "V",
+     "conf": 0.489,
+     "alts": [
+      [
+       "V",
+       0.542
+      ],
+      [
+       "I",
+       0.056
+      ],
+      [
+       "X",
+       0.046
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.987,
+     "alts": [
+      [
+       "A",
+       0.987
+      ],
+      [
+       "D",
+       0.007
+      ],
+      [
+       "N",
+       0.002
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.875,
+     "alts": [
+      [
+       "B",
+       0.875
+      ],
+      [
+       "E",
+       0.081
+      ],
+      [
+       "D",
+       0.013
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.27,
+     "alts": [
+      [
+       "A",
+       0.369
+      ],
+      [
+       "R",
+       0.286
+      ],
+      [
+       "E",
+       0.072
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p029.png",
+   "frame_img": "frames/f029.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 30,
+   "source_frame": 30,
+   "time_s": 3.0,
+   "vehicle_box": [
+    2,
+    2,
+    702,
+    524
+   ],
+   "plate_box": [
+    248,
+    435,
+    325,
+    463
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "DS",
+   "mean_conf": 0.758,
+   "two_line": false,
+   "sharpness": 15.9,
+   "plate_height_px": 28,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "D",
+     "conf": 0.524,
+     "alts": [
+      [
+       "D",
+       0.524
+      ],
+      [
+       "E",
+       0.169
+      ],
+      [
+       "L",
+       0.061
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.992,
+     "alts": [
+      [
+       "S",
+       0.992
+      ],
+      [
+       "E",
+       0.005
+      ],
+      [
+       "5",
+       0.001
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p030.png",
+   "frame_img": "frames/f030.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 31,
+   "source_frame": 31,
+   "time_s": 3.1,
+   "vehicle_box": [
+    1,
+    2,
+    702,
+    525
+   ],
+   "plate_box": [
+    343,
+    336,
+    375,
+    353
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "2837PKABA",
+   "mean_conf": 0.299,
+   "two_line": true,
+   "sharpness": 7.1,
+   "plate_height_px": 17,
+   "weight": 0.0164,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "2",
+     "conf": 0.703,
+     "alts": [
+      [
+       "2",
+       0.703
+      ],
+      [
+       "5",
+       0.096
+      ],
+      [
+       "4",
+       0.076
+      ]
+     ]
+    },
+    {
+     "char": "8",
+     "conf": 0.119,
+     "alts": [
+      [
+       "8",
+       0.257
+      ],
+      [
+       "E",
+       0.174
+      ],
+      [
+       "3",
+       0.077
+      ]
+     ]
+    },
+    {
+     "char": "3",
+     "conf": 0.058,
+     "alts": [
+      [
+       "3",
+       0.173
+      ],
+      [
+       "8",
+       0.162
+      ],
+      [
+       "D",
+       0.097
+      ]
+     ]
+    },
+    {
+     "char": "7",
+     "conf": 0.138,
+     "alts": [
+      [
+       "7",
+       0.264
+      ],
+      [
+       "N",
+       0.195
+      ],
+      [
+       "5",
+       0.16
+      ]
+     ]
+    },
+    {
+     "char": "P",
+     "conf": 0.191,
+     "alts": [
+      [
+       "P",
+       0.316
+      ],
+      [
+       "V",
+       0.311
+      ],
+      [
+       "7",
+       0.231
+      ]
+     ]
+    },
+    {
+     "char": "K",
+     "conf": 0.068,
+     "alts": [
+      [
+       "K",
+       0.185
+      ],
+      [
+       "3",
+       0.12
+      ],
+      [
+       "I",
+       0.12
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.848,
+     "alts": [
+      [
+       "A",
+       0.848
+      ],
+      [
+       "4",
+       0.064
+      ],
+      [
+       "H",
+       0.02
+      ]
+     ]
+    },
+    {
+     "char": "B",
+     "conf": 0.16,
+     "alts": [
+      [
+       "B",
+       0.283
+      ],
+      [
+       "F",
+       0.186
+      ],
+      [
+       "P",
+       0.143
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.409,
+     "alts": [
+      [
+       "A",
+       0.453
+      ],
+      [
+       "Z",
+       0.307
+      ],
+      [
+       "E",
+       0.165
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p031.png",
+   "frame_img": "frames/f031.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 32,
+   "source_frame": 32,
+   "time_s": 3.2,
+   "vehicle_box": [
+    1,
+    2,
+    706,
+    527
+   ],
+   "plate_box": [
+    232,
+    385,
+    295,
+    407
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BA",
+   "mean_conf": 0.597,
+   "two_line": false,
+   "sharpness": 8.3,
+   "plate_height_px": 22,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.651,
+     "alts": [
+      [
+       "B",
+       0.651
+      ],
+      [
+       "E",
+       0.123
+      ],
+      [
+       "P",
+       0.072
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.542,
+     "alts": [
+      [
+       "A",
+       0.542
+      ],
+      [
+       "T",
+       0.137
+      ],
+      [
+       "J",
+       0.069
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p032.png",
+   "frame_img": "frames/f032.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 33,
+   "source_frame": 33,
+   "time_s": 3.3,
+   "vehicle_box": [
+    2,
+    2,
+    706,
+    531
+   ],
+   "plate_box": [
+    345,
+    340,
+    377,
+    357
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "EERXFZ",
+   "mean_conf": 0.544,
+   "two_line": true,
+   "sharpness": 10.7,
+   "plate_height_px": 17,
+   "weight": 0.0559,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.669,
+     "alts": [
+      [
+       "E",
+       0.669
+      ],
+      [
+       "B",
+       0.084
+      ],
+      [
+       "5",
+       0.08
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.48,
+     "alts": [
+      [
+       "E",
+       0.496
+      ],
+      [
+       "2",
+       0.225
+      ],
+      [
+       "8",
+       0.047
+      ]
+     ]
+    },
+    {
+     "char": "R",
+     "conf": 0.651,
+     "alts": [
+      [
+       "R",
+       0.651
+      ],
+      [
+       "E",
+       0.037
+      ],
+      [
+       "K",
+       0.035
+      ]
+     ]
+    },
+    {
+     "char": "X",
+     "conf": 0.557,
+     "alts": [
+      [
+       "X",
+       0.557
+      ],
+      [
+       "R",
+       0.219
+      ],
+      [
+       "I",
+       0.105
+      ]
+     ]
+    },
+    {
+     "char": "F",
+     "conf": 0.26,
+     "alts": [
+      [
+       "F",
+       0.36
+      ],
+      [
+       "E",
+       0.246
+      ],
+      [
+       "P",
+       0.119
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.648,
+     "alts": [
+      [
+       "Z",
+       0.648
+      ],
+      [
+       "A",
+       0.082
+      ],
+      [
+       "2",
+       0.049
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p033.png",
+   "frame_img": "frames/f033.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 34,
+   "source_frame": 34,
+   "time_s": 3.4,
+   "vehicle_box": [
+    0,
+    1,
+    713,
+    528
+   ],
+   "plate_box": [
+    348,
+    337,
+    380,
+    355
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "BEFEA",
+   "mean_conf": 0.49,
+   "two_line": true,
+   "sharpness": 14.4,
+   "plate_height_px": 18,
+   "weight": 0.0475,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.499,
+     "alts": [
+      [
+       "B",
+       0.5
+      ],
+      [
+       "5",
+       0.146
+      ],
+      [
+       "F",
+       0.081
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.867,
+     "alts": [
+      [
+       "E",
+       0.867
+      ],
+      [
+       "A",
+       0.022
+      ],
+      [
+       "Z",
+       0.018
+      ]
+     ]
+    },
+    {
+     "char": "F",
+     "conf": 0.128,
+     "alts": [
+      [
+       "F",
+       0.253
+      ],
+      [
+       "6",
+       0.093
+      ],
+      [
+       "3",
+       0.093
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.203,
+     "alts": [
+      [
+       "E",
+       0.322
+      ],
+      [
+       "R",
+       0.133
+      ],
+      [
+       "T",
+       0.074
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.75,
+     "alts": [
+      [
+       "A",
+       0.75
+      ],
+      [
+       "E",
+       0.103
+      ],
+      [
+       "4",
+       0.027
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p034.png",
+   "frame_img": "frames/f034.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 35,
+   "source_frame": 35,
+   "time_s": 3.5,
+   "vehicle_box": [
+    2,
+    1,
+    711,
+    533
+   ],
+   "plate_box": [
+    348,
+    340,
+    380,
+    358
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "F??IAEZLZ",
+   "mean_conf": 0.649,
+   "two_line": true,
+   "sharpness": 8.5,
+   "plate_height_px": 18,
+   "weight": 0.0797,
+   "excluded": null,
+   "variant": "clahe",
+   "chars": [
+    {
+     "char": "F",
+     "conf": 0.046,
+     "alts": [
+      [
+       "F",
+       0.152
+      ],
+      [
+       "5",
+       0.141
+      ],
+      [
+       "P",
+       0.112
+      ]
+     ]
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "?",
+     "conf": 0.0,
+     "alts": []
+    },
+    {
+     "char": "I",
+     "conf": 0.59,
+     "alts": [
+      [
+       "I",
+       0.682
+      ],
+      [
+       "7",
+       0.13
+      ],
+      [
+       "A",
+       0.049
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.687,
+     "alts": [
+      [
+       "A",
+       0.687
+      ],
+      [
+       "8",
+       0.184
+      ],
+      [
+       "S",
+       0.069
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.77,
+     "alts": [
+      [
+       "E",
+       0.77
+      ],
+      [
+       "A",
+       0.125
+      ],
+      [
+       "C",
+       0.043
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.638,
+     "alts": [
+      [
+       "Z",
+       0.638
+      ],
+      [
+       "E",
+       0.104
+      ],
+      [
+       "R",
+       0.069
+      ]
+     ]
+    },
+    {
+     "char": "L",
+     "conf": 0.939,
+     "alts": [
+      [
+       "L",
+       0.939
+      ],
+      [
+       "K",
+       0.007
+      ],
+      [
+       "I",
+       0.007
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.87,
+     "alts": [
+      [
+       "Z",
+       0.87
+      ],
+      [
+       "A",
+       0.049
+      ],
+      [
+       "T",
+       0.019
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p035.png",
+   "frame_img": "frames/f035.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 36,
+   "source_frame": 36,
+   "time_s": 3.6,
+   "vehicle_box": [
+    1,
+    1,
+    715,
+    533
+   ],
+   "plate_box": [
+    216,
+    453,
+    300,
+    484
+   ],
+   "plate_source": "detected",
+   "loc_score": 0.25,
+   "text": "BS",
+   "mean_conf": 0.765,
+   "two_line": false,
+   "sharpness": 20.7,
+   "plate_height_px": 31,
+   "weight": 0.0,
+   "excluded": "fewer than 3 legible characters",
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "B",
+     "conf": 0.965,
+     "alts": [
+      [
+       "B",
+       0.965
+      ],
+      [
+       "E",
+       0.02
+      ],
+      [
+       "D",
+       0.01
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.566,
+     "alts": [
+      [
+       "S",
+       0.566
+      ],
+      [
+       "5",
+       0.236
+      ],
+      [
+       "E",
+       0.04
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p036.png",
+   "frame_img": "frames/f036.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 37,
+   "source_frame": 37,
+   "time_s": 3.7,
+   "vehicle_box": [
+    1,
+    2,
+    716,
+    533
+   ],
+   "plate_box": [
+    350,
+    341,
+    383,
+    358
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "EAAAPZ",
+   "mean_conf": 0.53,
+   "two_line": true,
+   "sharpness": 7.2,
+   "plate_height_px": 17,
+   "weight": 0.0515,
+   "excluded": "lower quality than the frames selected for fusion",
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.439,
+     "alts": [
+      [
+       "E",
+       0.469
+      ],
+      [
+       "F",
+       0.339
+      ],
+      [
+       "B",
+       0.068
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.958,
+     "alts": [
+      [
+       "A",
+       0.958
+      ],
+      [
+       "H",
+       0.026
+      ],
+      [
+       "4",
+       0.01
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.538,
+     "alts": [
+      [
+       "A",
+       0.652
+      ],
+      [
+       "K",
+       0.2
+      ],
+      [
+       "R",
+       0.023
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 1.0,
+     "alts": [
+      [
+       "A",
+       1.0
+      ],
+      [
+       "E",
+       0.0
+      ],
+      [
+       "J",
+       0.0
+      ]
+     ]
+    },
+    {
+     "char": "P",
+     "conf": 0.094,
+     "alts": [
+      [
+       "P",
+       0.216
+      ],
+      [
+       "F",
+       0.201
+      ],
+      [
+       "E",
+       0.163
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.153,
+     "alts": [
+      [
+       "Z",
+       0.277
+      ],
+      [
+       "E",
+       0.213
+      ],
+      [
+       "I",
+       0.139
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p037.png",
+   "frame_img": "frames/f037.jpg",
+   "used_in_fusion": false
+  },
+  {
+   "frame": 38,
+   "source_frame": 38,
+   "time_s": 3.8,
+   "vehicle_box": [
+    1,
+    3,
+    719,
+    534
+   ],
+   "plate_box": [
+    351,
+    342,
+    384,
+    359
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "EAS774EZE",
+   "mean_conf": 0.558,
+   "two_line": true,
+   "sharpness": 9.1,
+   "plate_height_px": 17,
+   "weight": 0.058,
+   "excluded": null,
+   "variant": "sharpened",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.607,
+     "alts": [
+      [
+       "E",
+       0.607
+      ],
+      [
+       "R",
+       0.095
+      ],
+      [
+       "B",
+       0.087
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.883,
+     "alts": [
+      [
+       "A",
+       0.883
+      ],
+      [
+       "I",
+       0.04
+      ],
+      [
+       "4",
+       0.016
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.261,
+     "alts": [
+      [
+       "S",
+       0.377
+      ],
+      [
+       "3",
+       0.148
+      ],
+      [
+       "E",
+       0.104
+      ]
+     ]
+    },
+    {
+     "char": "7",
+     "conf": 0.476,
+     "alts": [
+      [
+       "7",
+       0.571
+      ],
+      [
+       "5",
+       0.143
+      ],
+      [
+       "8",
+       0.065
+      ]
+     ]
+    },
+    {
+     "char": "7",
+     "conf": 0.908,
+     "alts": [
+      [
+       "7",
+       0.908
+      ],
+      [
+       "3",
+       0.027
+      ],
+      [
+       "I",
+       0.012
+      ]
+     ]
+    },
+    {
+     "char": "4",
+     "conf": 0.585,
+     "alts": [
+      [
+       "4",
+       0.614
+      ],
+      [
+       "1",
+       0.301
+      ],
+      [
+       "Q",
+       0.023
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.645,
+     "alts": [
+      [
+       "E",
+       0.645
+      ],
+      [
+       "F",
+       0.213
+      ],
+      [
+       "B",
+       0.068
+      ]
+     ]
+    },
+    {
+     "char": "Z",
+     "conf": 0.249,
+     "alts": [
+      [
+       "Z",
+       0.358
+      ],
+      [
+       "S",
+       0.153
+      ],
+      [
+       "C",
+       0.114
+      ]
+     ]
+    },
+    {
+     "char": "E",
+     "conf": 0.412,
+     "alts": [
+      [
+       "E",
+       0.455
+      ],
+      [
+       "I",
+       0.328
+      ],
+      [
+       "S",
+       0.073
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p038.png",
+   "frame_img": "frames/f038.jpg",
+   "used_in_fusion": true
+  },
+  {
+   "frame": 39,
+   "source_frame": 39,
+   "time_s": 3.9,
+   "vehicle_box": [
+    1,
+    2,
+    727,
+    533
+   ],
+   "plate_box": [
+    355,
+    341,
+    388,
+    359
+   ],
+   "plate_source": "propagated",
+   "loc_score": 0.1,
+   "text": "EASA",
+   "mean_conf": 0.831,
+   "two_line": true,
+   "sharpness": 8.4,
+   "plate_height_px": 18,
+   "weight": 0.1309,
+   "excluded": null,
+   "variant": "gray",
+   "chars": [
+    {
+     "char": "E",
+     "conf": 0.517,
+     "alts": [
+      [
+       "E",
+       0.517
+      ],
+      [
+       "B",
+       0.26
+      ],
+      [
+       "L",
+       0.055
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.989,
+     "alts": [
+      [
+       "A",
+       0.989
+      ],
+      [
+       "Z",
+       0.006
+      ],
+      [
+       "I",
+       0.001
+      ]
+     ]
+    },
+    {
+     "char": "S",
+     "conf": 0.904,
+     "alts": [
+      [
+       "S",
+       0.904
+      ],
+      [
+       "F",
+       0.03
+      ],
+      [
+       "5",
+       0.022
+      ]
+     ]
+    },
+    {
+     "char": "A",
+     "conf": 0.915,
+     "alts": [
+      [
+       "A",
+       0.915
+      ],
+      [
+       "N",
+       0.023
+      ],
+      [
+       "H",
+       0.016
+      ]
+     ]
+    }
+   ],
+   "plate_img": "plates/p039.png",
+   "frame_img": "frames/f039.jpg",
+   "used_in_fusion": true
+  }
+ ],
+ "fusion": {
+  "positions": [
+   {
+    "idx": 0,
+    "char": "E",
+    "best_guess": "E",
+    "conf": 0.646,
+    "known": true,
+    "n_frames": 14,
+    "alts": [
+     [
+      "E",
+      0.646
+     ],
+     [
+      "B",
+      0.074
+     ],
+     [
+      "F",
+      0.058
+     ]
+    ],
+    "dist": {
+     "E": 0.6462,
+     "B": 0.0741,
+     "F": 0.0584,
+     "A": 0.0458,
+     "R": 0.0429,
+     "D": 0.0284,
+     "K": 0.0248,
+     "C": 0.0187
+    },
+    "votes": [
+     {
+      "frame": 16,
+      "char": "E",
+      "conf": 0.827
+     },
+     {
+      "frame": 9,
+      "char": "E",
+      "conf": 0.653
+     },
+     {
+      "frame": 15,
+      "char": "E",
+      "conf": 0.687
+     },
+     {
+      "frame": 3,
+      "char": "E",
+      "conf": 0.83
+     },
+     {
+      "frame": 39,
+      "char": "E",
+      "conf": 0.517
+     },
+     {
+      "frame": 35,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 17,
+      "char": "E",
+      "conf": 0.647
+     },
+     {
+      "frame": 4,
+      "char": "R",
+      "conf": 0.13
+     },
+     {
+      "frame": 26,
+      "char": "R",
+      "conf": 0.292
+     },
+     {
+      "frame": 7,
+      "char": "E",
+      "conf": 0.945
+     },
+     {
+      "frame": 5,
+      "char": "A",
+      "conf": 0.691
+     },
+     {
+      "frame": 28,
+      "char": "E",
+      "conf": 0.551
+     },
+     {
+      "frame": 29,
+      "char": "E",
+      "conf": 0.983
+     },
+     {
+      "frame": 38,
+      "char": "E",
+      "conf": 0.607
+     },
+     {
+      "frame": 10,
+      "char": "D",
+      "conf": 0.27
+     }
+    ]
+   },
+   {
+    "idx": 1,
+    "char": "?",
+    "best_guess": "S",
+    "conf": 0.394,
+    "known": false,
+    "n_frames": 12,
+    "alts": [
+     [
+      "S",
+      0.394
+     ],
+     [
+      "A",
+      0.152
+     ],
+     [
+      "1",
+      0.082
+     ]
+    ],
+    "dist": {
+     "S": 0.394,
+     "A": 0.1525,
+     "1": 0.0818,
+     "X": 0.0485,
+     "4": 0.0482,
+     "E": 0.0466,
+     "C": 0.0417,
+     "L": 0.0249
+    },
+    "votes": [
+     {
+      "frame": 16,
+      "char": "S",
+      "conf": 0.939
+     },
+     {
+      "frame": 9,
+      "char": "S",
+      "conf": 0.669
+     },
+     {
+      "frame": 15,
+      "char": "C",
+      "conf": 0.205
+     },
+     {
+      "frame": 3,
+      "char": "1",
+      "conf": 0.876
+     },
+     {
+      "frame": 39,
+      "char": "A",
+      "conf": 0.989
+     },
+     {
+      "frame": 35,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 17,
+      "char": "X",
+      "conf": 0.81
+     },
+     {
+      "frame": 4,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 26,
+      "char": "A",
+      "conf": 0.863
+     },
+     {
+      "frame": 7,
+      "char": "B",
+      "conf": 0.485
+     },
+     {
+      "frame": 5,
+      "char": "4",
+      "conf": 0.865
+     },
+     {
+      "frame": 28,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 29,
+      "char": "V",
+      "conf": 0.489
+     },
+     {
+      "frame": 38,
+      "char": "S",
+      "conf": 0.261
+     },
+     {
+      "frame": 10,
+      "char": "L",
+      "conf": 0.212
+     }
+    ]
+   },
+   {
+    "idx": 2,
+    "char": "?",
+    "best_guess": "S",
+    "conf": 0.471,
+    "known": false,
+    "n_frames": 14,
+    "alts": [
+     [
+      "S",
+      0.471
+     ],
+     [
+      "A",
+      0.163
+     ],
+     [
+      "H",
+      0.1
+     ]
+    ],
+    "dist": {
+     "S": 0.4709,
+     "A": 0.1631,
+     "H": 0.1001,
+     "4": 0.033,
+     "Z": 0.027,
+     "X": 0.0222,
+     "R": 0.0207,
+     "I": 0.0197
+    },
+    "votes": [
+     {
+      "frame": 16,
+      "char": "S",
+      "conf": 0.989
+     },
+     {
+      "frame": 9,
+      "char": "H",
+      "conf": 0.747
+     },
+     {
+      "frame": 15,
+      "char": "S",
+      "conf": 0.701
+     },
+     {
+      "frame": 39,
+      "char": "S",
+      "conf": 0.904
+     },
+     {
+      "frame": 35,
+      "char": "A",
+      "conf": 0.687
+     },
+     {
+      "frame": 17,
+      "char": "G",
+      "conf": 0.065
+     },
+     {
+      "frame": 4,
+      "char": "A",
+      "conf": 0.446
+     },
+     {
+      "frame": 26,
+      "char": "S",
+      "conf": 0.266
+     },
+     {
+      "frame": 7,
+      "char": "A",
+      "conf": 0.706
+     },
+     {
+      "frame": 5,
+      "char": "4",
+      "conf": 0.513
+     },
+     {
+      "frame": 28,
+      "char": "A",
+      "conf": 0.653
+     },
+     {
+      "frame": 29,
+      "char": "A",
+      "conf": 0.27
+     },
+     {
+      "frame": 38,
+      "char": "Z",
+      "conf": 0.249
+     },
+     {
+      "frame": 10,
+      "char": "A",
+      "conf": 0.731
+     }
+    ]
+   }
+  ],
+  "text": "E??",
+  "n_frames": 15,
+  "reference_frame": 16,
+  "insertions": {
+   "-1": 0.399,
+   "2": 0.24,
+   "1": 0.282,
+   "0": 0.226
+  }
+ },
+ "attributes": {
+  "colour": {
+   "black": 0.4492,
+   "grey": 0.3912,
+   "white": 0.1133,
+   "silver": 0.0464
+  },
+  "body_type": {
+   "suv": 0.8247,
+   "van": 0.1056,
+   "car": 0.0553,
+   "truck": 0.0092,
+   "auto-rickshaw": 0.0046,
+   "bus": 0.0003,
+   "two-wheeler": 0.0003
+  },
+  "body_type_clip": {
+   "suv": 0.7974,
+   "van": 0.1698,
+   "car": 0.03,
+   "truck": 0.0015,
+   "bus": 0.0005,
+   "auto-rickshaw": 0.0005,
+   "two-wheeler": 0.0004
+  },
+  "make_model": {
+   "Mahindra Scorpio": 0.7279,
+   "Maruti Suzuki Brezza": 0.14,
+   "Mahindra XUV700": 0.076,
+   "Hyundai Creta": 0.032,
+   "Kia Sonet": 0.0089
+  },
+  "colour_hint": null,
+  "body_hint": null
+ },
+ "match": {
+  "status": "no_confident_match",
+  "message": "No confident match - plate evidence is too weak to single out a vehicle. Candidates below are investigative leads only.",
+  "p_not_in_registry": 44.9,
+  "n_registry": 600,
+  "n_plausible": 46,
+  "candidates": [
+   {
+    "rank": 1,
+    "vehicle": {
+     "reg_no": "GJ01FA5495",
+     "make": "Mahindra",
+     "model": "Scorpio",
+     "body_type": "suv",
+     "colour": "black",
+     "year": "2016",
+     "fuel": "Diesel",
+     "owner": "Siddharth Sharma",
+     "city": "Ahmedabad",
+     "status": "Active"
+    },
+    "confidence": 3.2,
+    "score": {
+     "total_llr": 2.35,
+     "plate_llr": -0.96,
+     "colour_llr": 1.05,
+     "body_llr": 1.14,
+     "model_llr": 1.13
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": -0.96,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "G",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "J",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "0",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "E",
+        "conf": 0.646,
+        "reg": "F",
+        "rel": "similar",
+        "llr": 1.49
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "A",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "5",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "4",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "9",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "5",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 0,
+       "similar": 1,
+       "mismatch": 0,
+       "unknown": 2,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": -0.96,
+      "text": "Plate (video, multi-frame): read 'E??' vs registry 'GJ01FA5495' - 0/1 readable characters match exactly, 1 visually similar (E~F), 2 unreadable position(s) left neutral, 7 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 1.05,
+      "text": "Observed colour 'black' (45%) matches registered colour 'black'."
+     },
+     {
+      "factor": "body type",
+      "llr": 1.14,
+      "text": "Observed body type 'suv' (82%) matches registered 'suv'."
+     },
+     {
+      "factor": "make/model",
+      "llr": 1.13,
+      "text": "Make/model estimate 'Mahindra Scorpio' (73%) vs registered 'Mahindra Scorpio'."
+     }
+    ]
+   },
+   {
+    "rank": 2,
+    "vehicle": {
+     "reg_no": "UP14HE9386",
+     "make": "Mahindra",
+     "model": "XUV700",
+     "body_type": "suv",
+     "colour": "silver",
+     "year": "2010",
+     "fuel": "Petrol",
+     "owner": "Neha Shaikh",
+     "city": "Lucknow",
+     "status": "Active"
+    },
+    "confidence": 3.1,
+    "score": {
+     "total_llr": 2.35,
+     "plate_llr": 0.55,
+     "colour_llr": 0.05,
+     "body_llr": 1.14,
+     "model_llr": 0.62
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": 0.55,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "U",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "P",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "4",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "H",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "E",
+        "conf": 0.646,
+        "reg": "E",
+        "rel": "exact",
+        "llr": 3.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "9",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "3",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "8",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "6",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 1,
+       "similar": 0,
+       "mismatch": 0,
+       "unknown": 2,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": 0.55,
+      "text": "Plate (video, multi-frame): read 'E??' vs registry 'UP14HE9386' - 1/1 readable characters match exactly, 2 unreadable position(s) left neutral, 7 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 0.05,
+      "text": "Observed colour 'black' (45%) conflicts with registered colour 'silver'."
+     },
+     {
+      "factor": "body type",
+      "llr": 1.14,
+      "text": "Observed body type 'suv' (82%) matches registered 'suv'."
+     },
+     {
+      "factor": "make/model",
+      "llr": 0.62,
+      "text": "Make/model estimate 'Mahindra Scorpio' (73%) vs registered 'Mahindra XUV700'."
+     }
+    ]
+   },
+   {
+    "rank": 3,
+    "vehicle": {
+     "reg_no": "TN07BF5459",
+     "make": "Mahindra",
+     "model": "Scorpio",
+     "body_type": "suv",
+     "colour": "grey",
+     "year": "2020",
+     "fuel": "CNG",
+     "owner": "Kavya Iyer",
+     "city": "Chennai",
+     "status": "Active"
+    },
+    "confidence": 2.8,
+    "score": {
+     "total_llr": 2.22,
+     "plate_llr": -0.96,
+     "colour_llr": 0.92,
+     "body_llr": 1.14,
+     "model_llr": 1.13
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": -0.96,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "T",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "N",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "0",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "7",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "B",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "E",
+        "conf": 0.646,
+        "reg": "F",
+        "rel": "similar",
+        "llr": 1.49
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "5",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "4",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "5",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "9",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 0,
+       "similar": 1,
+       "mismatch": 0,
+       "unknown": 2,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": -0.96,
+      "text": "Plate (video, multi-frame): read 'E??' vs registry 'TN07BF5459' - 0/1 readable characters match exactly, 1 visually similar (E~F), 2 unreadable position(s) left neutral, 7 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 0.92,
+      "text": "Observed colour 'black' (45%) is compatible with registered colour 'grey'."
+     },
+     {
+      "factor": "body type",
+      "llr": 1.14,
+      "text": "Observed body type 'suv' (82%) matches registered 'suv'."
+     },
+     {
+      "factor": "make/model",
+      "llr": 1.13,
+      "text": "Make/model estimate 'Mahindra Scorpio' (73%) vs registered 'Mahindra Scorpio'."
+     }
+    ]
+   },
+   {
+    "rank": 4,
+    "vehicle": {
+     "reg_no": "KA01GE0255",
+     "make": "Hyundai",
+     "model": "Creta",
+     "body_type": "suv",
+     "colour": "white",
+     "year": "2012",
+     "fuel": "Diesel",
+     "owner": "Ananya Khan",
+     "city": "Bengaluru",
+     "status": "Active"
+    },
+    "confidence": 1.7,
+    "score": {
+     "total_llr": 1.71,
+     "plate_llr": 0.55,
+     "colour_llr": 0.1,
+     "body_llr": 1.14,
+     "model_llr": -0.08
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": 0.55,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "K",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "A",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "0",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "G",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "E",
+        "conf": 0.646,
+        "reg": "E",
+        "rel": "exact",
+        "llr": 3.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "0",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "2",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "5",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "5",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 1,
+       "similar": 0,
+       "mismatch": 0,
+       "unknown": 2,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": 0.55,
+      "text": "Plate (video, multi-frame): read 'E??' vs registry 'KA01GE0255' - 1/1 readable characters match exactly, 2 unreadable position(s) left neutral, 7 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 0.1,
+      "text": "Observed colour 'black' (45%) conflicts with registered colour 'white'."
+     },
+     {
+      "factor": "body type",
+      "llr": 1.14,
+      "text": "Observed body type 'suv' (82%) matches registered 'suv'."
+     },
+     {
+      "factor": "make/model",
+      "llr": -0.08,
+      "text": "Make/model estimate 'Mahindra Scorpio' (73%) vs registered 'Hyundai Creta'."
+     }
+    ]
+   },
+   {
+    "rank": 5,
+    "vehicle": {
+     "reg_no": "KL11EW8508",
+     "make": "Maruti Suzuki",
+     "model": "WagonR",
+     "body_type": "car",
+     "colour": "black",
+     "year": "2017",
+     "fuel": "Petrol",
+     "owner": "Fatima Sharma",
+     "city": "Kochi",
+     "status": "Active"
+    },
+    "confidence": 1.4,
+    "score": {
+     "total_llr": 1.52,
+     "plate_llr": 0.55,
+     "colour_llr": 1.05,
+     "body_llr": -0.0,
+     "model_llr": -0.08
+    },
+    "plate_alignment": [
+     {
+      "source": "video, multi-frame",
+      "llr": 0.55,
+      "rows": [
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "K",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "L",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "1",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "E",
+        "conf": 0.646,
+        "reg": "E",
+        "rel": "exact",
+        "llr": 3.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "W",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "?",
+        "conf": 0.0,
+        "reg": "8",
+        "rel": "unknown",
+        "llr": 0.0
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "5",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "0",
+        "rel": "not-visible",
+        "llr": -0.35
+       },
+       {
+        "obs": "",
+        "conf": 0,
+        "reg": "8",
+        "rel": "not-visible",
+        "llr": -0.35
+       }
+      ],
+      "stats": {
+       "exact": 1,
+       "similar": 0,
+       "mismatch": 0,
+       "unknown": 2,
+       "known": 1
+      }
+     }
+    ],
+    "reasons": [
+     {
+      "factor": "plate",
+      "llr": 0.55,
+      "text": "Plate (video, multi-frame): read 'E??' vs registry 'KL11EW8508' - 1/1 readable characters match exactly, 2 unreadable position(s) left neutral, 7 plate character(s) outside the visible part."
+     },
+     {
+      "factor": "colour",
+      "llr": 1.05,
+      "text": "Observed colour 'black' (45%) matches registered colour 'black'."
+     },
+     {
+      "factor": "body type",
+      "llr": -0.0,
+      "text": "Observed body type 'suv' (82%) is compatible with registered 'car'."
+     },
+     {
+      "factor": "make/model",
+      "llr": -0.08,
+      "text": "Make/model estimate 'Mahindra Scorpio' (73%) vs registered 'Maruti Suzuki WagonR'."
+     }
+    ]
+   }
+  ]
+ },
+ "signature": {
+  "embedding": [
+   0.02452000044286251,
+   0.038339998573064804,
+   -0.013299999758601189,
+   -0.0040699997916817665,
+   0.03655000030994415,
+   0.021139999851584435,
+   0.019060000777244568,
+   -0.009109999984502792,
+   -0.03339000046253204,
+   -0.002959999954327941,
+   0.006140000186860561,
+   0.004610000178217888,
+   0.060029998421669006,
+   -0.023150000721216202,
+   -0.009669999592006207,
+   0.005739999935030937,
+   0.08558999747037888,
+   -0.01080000028014183,
+   -0.003700000001117587,
+   -0.033969998359680176,
+   0.04165999963879585,
+   0.012059999629855156,
+   0.004490000195801258,
+   0.02126000076532364,
+   0.018789999186992645,
+   0.044759999960660934,
+   -0.006599999964237213,
+   -0.011250000447034836,
+   -0.050289999693632126,
+   0.014159999787807465,
+   -0.017810000106692314,
+   -0.03058999963104725,
+   -0.019190000370144844,
+   0.019840000197291374,
+   0.040130000561475754,
+   0.007149999961256981,
+   -0.01221999991685152,
+   -0.018540000542998314,
+   -0.009589999914169312,
+   0.0865899994969368,
+   -0.011950000189244747,
+   0.06453000009059906,
+   0.007660000119358301,
+   -0.026110000908374786,
+   -0.028449999168515205,
+   0.03376999869942665,
+   -0.021379999816417694,
+   0.0062699997797608376,
+   0.035009998828172684,
+   -0.038430001586675644,
+   0.007899999618530273,
+   -0.026019999757409096,
+   0.006800000090152025,
+   0.00039000000106170774,
+   -0.00812000036239624,
+   -0.013199999928474426,
+   0.004430000204592943,
+   -0.0024500000290572643,
+   -0.008829999715089798,
+   -0.01558000035583973,
+   0.06955999881029129,
+   -0.07304000109434128,
+   0.004809999838471413,
+   0.020150000229477882,
+   0.015720000490546227,
+   0.0007099999929778278,
+   -0.011970000341534615,
+   0.03618000075221062,
+   0.00925000011920929,
+   -0.019990000873804092,
+   0.009239999577403069,
+   -0.05762999877333641,
+   -0.004660000093281269,
+   0.0019399999873712659,
+   -0.019990000873804092,
+   0.028909999877214432,
+   -0.03311999887228012,
+   -0.044849999248981476,
+   0.03443999961018562,
+   -0.02783999964594841,
+   0.004579999949783087,
+   -0.018290000036358833,
+   -0.010820000432431698,
+   -0.016279999166727066,
+   -0.002689999993890524,
+   0.02622999995946884,
+   -0.017969999462366104,
+   0.025200000032782555,
+   0.02993999980390072,
+   -0.04623999819159508,
+   0.01408000010997057,
+   -0.059470001608133316,
+   -0.5520200133323669,
+   0.06589999794960022,
+   -0.03223000094294548,
+   0.02369000017642975,
+   0.005960000213235617,
+   -0.007340000011026859,
+   0.05127999931573868,
+   0.08053000271320343,
+   0.03376000002026558,
+   0.048569999635219574,
+   0.06463000178337097,
+   0.05285000056028366,
+   -0.03010999970138073,
+   0.0015899999998509884,
+   -0.17196999490261078,
+   0.034299999475479126,
+   -0.009390000253915787,
+   -0.0016499999910593033,
+   0.011730000376701355,
+   -9.000000136438757e-05,
+   0.007550000213086605,
+   -0.009209999814629555,
+   0.0243500005453825,
+   0.002090000081807375,
+   0.026820000261068344,
+   -0.02889999933540821,
+   -0.009630000218749046,
+   -0.0514799989759922,
+   0.03866000100970268,
+   -0.013869999907910824,
+   -0.050519999116659164,
+   0.005450000055134296,
+   0.024569999426603317,
+   -0.0509600006043911,
+   0.01868000067770481,
+   -0.008019999600946903,
+   -0.003120000008493662,
+   -0.012889999896287918,
+   -0.00471000000834465,
+   -0.04041000083088875,
+   -0.006670000031590462,
+   0.07101999968290329,
+   0.024890000000596046,
+   -0.008259999565780163,
+   0.018330000340938568,
+   -0.0420599989593029,
+   -0.004730000160634518,
+   0.015709999948740005,
+   0.012509999796748161,
+   -0.019579999148845673,
+   -0.013500000350177288,
+   -0.03643999993801117,
+   -0.004840000066906214,
+   -0.024769999086856842,
+   0.007139999885112047,
+   0.06538999825716019,
+   -0.003229999914765358,
+   -0.005169999785721302,
+   -0.004619999788701534,
+   0.033560000360012054,
+   0.028310000896453857,
+   0.027219999581575394,
+   0.0003100000030826777,
+   -0.009519999846816063,
+   0.04295000061392784,
+   -0.0589900016784668,
+   0.026930000633001328,
+   0.03694000095129013,
+   -0.027899999171495438,
+   0.004350000061094761,
+   -0.05530000105500221,
+   -0.01761000044643879,
+   0.054669998586177826,
+   -0.0009899999713525176,
+   0.04625000059604645,
+   0.005570000037550926,
+   0.03167000040411949,
+   -0.018149999901652336,
+   -0.040119998157024384,
+   0.04366999864578247,
+   -0.0008500000112690032,
+   -0.05274000018835068,
+   0.0053400001488626,
+   -0.03279000148177147,
+   0.18045000731945038,
+   -0.012400000356137753,
+   0.007619999814778566,
+   -0.046720001846551895,
+   -0.016090000048279762,
+   -0.027389999479055405,
+   -0.007939999923110008,
+   -0.01283000037074089,
+   -0.011049999855458736,
+   -0.04236000031232834,
+   -0.022789999842643738,
+   -0.023770000785589218,
+   -0.0021800000686198473,
+   -0.015169999562203884,
+   0.03067000024020672,
+   0.006310000084340572,
+   0.03553000092506409,
+   -0.014890000224113464,
+   -0.05389999970793724,
+   -0.003010000102221966,
+   -0.02346000075340271,
+   0.00014000000373926014,
+   -0.08613999933004379,
+   0.04633000120520592,
+   -0.01071999967098236,
+   -0.021880000829696655,
+   0.03771999850869179,
+   0.027879999950528145,
+   0.002199999988079071,
+   -0.012190000154078007,
+   -0.02848999947309494,
+   -0.03757999837398529,
+   -0.04039999842643738,
+   0.04400999844074249,
+   0.0035200000274926424,
+   0.036649998277425766,
+   0.006899999920278788,
+   0.02508999966084957,
+   -0.003869999898597598,
+   -0.018950000405311584,
+   0.003289999905973673,
+   0.024310000240802765,
+   -0.010889999568462372,
+   0.0203699991106987,
+   -0.042729999870061874,
+   -0.061769999563694,
+   0.01597999967634678,
+   -0.03790999948978424,
+   0.05936000123620033,
+   -0.026170000433921814,
+   -0.07046999782323837,
+   -0.029980000108480453,
+   -0.0012199999764561653,
+   0.031539998948574066,
+   -0.017170000821352005,
+   -0.0157299991697073,
+   -0.030489999800920486,
+   0.13258999586105347,
+   0.0033599999733269215,
+   0.06948000192642212,
+   0.0157299991697073,
+   0.04298999905586243,
+   -0.045099999755620956,
+   -0.0023799999617040157,
+   0.00571999978274107,
+   0.017659999430179596,
+   0.01384000014513731,
+   -0.05249999836087227,
+   -0.021469999104738235,
+   0.04540000110864639,
+   0.045910000801086426,
+   0.03508999943733215,
+   0.0004600000102072954,
+   0.008150000125169754,
+   0.04479999840259552,
+   0.04941999912261963,
+   -0.003759999992325902,
+   -0.003969999961555004,
+   0.014689999632537365,
+   -0.006579999811947346,
+   0.013949999585747719,
+   0.02565000019967556,
+   0.23579999804496765,
+   -0.09004999697208405,
+   -0.022600000724196434,
+   -0.008009999990463257,
+   0.007819999940693378,
+   0.11527000367641449,
+   0.03426000103354454,
+   -0.005760000087320805,
+   0.0083600003272295,
+   0.05130000039935112,
+   0.037060000002384186,
+   -0.04202000051736832,
+   -0.0011500000255182385,
+   0.02312999963760376,
+   0.010029999539256096,
+   -0.02044999971985817,
+   0.012670000083744526,
+   -0.0015300000086426735,
+   -0.009159999899566174,
+   -0.014240000396966934,
+   0.011239999905228615,
+   -0.0038900000508874655,
+   0.029589999467134476,
+   0.021779999136924744,
+   -0.06802999973297119,
+   -0.002589999930933118,
+   -0.028389999642968178,
+   0.0022700000554323196,
+   0.05372000113129616,
+   -0.00107999995816499,
+   0.017629999667406082,
+   -0.03432999923825264,
+   0.02498999983072281,
+   -0.0625,
+   0.028540000319480896,
+   0.01939000003039837,
+   -0.03206999972462654,
+   0.04868999868631363,
+   0.06532999873161316,
+   -0.029249999672174454,
+   0.06298000365495682,
+   0.023479999974370003,
+   0.02046000026166439,
+   0.04805999994277954,
+   0.009259999729692936,
+   0.0022299999836832285,
+   0.006829999852925539,
+   -0.001820000004954636,
+   0.015540000051259995,
+   0.03610000014305115,
+   0.036010000854730606,
+   0.02094000019133091,
+   0.0398700013756752,
+   0.02085000090301037,
+   0.07096000015735626,
+   0.021950000897049904,
+   0.04069000110030174,
+   0.05640000104904175,
+   -0.05033000186085701,
+   0.043480001389980316,
+   -0.0034799999557435513,
+   -0.01063000038266182,
+   0.008469999767839909,
+   0.09572000056505203,
+   -0.03180000185966492,
+   0.0007699999841861427,
+   -0.009709999896585941,
+   -0.01071999967098236,
+   0.03633999824523926,
+   -0.003800000064074993,
+   -0.011500000022351742,
+   -0.021090000867843628,
+   0.01988000050187111,
+   0.03926999866962433,
+   0.02418999932706356,
+   0.05042999982833862,
+   0.00107999995816499,
+   0.014109999872744083,
+   -0.01844000071287155,
+   -0.013120000250637531,
+   -0.04707999899983406,
+   -0.0055599999614059925,
+   -0.00039000000106170774,
+   -0.048990000039339066,
+   0.015780000016093254,
+   0.006149999797344208,
+   0.028920000419020653,
+   0.006300000008195639,
+   0.032829999923706055,
+   0.026410000398755074,
+   -0.010940000414848328,
+   0.02232000045478344,
+   -0.02118000015616417,
+   -0.013899999670684338,
+   -0.02483000047504902,
+   0.013869999907910824,
+   -0.01271000038832426,
+   -0.02776999957859516,
+   0.029529999941587448,
+   0.019610000774264336,
+   0.01583000086247921,
+   -0.012350000441074371,
+   0.07321999967098236,
+   -0.022299999371170998,
+   0.02768000029027462,
+   0.007449999917298555,
+   -0.1125200018286705,
+   0.00494999997317791,
+   -0.011730000376701355,
+   -0.03350000083446503,
+   0.013330000452697277,
+   -0.0021899999119341373,
+   -0.01728999987244606,
+   0.004860000219196081,
+   0.0106800002977252,
+   -0.020899999886751175,
+   0.05683999881148338,
+   0.03133999928832054,
+   0.09529999643564224,
+   -0.00749000022187829,
+   0.053119998425245285,
+   0.0370200015604496,
+   -0.0026199999265372753,
+   0.05144999921321869,
+   0.0034600000362843275,
+   -0.013389999978244305,
+   0.04566999897360802,
+   0.09233999997377396,
+   0.03170999884605408,
+   0.0018599999602884054,
+   0.015930000692605972,
+   -0.002300000051036477,
+   0.012079999782145023,
+   -0.011979999952018261,
+   -0.014259999617934227,
+   0.004900000058114529,
+   -0.01131999958306551,
+   -0.031690001487731934,
+   0.03141000121831894,
+   0.002689999993890524,
+   -0.03736000135540962,
+   0.001610000035725534,
+   0.03305999934673309,
+   0.06528999656438828,
+   0.05087999999523163,
+   -0.03302000090479851,
+   -0.011389999650418758,
+   0.02127999998629093,
+   0.02703999914228916,
+   0.025790000334382057,
+   0.01809000037610531,
+   -0.03460000082850456,
+   0.02655000053346157,
+   0.0018500000005587935,
+   0.00546000013127923,
+   0.01865999959409237,
+   0.006630000192672014,
+   -0.011850000359117985,
+   -0.016790000721812248,
+   -0.027489999309182167,
+   -0.009200000204145908,
+   0.002240000059828162,
+   -0.026729999110102654,
+   0.017170000821352005,
+   0.01947999931871891,
+   0.025459999218583107,
+   -0.0287299994379282,
+   0.016589999198913574,
+   0.005470000207424164,
+   0.036649998277425766,
+   -0.20196999609470367,
+   0.00395999988541007,
+   -0.031449999660253525,
+   0.027639999985694885,
+   -0.014109999872744083,
+   0.009879999794065952,
+   -0.011029999703168869,
+   -0.023250000551342964,
+   0.0012100000167265534,
+   0.010610000230371952,
+   0.011049999855458736,
+   0.010809999890625477,
+   -0.02725999988615513,
+   0.009770000353455544,
+   0.05480000004172325,
+   -0.0724399983882904,
+   -0.01063000038266182,
+   -0.010689999908208847,
+   0.009429999627172947,
+   0.02522999979555607,
+   0.0022799998987466097,
+   -0.01131999958306551,
+   0.016659999266266823,
+   0.022579999640583992,
+   -0.007470000069588423,
+   -0.028839999809861183,
+   0.03708000108599663,
+   0.006639999803155661,
+   0.05045999959111214,
+   0.015860000625252724,
+   -0.011490000411868095,
+   0.018489999696612358,
+   0.05067000165581703,
+   0.009229999966919422,
+   -0.013620000332593918,
+   -0.006680000107735395,
+   0.0052200001664459705,
+   0.02321000024676323,
+   0.009829999879002571,
+   -0.0038499999791383743,
+   0.00634999992325902,
+   0.006969999987632036,
+   0.0035000001080334187,
+   0.02572000026702881,
+   -0.001930000027641654,
+   -0.02792000025510788,
+   0.020069999620318413,
+   -0.007660000119358301,
+   -0.00853000022470951,
+   -0.043549999594688416,
+   -0.04269000142812729,
+   0.017489999532699585,
+   -0.02005000039935112,
+   -0.04826999828219414,
+   0.000750000006519258,
+   0.05412000045180321,
+   0.03623000159859657,
+   0.0048699998296797276,
+   -0.032269999384880066,
+   0.0020200000144541264,
+   0.012649999931454659,
+   -0.009639999829232693,
+   -0.03613999858498573,
+   0.0018500000005587935,
+   -0.002409999957308173,
+   0.001120000029914081,
+   0.0044200001284480095,
+   -0.045559998601675034,
+   -0.03271999955177307,
+   0.01063000038266182,
+   -0.01513999979943037,
+   -0.034860000014305115,
+   -0.012959999963641167,
+   -0.04376000165939331,
+   -0.019060000777244568,
+   0.01565999910235405,
+   0.013509999960660934,
+   -0.006070000119507313,
+   -0.027739999815821648,
+   0.01665000058710575,
+   -0.04075000062584877,
+   0.04799000173807144,
+   -0.0023799999617040157,
+   0.03068999946117401
+  ],
+  "colour": {
+   "black": 0.4492,
+   "grey": 0.3912,
+   "white": 0.1133,
+   "silver": 0.0464
+  },
+  "body": {
+   "suv": 0.8247,
+   "van": 0.1056,
+   "car": 0.0553,
+   "truck": 0.0092,
+   "auto-rickshaw": 0.0046,
+   "bus": 0.0003,
+   "two-wheeler": 0.0003
+  },
+  "plate_positions": [
+   {
+    "idx": 0,
+    "char": "E",
+    "best_guess": "E",
+    "conf": 0.646,
+    "known": true,
+    "n_frames": 14,
+    "alts": [
+     [
+      "E",
+      0.646
+     ],
+     [
+      "B",
+      0.074
+     ],
+     [
+      "F",
+      0.058
+     ]
+    ],
+    "dist": {
+     "E": 0.6462,
+     "B": 0.0741,
+     "F": 0.0584,
+     "A": 0.0458,
+     "R": 0.0429,
+     "D": 0.0284,
+     "K": 0.0248,
+     "C": 0.0187
+    },
+    "votes": [
+     {
+      "frame": 16,
+      "char": "E",
+      "conf": 0.827
+     },
+     {
+      "frame": 9,
+      "char": "E",
+      "conf": 0.653
+     },
+     {
+      "frame": 15,
+      "char": "E",
+      "conf": 0.687
+     },
+     {
+      "frame": 3,
+      "char": "E",
+      "conf": 0.83
+     },
+     {
+      "frame": 39,
+      "char": "E",
+      "conf": 0.517
+     },
+     {
+      "frame": 35,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 17,
+      "char": "E",
+      "conf": 0.647
+     },
+     {
+      "frame": 4,
+      "char": "R",
+      "conf": 0.13
+     },
+     {
+      "frame": 26,
+      "char": "R",
+      "conf": 0.292
+     },
+     {
+      "frame": 7,
+      "char": "E",
+      "conf": 0.945
+     },
+     {
+      "frame": 5,
+      "char": "A",
+      "conf": 0.691
+     },
+     {
+      "frame": 28,
+      "char": "E",
+      "conf": 0.551
+     },
+     {
+      "frame": 29,
+      "char": "E",
+      "conf": 0.983
+     },
+     {
+      "frame": 38,
+      "char": "E",
+      "conf": 0.607
+     },
+     {
+      "frame": 10,
+      "char": "D",
+      "conf": 0.27
+     }
+    ]
+   },
+   {
+    "idx": 1,
+    "char": "?",
+    "best_guess": "S",
+    "conf": 0.394,
+    "known": false,
+    "n_frames": 12,
+    "alts": [
+     [
+      "S",
+      0.394
+     ],
+     [
+      "A",
+      0.152
+     ],
+     [
+      "1",
+      0.082
+     ]
+    ],
+    "dist": {
+     "S": 0.394,
+     "A": 0.1525,
+     "1": 0.0818,
+     "X": 0.0485,
+     "4": 0.0482,
+     "E": 0.0466,
+     "C": 0.0417,
+     "L": 0.0249
+    },
+    "votes": [
+     {
+      "frame": 16,
+      "char": "S",
+      "conf": 0.939
+     },
+     {
+      "frame": 9,
+      "char": "S",
+      "conf": 0.669
+     },
+     {
+      "frame": 15,
+      "char": "C",
+      "conf": 0.205
+     },
+     {
+      "frame": 3,
+      "char": "1",
+      "conf": 0.876
+     },
+     {
+      "frame": 39,
+      "char": "A",
+      "conf": 0.989
+     },
+     {
+      "frame": 35,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 17,
+      "char": "X",
+      "conf": 0.81
+     },
+     {
+      "frame": 4,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 26,
+      "char": "A",
+      "conf": 0.863
+     },
+     {
+      "frame": 7,
+      "char": "B",
+      "conf": 0.485
+     },
+     {
+      "frame": 5,
+      "char": "4",
+      "conf": 0.865
+     },
+     {
+      "frame": 28,
+      "char": "?",
+      "conf": 0.0
+     },
+     {
+      "frame": 29,
+      "char": "V",
+      "conf": 0.489
+     },
+     {
+      "frame": 38,
+      "char": "S",
+      "conf": 0.261
+     },
+     {
+      "frame": 10,
+      "char": "L",
+      "conf": 0.212
+     }
+    ]
+   },
+   {
+    "idx": 2,
+    "char": "?",
+    "best_guess": "S",
+    "conf": 0.471,
+    "known": false,
+    "n_frames": 14,
+    "alts": [
+     [
+      "S",
+      0.471
+     ],
+     [
+      "A",
+      0.163
+     ],
+     [
+      "H",
+      0.1
+     ]
+    ],
+    "dist": {
+     "S": 0.4709,
+     "A": 0.1631,
+     "H": 0.1001,
+     "4": 0.033,
+     "Z": 0.027,
+     "X": 0.0222,
+     "R": 0.0207,
+     "I": 0.0197
+    },
+    "votes": [
+     {
+      "frame": 16,
+      "char": "S",
+      "conf": 0.989
+     },
+     {
+      "frame": 9,
+      "char": "H",
+      "conf": 0.747
+     },
+     {
+      "frame": 15,
+      "char": "S",
+      "conf": 0.701
+     },
+     {
+      "frame": 39,
+      "char": "S",
+      "conf": 0.904
+     },
+     {
+      "frame": 35,
+      "char": "A",
+      "conf": 0.687
+     },
+     {
+      "frame": 17,
+      "char": "G",
+      "conf": 0.065
+     },
+     {
+      "frame": 4,
+      "char": "A",
+      "conf": 0.446
+     },
+     {
+      "frame": 26,
+      "char": "S",
+      "conf": 0.266
+     },
+     {
+      "frame": 7,
+      "char": "A",
+      "conf": 0.706
+     },
+     {
+      "frame": 5,
+      "char": "4",
+      "conf": 0.513
+     },
+     {
+      "frame": 28,
+      "char": "A",
+      "conf": 0.653
+     },
+     {
+      "frame": 29,
+      "char": "A",
+      "conf": 0.27
+     },
+     {
+      "frame": 38,
+      "char": "Z",
+      "conf": 0.249
+     },
+     {
+      "frame": 10,
+      "char": "A",
+      "conf": 0.731
+     }
+    ]
+   }
+  ]
+ },
+ "keyframe": "keyframe.jpg",
+ "elapsed_s": 8.1
+}
