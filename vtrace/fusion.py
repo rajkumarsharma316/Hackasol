@@ -70,6 +70,12 @@ def _apply_indian_syntax_prior(pooled_list: list) -> list:
 
 
 def _sim(a, b):
+    # A stacked commercial plate has two independent text rows. Do not align a
+    # character from one row to a glyph on the other row when frame OCR lengths
+    # differ slightly; treating a cross-row pairing as a mismatch makes the
+    # Needleman-Wunsch pass prefer separate insertion/deletion gaps instead.
+    if a.get("line", 0) != b.get("line", 0):
+        return -1.5
     if a["dist"] is None or b["dist"] is None:
         return 0.1
     return 2.2 * float(np.dot(a["dist"], b["dist"])) - 0.6

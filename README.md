@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # VTrace — Vehicle Identification & Traceability from CCTV Footage
 
 Turn blurry CCTV footage and a partial number plate into a ranked, explainable shortlist of possible vehicles from a sample vehicle registry.
@@ -78,3 +79,78 @@ python -m uvicorn app:app --host 127.0.0.1 --port 8000
 ```
 
 Then open **http://127.0.0.1:8000** in your browser.
+=======
+# VTrace
+
+VTrace analyses CCTV video for vehicle tracks, number plates, visual attributes, and possible registry matches. It includes a FastAPI web app, sample clips, precomputed reports, and batch analysis tools.
+
+## Run locally
+
+Use Python 3.10 or newer. Install the project dependencies in an isolated environment:
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Install the PyTorch build suited to your hardware if the default pip build is not appropriate. To enable optional CLIP based make/model and appearance features, install `transformers` as well.
+
+Some features load pretrained weights on first use. To prepare the primary detection and OCR models in advance, run:
+
+```sh
+python tools/setup_models.py
+```
+
+For the optional Indian/European number-plate detector, install its 22.5 MB
+pretrained weights separately:
+
+```sh
+python tools/setup_plate_detector.py
+```
+
+Without these optional weights, plate localization uses the original OCR-text
+and colour proposal pipeline. See [recognition pipeline notes](docs/AI_RECOGNITION.md)
+for the model source, license notes, and benchmark comparison.
+
+Then start the app from the project root:
+
+```sh
+uvicorn app:app --reload
+```
+
+Open `http://127.0.0.1:8000`. Uploaded videos may be up to 500 MB and must use MP4, MOV, M4V, AVI, MKV, or WebM extensions. Model inference is compute intensive; a GPU can improve throughput.
+
+Uploads can include a camera ID and an optional recording date/time. Completed
+uploads are retained under the ignored `jobs/` runtime folder and reloaded into
+observation history on restart. To enable audited accept/reject/correct review,
+set a server-side `VTRACE_REVIEW_TOKEN`; review writes are disabled without it.
+This local demo does not provide user accounts, so do not expose it to an
+untrusted network without adding authentication and access controls.
+
+## Project map
+
+- `app.py` — FastAPI routes, uploads, and background analysis jobs.
+- `static/index.html` — single page dashboard.
+- `vtrace/` — video pipeline, plate OCR, attributes, matching, re-identification, and report generation.
+- `data/registry.csv` — example vehicle registry used for matching.
+- `test_clips/` — synthetic benchmark clips and ground truth.
+- `reports/` — generated HTML reports and batch summary.
+- `tools/` — model setup, sample generation, batch analysis, and developer probes.
+
+## Useful commands
+
+```sh
+python tools/run_batch.py                 # analyse all benchmark clips
+python tools/run_batch.py clip01           # analyse clips matching a name
+python tools/evaluate_benchmark.py --output jobs/evaluations/run-01  # reproducible metrics; keeps reports untouched
+python tools/make_registry.py              # regenerate the example registry
+```
+
+`tools/run_batch.py` writes into `reports/` and replaces those report outputs.
+Use `tools/evaluate_benchmark.py` for comparisons that preserve the saved baseline.
+
+The API exposes interactive documentation at `/docs`. Job status is held in memory;
+completed result files under `jobs/` are reloaded at startup. Treat registry matches
+as investigative leads and verify them against the original footage and authoritative records.
+>>>>>>> b4e1347 (Updated project files)

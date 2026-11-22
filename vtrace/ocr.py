@@ -13,6 +13,7 @@ import cv2
 import numpy as np
 import torch
 import torch.nn.functional as F
+from PIL import Image
 
 from . import engines
 from .vocab import CHARS, CHAR_IDX
@@ -36,27 +37,50 @@ def _char_map(reader):
 
 def _prep(gray: np.ndarray, imgH=64) -> torch.Tensor:
     h, w = gray.shape[:2]
-    nw = max(imgH, int(math.ceil(imgH * w / max(h, 1))))
-    img = cv2.resize(gray, (nw, imgH), interpolation=cv2.INTER_CUBIC)
+    if h <= 0 or w <= 0:
+        raise ValueError("OCR input must have nonzero width and height")
+    nw = max(1, int(imgH * w / h))
+    # Match EasyOCR's AlignCollate: LANCZOS resize to model height, then right-pad
+    # to the next imgH multiple by repeating the final edge column. Feeding an
+    # unpadded width changes the CTC time grid and produced spurious glyphs.
+    img = np.asarray(Image.fromarray(gray).resize((nw, imgH), Image.Resampling.LANCZOS)).copy()
+    padded_w = int(math.ceil(nw / imgH) * imgH)
+    if padded_w > nw:
+        img = cv2.copyMakeBorder(img, 0, 0, 0, padded_w - nw, cv2.BORDER_REPLICATE)
     t = torch.from_numpy(img).float().div(255.0).sub(0.5).div(0.5)
     return t[None, None]
 
 
-def _posteriors(gray: np.ndarray) -> np.ndarray:
+def _posteriors(gray: np.ndarray, detector: bool = True) -> np.ndarray:
     """Return (T, 37) array: column 0 = blank, 1..36 = CHARS probabilities."""
-    reader = engines.ocr_reader()
-    groups = _char_map(reader)
+    reader = engines.ocr_reader(detector=detector)
     x = _prep(gray).to(engines.DEVICE)
     with torch.no_grad():
-        text = torch.zeros(1, 26, dtype=torch.long, device=engines.DEVICE)
+        text = torch.zeros(1, int(x.shape[-1] / 10) + 1, dtype=torch.long, device=engines.DEVICE)
         preds = reader.recognizer(x, text)
         prob = F.softmax(preds, dim=2)[0].cpu().numpy()  # (T, C)
+    return _project_alphanumeric_posteriors(prob, reader)
+
+
+def _project_alphanumeric_posteriors(prob: np.ndarray, reader) -> np.ndarray:
+    """Map EasyOCR classes to plate symbols without turning punctuation into glyphs.
+
+    Previously non-alphanumeric probability was dropped and the remaining mass
+    renormalized to 1. That forced a punctuation/space peak to become the most
+    likely letter or digit, systematically inventing plate characters. Treat
+    unsupported symbols as blank evidence instead; keep the original total mass.
+    """
+    groups = _char_map(reader)
     out = np.zeros((prob.shape[0], 37), np.float32)
+    mapped_indices = {0}
     out[:, 0] = prob[:, 0]
     for k, idxs in enumerate(groups):
         if idxs:
             out[:, k + 1] = prob[:, idxs].sum(1)
-    out /= out.sum(1, keepdims=True) + 1e-9   # drop punctuation / symbols mass
+            mapped_indices.update(idxs)
+    unsupported = [i for i in range(prob.shape[1]) if i not in mapped_indices]
+    if unsupported:
+        out[:, 0] += prob[:, unsupported].sum(1)
     return out
 
 
@@ -125,7 +149,8 @@ def _clean_edges(part: np.ndarray) -> np.ndarray:
     return cv2.copyMakeBorder(out, 4, 4, 8, 8, cv2.BORDER_CONSTANT, value=bg)
 
 
-def read_plate(bgr: np.ndarray, two_line: bool | None = None, line_strips: list[np.ndarray] | None = None) -> dict:
+def read_plate(bgr: np.ndarray, two_line: bool | None = None, line_strips: list[np.ndarray] | None = None,
+               detector: bool = False) -> dict:
     """Read one plate crop (or pre-rectified line strips).
 
     Returns {'chars': [...], 'text', 'mean_conf', 'variant', 'two_line'}.
@@ -133,6 +158,13 @@ def read_plate(bgr: np.ndarray, two_line: bool | None = None, line_strips: list[
     if line_strips:
         strips = [s for s in line_strips if s.shape[0] >= 5 and s.shape[1] >= 10]
         if strips:
+            # A detector supplies the outer plate quadrilateral, so stacked
+            # commercial plates arrive as one rectified strip. Split those using
+            # their near-square aspect ratio instead of treating both rows as one
+            # sequence (which previously collapsed clips 04 and 06 to one glyph).
+            if len(strips) == 1 and strips[0].shape[1] / max(strips[0].shape[0], 1) < 1.6:
+                strips = _split_lines(cv2.cvtColor(strips[0], cv2.COLOR_BGR2GRAY)
+                                      if strips[0].ndim == 3 else strips[0])
             two_line = len(strips) > 1
             best = None
             for vname in ("gray", "clahe", "sharpened"):
@@ -140,7 +172,7 @@ def read_plate(bgr: np.ndarray, two_line: bool | None = None, line_strips: list[
                 for li, st in enumerate(strips):
                     g = dict(_variants(st))[vname]
                     pad = _clean_edges(g)
-                    cs = _decode(_posteriors(pad), pad.shape[1])
+                    cs = _decode(_posteriors(pad, detector=detector), pad.shape[1])
                     for c in cs:
                         c["line"] = li
                     chars += _mark_gaps(cs)
@@ -168,14 +200,14 @@ def read_plate(bgr: np.ndarray, two_line: bool | None = None, line_strips: list[
             if part.shape[0] < 6:
                 continue
             pad = _clean_edges(part)
-            cs = _decode(_posteriors(pad), pad.shape[1])
+            cs = _decode(_posteriors(pad, detector=detector), pad.shape[1])
             for c in cs:
                 c["line"] = li
             chars += _mark_gaps(cs)
         known = [c for c in chars if c["char"] != "?"]
         # mild preference for plausible plate lengths (6..10 chars)
         len_pen = 1.0 if len(known) <= 10 else max(0.5, 1.0 - 0.12 * (len(known) - 10))
-        score = (np.mean([c["conf"] for c in known]) if known else 0) * min(1.0, len(known) / 6) * len_pen
+        score = (np.mean([c["conf"] for c in known]) if known else 0.0) * min(1.0, len(known) / 6) * len_pen
         if best is None or score > best[0]:
             best = (score, name, chars)
     score, name, chars = best

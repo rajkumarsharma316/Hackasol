@@ -2,13 +2,15 @@
 from __future__ import annotations
 
 import json
+import math
+import random
 import time
 from pathlib import Path
 
 import cv2
 import numpy as np
 
-from . import attributes, engines, fusion, matcher, ocr, plate
+from . import attributes, confidence, engines, fusion, matcher, ocr, plate
 from .vocab import BODY_TYPES, COLOURS
 
 MAX_FRAMES = 60
@@ -39,6 +41,31 @@ def _sharpness(img):
     return float(cv2.Laplacian(g, cv2.CV_64F).var())
 
 
+def _predict_box(track, frame_idx):
+    """Constant-velocity box extrapolation across sampled-frame gaps."""
+    history = track["boxes"]
+    fi, last, _ = history[-1]
+    gap = max(1, frame_idx - fi)
+    pred = np.asarray(last, dtype=np.float32)
+    if len(history) >= 2:
+        pfi, prev, _ = history[-2]
+        span = max(1, fi - pfi)
+        pred += (pred - np.asarray(prev, dtype=np.float32)) * (gap / span)
+    last_w, last_h = max(2.0, history[-1][1][2] - history[-1][1][0]), max(2.0, history[-1][1][3] - history[-1][1][1])
+    cx, cy = (pred[0] + pred[2]) / 2, (pred[1] + pred[3]) / 2
+    pw = float(np.clip(pred[2] - pred[0], 0.5 * last_w, 2.0 * last_w))
+    ph = float(np.clip(pred[3] - pred[1], 0.5 * last_h, 2.0 * last_h))
+    pred = np.asarray([cx - pw / 2, cy - ph / 2, cx + pw / 2, cy + ph / 2], dtype=np.float32)
+    return pred.tolist()
+
+
+def _center_distance(a, b):
+    ac = np.array([(a[0] + a[2]) / 2, (a[1] + a[3]) / 2], dtype=float)
+    bc = np.array([(b[0] + b[2]) / 2, (b[1] + b[3]) / 2], dtype=float)
+    diag = max(1.0, float(np.hypot(a[2] - a[0], a[3] - a[1])))
+    return float(np.linalg.norm(ac - bc) / diag)
+
+
 class VideoAnalysis:
     def __init__(self, video_path, job_dir, registry, progress=None):
         self.video_path = str(video_path)
@@ -59,21 +86,16 @@ class VideoAnalysis:
             return
         self.progress(2, "Reading video")
         cap = cv2.VideoCapture(self.video_path)
-        total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) or 0
-        fps = cap.get(cv2.CAP_PROP_FPS) or 25.0
-        raw = []
-        if total <= 0:   # unknown length: read all
-            while True:
-                ok, fr = cap.read()
-                if not ok:
-                    break
-                raw.append(fr)
-            total = len(raw)
-            idxs = np.linspace(0, total - 1, min(total, MAX_FRAMES)).astype(int) if total else []
-            picked = [(i, raw[i]) for i in idxs]
-        else:
-            idxs = set(np.linspace(0, total - 1, min(total, MAX_FRAMES)).astype(int).tolist())
-            picked, i = [], 0
+        if not cap.isOpened():
+            cap.release()
+            raise ValueError("Could not open the uploaded video. Check that it is a valid, supported video file.")
+        reported_total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
+        fps = float(cap.get(cv2.CAP_PROP_FPS) or 0)
+        if not math.isfinite(fps) or fps <= 0:
+            fps = 25.0
+        picked, i = [], 0
+        if reported_total > 0:
+            idxs = set(np.linspace(0, reported_total - 1, min(reported_total, MAX_FRAMES)).astype(int).tolist())
             while True:
                 ok, fr = cap.read()
                 if not ok:
@@ -81,6 +103,22 @@ class VideoAnalysis:
                 if i in idxs:
                     picked.append((i, fr))
                 i += 1
+            total = i
+        else:   # Unknown-length videos: reservoir-sample without retaining every decoded frame.
+            rng = random.Random(0)
+            while True:
+                ok, fr = cap.read()
+                if not ok:
+                    break
+                if len(picked) < MAX_FRAMES:
+                    picked.append((i, fr))
+                else:
+                    slot = rng.randrange(i + 1)
+                    if slot < MAX_FRAMES:
+                        picked[slot] = (i, fr)
+                i += 1
+            total = i
+            picked.sort(key=lambda item: item[0])
         cap.release()
         if not picked:
             raise ValueError("Could not decode any frames from the uploaded file.")
@@ -119,26 +157,43 @@ class VideoAnalysis:
             for x in d:
                 if all(plate.iou(x["box"], k["box"]) < 0.6 for k in keep):
                     keep.append(x)
-            used = set()
-            for x in keep:
-                best, bi = 0.25, None
+            # Match globally rather than letting the first high-confidence box
+            # greedily claim the best track. A constant-velocity prediction helps
+            # maintain identity through sampled-frame gaps and brief occlusions.
+            edges = []
+            for di, x in enumerate(keep):
                 for ti, t in enumerate(tracks):
-                    if ti in used or fi - t["last"] > 6:
+                    if fi - t["last"] > 6:
                         continue
-                    o = plate.iou(x["box"], t["boxes"][-1][1])
-                    if o > best:
-                        best, bi = o, ti
-                if bi is None:
-                    tracks.append({"id": len(tracks) + 1, "boxes": [], "cls": {}, "last": fi, "score": 0.0})
-                    bi = len(tracks) - 1
-                t = tracks[bi]
-                used.add(bi)
+                    prev_box = t["boxes"][-1][1]
+                    pred_box = _predict_box(t, fi)
+                    pred_iou = plate.iou(x["box"], pred_box)
+                    if pred_iou >= 0.12 or _center_distance(x["box"], pred_box) <= 0.35:
+                        edge_score = 0.7 * pred_iou + 0.3 * plate.iou(x["box"], prev_box)
+                        edges.append((edge_score, di, ti))
+            assigned_dets, assigned_tracks = set(), set()
+            for edge_score, di, ti in sorted(edges, reverse=True):
+                if edge_score < 0.10 or di in assigned_dets or ti in assigned_tracks:
+                    continue
+                x = keep[di]
+                t = tracks[ti]
+                assigned_dets.add(di)
+                assigned_tracks.add(ti)
                 t["boxes"].append((fi, x["box"], x["conf"]))
                 t["cls"][x["cls"]] = t["cls"].get(x["cls"], 0) + x["conf"]
                 t["last"] = fi
                 H, W = self.frames[fi].shape[:2]
                 b = x["box"]
                 t["score"] += x["conf"] * ((b[2] - b[0]) * (b[3] - b[1]) / (W * H)) ** 0.5
+            for di, x in enumerate(keep):
+                if di in assigned_dets:
+                    continue
+                t = {"id": len(tracks) + 1, "boxes": [(fi, x["box"], x["conf"])],
+                     "cls": {x["cls"]: x["conf"]}, "last": fi, "score": 0.0}
+                H, W = self.frames[fi].shape[:2]
+                b = x["box"]
+                t["score"] = x["conf"] * ((b[2] - b[0]) * (b[3] - b[1]) / (W * H)) ** 0.5
+                tracks.append(t)
         tracks = [t for t in tracks if len(t["boxes"]) >= 2] or tracks
         if not tracks:  # nothing detected - treat the whole frame as the vehicle
             tracks = [{"id": 1, "boxes": [(fi, [0, 0, f.shape[1], f.shape[0]], 0.0) for fi, f in enumerate(self.frames)],
@@ -156,6 +211,8 @@ class VideoAnalysis:
     def tracks_summary(self):
         tot = sum(t["score"] for t in self.tracks) or 1
         return [{"id": t["id"], "frames": len(t["boxes"]), "classes": {k: round(v, 2) for k, v in t["cls"].items()},
+                 "mean_detection_confidence": round(float(np.mean([x[2] for x in t["boxes"]])), 3),
+                 "max_sample_gap": max(0, max((b[0] - a[0] for a, b in zip(t["boxes"], t["boxes"][1:])), default=1) - 1),
                  "prominence": round(t["score"] / tot, 3), "thumb": f"crops/track{t['id']}.jpg"}
                 for t in self.tracks[:8]]
 
@@ -182,28 +239,77 @@ class VideoAnalysis:
                 per_frame[fi] = {"box": ab, "quads": [plate.box_to_quad(ab)], "score": 1.0, "source": "manual ROI"}
         else:
             props = {}
-            for k, (fi, vb) in enumerate(boxes.items()):
-                fr = self.frames[fi]
-                x1, y1, x2, y2 = plate.pad_box(vb, fr.shape, 0.04, 0.04)
-                crop = fr[y1:y2, x1:x2]
-                if crop.size == 0:
-                    continue
-                shifted = []
-                for p in plate.propose(crop):
-                    b = p["box"]
-                    shifted.append({
-                        "score": p["score"],
-                        "box": (b[0] + x1, b[1] + y1, b[2] + x1, b[3] + y1),
-                        "quads": plate.shift_quads(p["quads"], x1, y1),
-                        "from_text": p["from_text"],
-                    })
-                props[fi] = shifted
-                if k % 5 == 0:
-                    self.progress(25 + int(30 * k / max(len(boxes), 1)), "Locating number plate")
+            plate_model = engines.plate_detector()
+            if plate_model is not None:
+                # Run the specialized plate detector on vehicle crops in batches.
+                # This avoids treating arbitrary CRAFT text (logos, lamps, trim) as
+                # a plate and avoids loading CRAFT weights on the model-backed path.
+                crops, crop_meta = [], []
+                for fi, vb in boxes.items():
+                    fr = self.frames[fi]
+                    x1, y1, x2, y2 = plate.pad_box(vb, fr.shape, 0.08, 0.08)
+                    crop = fr[y1:y2, x1:x2]
+                    if crop.size:
+                        crops.append(crop)
+                        crop_meta.append((fi, vb, x1, y1, x2, y2))
+                detections = []
+                for start in range(0, len(crops), 16):
+                    batch = plate_model.predict(
+                        crops[start:start + 16], conf=0.25, imgsz=640, max_det=20,
+                        verbose=False, device=engines.YOLO_DEVICE,
+                    )
+                    detections.extend(batch)
+                for k, ((fi, vb, x1, y1, x2, y2), result) in enumerate(zip(crop_meta, detections)):
+                    fr_h, fr_w = self.frames[fi].shape[:2]
+                    vx1, vy1, vx2, vy2 = vb
+                    vw, vh = max(1.0, vx2 - vx1), max(1.0, vy2 - vy1)
+                    candidates = []
+                    if result.boxes is not None:
+                        for b, conf in zip(result.boxes.xyxy.cpu().numpy(), result.boxes.conf.cpu().numpy()):
+                            bx1, by1, bx2, by2 = [float(v) for v in b]
+                            bw, bh = bx2 - bx1, by2 - by1
+                            ratio = bw / max(bh, 1.0)
+                            # Reject tiny, implausibly large, or non-plate-shaped detections.
+                            if (bw < max(10.0, 0.025 * vw) or bh < max(6.0, 0.015 * vh)
+                                    or not 0.60 <= ratio <= 8.5
+                                    or bw * bh > 0.24 * vw * vh):
+                                continue
+                            ab = (max(0.0, bx1 + x1), max(0.0, by1 + y1),
+                                  min(float(fr_w), bx2 + x1), min(float(fr_h), by2 + y1))
+                            candidates.append({
+                                "score": float(conf), "box": ab,
+                                "quads": [plate.box_to_quad(ab)], "source": "plate model",
+                            })
+                    candidates.sort(key=lambda p: -p["score"])
+                    props[fi] = candidates[:6]
+                    if k % 5 == 0:
+                        self.progress(25 + int(30 * k / max(len(crop_meta), 1)), "Detecting number plates")
+            else:
+                # Keep the original CRAFT + colour proposals available when the
+                # optional plate detector has not been installed.
+                for k, (fi, vb) in enumerate(boxes.items()):
+                    fr = self.frames[fi]
+                    x1, y1, x2, y2 = plate.pad_box(vb, fr.shape, 0.04, 0.04)
+                    crop = fr[y1:y2, x1:x2]
+                    if crop.size == 0:
+                        continue
+                    shifted = []
+                    for p in plate.propose(crop):
+                        b = p["box"]
+                        shifted.append({
+                            "score": p["score"],
+                            "box": (b[0] + x1, b[1] + y1, b[2] + x1, b[3] + y1),
+                            "quads": plate.shift_quads(p["quads"], x1, y1),
+                            "from_text": p["from_text"], "source": "detected",
+                        })
+                    props[fi] = shifted
+                    if k % 5 == 0:
+                        self.progress(25 + int(30 * k / max(len(boxes), 1)), "Locating number plate")
             # Reference plate location from high-confidence (preferably text-backed) frames
             text_good = [
                 (fi, p[0]) for fi, p in props.items()
-                if p and p[0]["from_text"] and p[0]["score"] >= 0.25
+                if p and (p[0].get("from_text") or p[0].get("source") == "plate model")
+                and p[0]["score"] >= 0.25
             ]
             pool = text_good if len(text_good) >= 2 else [(fi, p[0]) for fi, p in props.items() if p]
             med, ref_rquads = None, None
@@ -219,7 +325,8 @@ class VideoAnalysis:
                     agree = plate.iou(plate.rel_box(p["box"], boxes[fi]), med) if med else 1.0
                     sc = p["score"] * (0.20 + 0.80 * agree) if med else p["score"]
                     if best is None or sc > best["score"]:
-                        best = {"box": p["box"], "quads": p["quads"], "score": sc, "source": "detected"}
+                        best = {"box": p["box"], "quads": p["quads"], "score": sc,
+                                "source": p.get("source", "detected")}
                 if (best is None or best["score"] < 0.14) and med is not None:
                     ab = plate.abs_box(med, boxes[fi])
                     aq = plate.abs_quads(ref_rquads, boxes[fi]) if ref_rquads else [plate.box_to_quad(ab)]
@@ -237,14 +344,33 @@ class VideoAnalysis:
             if pc.size == 0 or pc.shape[0] < 6:
                 continue
             strips = plate.warp_quads(fr, info.get("quads") or [])
-            rd = ocr.read_plate(pc, line_strips=strips)
+            # OCR reads a known plate crop directly; CRAFT is only needed by the
+            # legacy plate-proposal path, never by the CRNN recognizer itself.
+            rd = ocr.read_plate(pc, line_strips=strips, detector=False)
             known = [c for c in rd["chars"] if c["char"] != "?"]
             sharp = _sharpness(pc)
             s_sharp = min(1.0, sharp / 600.0) ** 0.5
             ph = pb[3] - pb[1]
             s_size = min(1.0, ph / (40.0 if rd["two_line"] else 24.0))
-            w = (rd["mean_conf"] ** 2) * (0.4 + 0.6 * s_sharp) * (0.4 + 0.6 * s_size) * \
-                (0.6 if info["source"] == "propagated" else 1.0)
+            gray_pc = cv2.cvtColor(pc, cv2.COLOR_BGR2GRAY) if pc.ndim == 3 else pc
+            contrast = float(np.std(gray_pc))
+            s_contrast = min(1.0, contrast / 50.0)
+            quality_crop = strips[0] if strips else pc
+            aspect = quality_crop.shape[1] / max(quality_crop.shape[0], 1)
+            plausible_aspect = (0.75 <= aspect <= 1.75) if rd["two_line"] else (1.7 <= aspect <= 8.5)
+            s_geometry = 1.0 if plausible_aspect else 0.25
+            # OCR can be confidently wrong when the text detector selected a lamp,
+            # badge, or other text on the vehicle. Keep localization confidence in
+            # the frame vote so a weak/propagated crop cannot dominate fusion.
+            s_loc = float(np.clip(info.get("score", 0.0), 0.0, 1.0))
+            quality_score = 0.30 * s_loc + 0.20 * s_sharp + 0.20 * s_size + 0.15 * s_contrast + 0.15 * s_geometry
+            # Mean OCR confidence is computed only over emitted glyphs. Without a
+            # completeness term, a tiny high-confidence fragment can outweigh a
+            # longer reading that carries more plate evidence. Use a gentle
+            # square-root penalty so partial/occluded views still contribute.
+            s_coverage = min(1.0, len(known) / 6.0) ** 0.5
+            w = (rd["mean_conf"] ** 2) * s_coverage * (0.4 + 0.6 * s_sharp) * (0.4 + 0.6 * s_size) * \
+                (0.25 + 0.75 * s_loc) * (0.6 if info["source"] == "propagated" else 1.0)
             excluded = None
             if len(known) < 3:
                 excluded, w = "fewer than 3 legible characters", 0.0
@@ -254,6 +380,9 @@ class VideoAnalysis:
                    "vehicle_box": [round(v) for v in boxes[fi]], "plate_box": [int(v) for v in pb],
                    "plate_source": info["source"], "loc_score": round(float(info["score"]), 3),
                    "text": rd["text"], "mean_conf": round(rd["mean_conf"], 3), "two_line": rd["two_line"],
+                   "quality": {"score": round(float(quality_score), 3), "contrast": round(contrast, 1),
+                               "geometry": round(s_geometry, 3), "sharpness_score": round(s_sharp, 3),
+                               "size_score": round(s_size, 3), "ocr_coverage_score": round(s_coverage, 3)},
                    "sharpness": round(sharp, 1), "plate_height_px": int(ph), "weight": round(w, 4),
                    "excluded": excluded, "variant": rd["variant"],
                    "chars": [{"char": c["char"], "conf": round(c["conf"], 3),
@@ -312,6 +441,10 @@ class VideoAnalysis:
         ev.body = {hints["body_type"]: 1.0} if hints.get("body_type") in BODY_TYPES else (body or None)
         ev.model = mm if hints.get("use_make_model", True) else None
         result = matcher.match(ev, self.registry)
+        quality = confidence.assess(
+            {"_boxes": track["boxes"]}, frame_rows, fused, result,
+        )
+        result = confidence.gate_registry_match(result, quality)
 
         # ---- key frame annotation
         best_fi = fused.get("reference_frame")
@@ -339,6 +472,7 @@ class VideoAnalysis:
             "attributes": {"colour": colour, "body_type": body, "body_type_clip": body_clip,
                            "make_model": mm, "colour_hint": hints.get("colour"),
                            "body_hint": hints.get("body_type")},
+            "confidence": quality,
             "match": result,
             "signature": signature,
             "keyframe": "keyframe.jpg",

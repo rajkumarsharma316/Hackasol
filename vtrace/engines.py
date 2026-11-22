@@ -32,6 +32,7 @@ def _yolo_device():
 YOLO_DEVICE = _yolo_device()
 _lock = threading.Lock()
 _cache: dict = {}
+PLATE_DETECTOR_WEIGHTS = MODELS / "plate_detector" / "best.pt"
 
 
 def yolo():
@@ -42,13 +43,29 @@ def yolo():
         return _cache["yolo"]
 
 
-def ocr_reader():
+def ocr_reader(detector: bool = True):
+    """Return EasyOCR with/without CRAFT text detection, cached separately."""
+    key = "ocr_with_detector" if detector else "ocr_recognizer_only"
     with _lock:
-        if "ocr" not in _cache:
+        if key not in _cache:
             import easyocr
-            _cache["ocr"] = easyocr.Reader(["en"], gpu=DEVICE == "cuda",
-                                           model_storage_directory=str(MODELS / "easyocr"), verbose=False)
-        return _cache["ocr"]
+            storage = MODELS / "easyocr"
+            storage.mkdir(parents=True, exist_ok=True)
+            _cache[key] = easyocr.Reader(["en"], gpu=DEVICE == "cuda", detector=detector,
+                                         model_storage_directory=str(storage),
+                                         user_network_directory=str(storage / "user_network"), verbose=False)
+        return _cache[key]
+
+
+def plate_detector():
+    """Return the optional Indian/European plate detector when weights are installed."""
+    if not PLATE_DETECTOR_WEIGHTS.is_file():
+        return None
+    with _lock:
+        if "plate_detector" not in _cache:
+            from ultralytics import YOLO
+            _cache["plate_detector"] = YOLO(str(PLATE_DETECTOR_WEIGHTS))
+        return _cache["plate_detector"]
 
 
 def clip():

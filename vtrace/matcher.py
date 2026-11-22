@@ -258,6 +258,15 @@ def _top(d: Optional[dict]):
 def match(evidence: Evidence, registry: list, top_k: int = 5) -> dict:
     all_models = sorted({(r["make"], r["model"]) for r in registry})
     n = len(registry)
+    if n == 0:
+        return {
+            "status": "no_confident_match",
+            "message": "No vehicles are available in the registry to compare against.",
+            "p_not_in_registry": 100.0,
+            "n_registry": 0,
+            "n_plausible": 0,
+            "candidates": [],
+        }
     scored = []
     for r in registry:
         plate_llr, plate_detail = 0.0, []

@@ -207,6 +207,11 @@
       border: 1px solid var(--warn);
       color: #fcd34d;
     }
+    .banner.review_required {
+      background: #332b17;
+      border: 1px solid #f59e0b;
+      color: #fde68a;
+    }
     .plate-strip {
       display: flex;
       gap: 6px;
@@ -326,6 +331,17 @@
     @media (max-width: 900px) {
       .two-col { grid-template-columns: 1fr; }
     }
+    @media (max-width: 760px) {
+      header { padding: 12px 14px; }
+      .container { padding: 14px 12px 32px; }
+      .query-controls, .registry-controls { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+      .reid-controls { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 480px) {
+      .query-controls, .registry-controls { grid-template-columns: 1fr !important; }
+      .tab-btn { flex: 1 1 auto; }
+      .plate-char { width: 36px; }
+    }
     .canvas-wrap {
       position: relative;
       width: 100%;
@@ -372,6 +388,7 @@
       <button class="tab-btn" onclick="switchTab('reid', this)">2. Two-Camera Tracking (Re-ID)</button>
       <button class="tab-btn" onclick="switchTab('query', this)">3. Partial Plate & Attribute Sandbox</button>
       <button class="tab-btn" onclick="switchTab('registry', this)">4. Vehicle Registry (<span id="regCount">600</span>)</button>
+      <button class="tab-btn" onclick="switchTab('history', this)">5. Observation History & Analytics</button>
     </nav>
   </header>
 
@@ -384,8 +401,12 @@
           <div class="card">
             <h2>Upload CCTV Clip</h2>
             <form id="uploadForm" onsubmit="handleUpload(event)">
-              <label>Video file (.mp4, .avi, .mov, .mkv)</label>
-              <input type="file" id="uploadFile" accept="video/*" required />
+              <label>Video file (MP4, MOV, M4V, AVI, MKV, WebM; up to 500 MB)</label>
+              <input type="file" id="uploadFile" accept=".mp4,.mov,.m4v,.avi,.mkv,.webm,video/*" required />
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
+                <div><label>Camera ID</label><input id="uploadCamera" maxlength="80" value="unspecified" /></div>
+                <div><label>Recording date/time (optional)</label><input id="uploadRecordedAt" type="datetime-local" /></div>
+              </div>
               <label>Optional Witness / Investigator Plate Hint (e.g. MH12??45*)</label>
               <input type="text" id="uploadPlateHint" placeholder="Use ? for 1 unknown, * for any run" />
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -425,9 +446,9 @@
       <div class="card">
         <h2>Cross-Camera Vehicle Tracking & Joint Evidence Fusion (Bonus)</h2>
         <div class="muted" style="margin-bottom:12px">
-          Compare two CCTV clips from different cameras (e.g., Camera A with moderate blur and Camera B with lower resolution, colour cast, and cut-off plate end) to test whether they show the same vehicle and combine their partial evidence against the registry.
+          Compare two CCTV observations using plate evidence, appearance and attributes. A definitive same-vehicle result requires readable plate agreement; visual similarity alone is only a review lead.
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end">
+        <div class="reid-controls" style="display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end">
           <div>
             <label>Camera Clip A</label>
             <select id="reidSelectA"></select>
@@ -449,7 +470,7 @@
         <div class="muted" style="margin-bottom:12px">
           Test the TRACE probabilistic matching and ranking algorithm directly with partial registration patterns (<code>?</code> = single unknown character, <code>*</code> = any number of unknown characters), visually confusable characters (<code>8/B</code>, <code>0/O/D</code>, <code>5/S</code>, <code>1/I</code>, <code>2/Z</code>), vehicle colour, body type, and make/model.
         </div>
-        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr auto;gap:10px;align-items:end">
+        <div class="query-controls" style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr auto;gap:10px;align-items:end">
           <div>
             <label>Partial Plate Pattern</label>
             <input type="text" id="qPlate" value="MH12??452?" placeholder="e.g. MH12??45* or KA05??7788" />
@@ -484,10 +505,10 @@
     <div id="tab-registry" class="tab-pane">
       <div class="card">
         <h2>Sample Vehicle Registry Browser</h2>
-        <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:10px;align-items:end;margin-bottom:12px">
+        <div class="registry-controls" style="display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:10px;align-items:end;margin-bottom:12px">
           <div>
             <label>Search Registration, Make, Model, Owner, or City</label>
-            <input type="text" id="regSearch" placeholder="e.g. MH12, Swift, Creta, Bengaluru..." oninput="loadRegistry()" />
+            <input type="text" id="regSearch" placeholder="e.g. MH12, Swift, Creta, Bengaluru..." oninput="scheduleRegistrySearch()" />
           </div>
           <div>
             <label>Filter Colour</label>
@@ -502,6 +523,27 @@
         <div id="regTableWrap"></div>
       </div>
     </div>
+
+    <!-- TAB 5: OBSERVATION HISTORY AND MEASURED ANALYTICS -->
+    <div id="tab-history" class="tab-pane">
+      <div id="analyticsCards" class="grid-2"></div>
+      <div class="card">
+        <h2>Vehicle Observation History</h2>
+        <div class="registry-controls" style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr auto;gap:8px;align-items:end">
+          <div><label>Registration or filename</label><input id="historyQuery" oninput="scheduleHistorySearch()" /></div>
+          <div><label>Camera ID</label><input id="historyCamera" oninput="scheduleHistorySearch()" /></div>
+          <div><label>From</label><input id="historyStart" type="date" onchange="loadHistory()" /></div>
+          <div><label>To</label><input id="historyEnd" type="date" onchange="loadHistory()" /></div>
+          <button class="btn btn-sec" onclick="loadHistory()">Refresh</button>
+        </div>
+        <div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap">
+          <select id="historyReview" onchange="loadHistory()"><option value="">All review states</option><option>pending</option><option>accepted</option><option>rejected</option><option>corrected</option></select>
+          <a class="btn btn-sec" id="historyCsv" href="/api/observations.csv">Export CSV</a>
+        </div>
+        <div id="historyTable"></div>
+        <div class="muted" style="margin-top:8px">Capture time is only available when supplied at upload. Otherwise timestamps refer to processing time and video-relative offsets. Duplicate rows are review suggestions, not identity conclusions.</div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -512,9 +554,22 @@
     let ROI_START = null;
     let ROI_BOX = null;
     let ACTIVE_FRAME_IDX = 0;
+    let REGISTRY_SEARCH_TIMER = null;
+    let HISTORY_SEARCH_TIMER = null;
 
     function esc(s) {
       return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    async function readApiJSON(response) {
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.detail || `Request failed (${response.status})`);
+      return data;
+    }
+
+    function showRequestError(error) {
+      const pane = document.getElementById('resultPane');
+      pane.innerHTML = `<div class="card"><b style="color:var(--danger)">${esc(error.message || error)}</b></div>`;
     }
 
     function confColor(c) {
@@ -529,12 +584,19 @@
       document.getElementById('tab-' + name).classList.add('active');
       if (btn) btn.classList.add('active');
       if (name === 'registry') loadRegistry();
+      if (name === 'history') { loadAnalytics(); loadHistory(); }
       if (name === 'query' && !document.getElementById('queryResult').innerHTML) runQuickQuery();
     }
 
     async function init() {
-      const r = await fetch('/api/meta');
-      META = await r.json();
+      let r;
+      try {
+        r = await fetch('/api/meta');
+        META = await readApiJSON(r);
+      } catch (error) {
+        showRequestError(error);
+        return;
+      }
       document.getElementById('regCount').textContent = META.registry_size;
       for (const id of ['uploadColour', 'qColour', 'regColour']) {
         const el = document.getElementById(id);
@@ -557,7 +619,7 @@
     function renderClipList() {
       const wrap = document.getElementById('clipList');
       wrap.innerHTML = META.test_clips.map(c => `
-        <div class="clip-item" id="clip-item-${c.id}" onclick="selectSampleClip('${c.id}')">
+        <div class="clip-item" id="clip-item-${esc(c.id)}" data-clip-id="${esc(c.id)}">
           <img src="${c.preview_url}" alt="${esc(c.id)}" />
           <div class="clip-meta">
             <b>${esc(c.id)}</b>
@@ -565,13 +627,16 @@
           </div>
         </div>
       `).join('');
+      wrap.querySelectorAll('.clip-item').forEach(el => {
+        el.addEventListener('click', () => selectSampleClip(el.dataset.clipId));
+      });
     }
 
     function populateReidDropdowns() {
       const sa = document.getElementById('reidSelectA');
       const sb = document.getElementById('reidSelectB');
       const jobs = META.jobs || [];
-      const opts = jobs.map(j => `<option value="${j.job_id}">${esc(j.filename)} (${esc(j.plate || 'analysed')})</option>`).join('');
+      const opts = jobs.map(j => `<option value="${j.job_id}">${esc(j.camera_id || 'camera')} · ${esc(j.filename)} (${esc(j.plate || 'analysed')})</option>`).join('');
       sa.innerHTML = opts;
       sb.innerHTML = opts;
       const camA = jobs.find(j => j.filename.includes('clip01'));
@@ -584,31 +649,45 @@
       document.querySelectorAll('.clip-item').forEach(el => el.classList.remove('active'));
       const item = document.getElementById('clip-item-' + clipId);
       if (item) item.classList.add('active');
-      const r = await fetch(`/api/analyse/sample/${clipId}?force=${force}`, { method: 'POST' });
-      const data = await r.json();
-      pollJob(data.job_id);
+      try {
+        const r = await fetch(`/api/analyse/sample/${encodeURIComponent(clipId)}?force=${force}`, { method: 'POST' });
+        const data = await readApiJSON(r);
+        pollJob(data.job_id);
+      } catch (error) { showRequestError(error); }
     }
 
     async function handleUpload(e) {
       e.preventDefault();
       const f = document.getElementById('uploadFile').files[0];
       if (!f) return;
+      if (f.size > 500 * 1024 * 1024) {
+        showRequestError(new Error('Video exceeds the 500 MB upload limit.'));
+        return;
+      }
       const fd = new FormData();
       fd.append('file', f);
       fd.append('plate_pattern', document.getElementById('uploadPlateHint').value);
       fd.append('colour', document.getElementById('uploadColour').value);
       fd.append('body_type', document.getElementById('uploadBody').value);
-      const r = await fetch('/api/analyse/upload', { method: 'POST', body: fd });
-      const data = await r.json();
-      pollJob(data.job_id);
+      fd.append('camera_id', document.getElementById('uploadCamera').value);
+      const localRecordedAt = document.getElementById('uploadRecordedAt').value;
+      fd.append('recorded_at', localRecordedAt ? new Date(localRecordedAt).toISOString() : '');
+      try {
+        const r = await fetch('/api/analyse/upload', { method: 'POST', body: fd });
+        const data = await readApiJSON(r);
+        pollJob(data.job_id);
+      } catch (error) { showRequestError(error); }
     }
 
     async function pollJob(jobId) {
       CURRENT_JOB_ID = jobId;
       const pane = document.getElementById('resultPane');
       while (CURRENT_JOB_ID === jobId) {
-        const r = await fetch(`/api/jobs/${jobId}`);
-        const job = await r.json();
+        let job;
+        try {
+          const r = await fetch(`/api/jobs/${encodeURIComponent(jobId)}`);
+          job = await readApiJSON(r);
+        } catch (error) { showRequestError(error); break; }
         if (job.status === 'running') {
           pane.innerHTML = `
             <div class="card prog-box">
@@ -624,9 +703,11 @@
         } else {
           CURRENT_JOB = job;
           renderJobResult(job);
-          const mr = await fetch('/api/meta');
-          META = await mr.json();
-          populateReidDropdowns();
+          try {
+            const mr = await fetch('/api/meta');
+            META = await readApiJSON(mr);
+            populateReidDropdowns();
+          } catch (error) { showRequestError(error); }
           break;
         }
       }
@@ -722,6 +803,9 @@
       const fu = res.fusion;
       const at = res.attributes;
       const m = res.match;
+      const quality = res.confidence || {};
+      const observation = res.observation || {};
+      const review = res.review || {status:'pending', machine_prediction:fu.text};
       const hints = res.hints || {};
       const gt = job.ground_truth;
       ACTIVE_FRAME_IDX = fu.reference_frame ?? 0;
@@ -746,6 +830,15 @@
             <a class="btn" href="/api/jobs/${job.job_id}/report" target="_blank">Open HTML / Print PDF Report</a>
             <a class="btn btn-sec" href="/api/jobs/${job.job_id}/report?download=true">Download Report (.html)</a>
           </div>
+        </div>
+
+        <div class="card">
+          <h3>Recognition Evidence & Decision</h3>
+          <div class="muted" style="margin-bottom:8px">${esc(quality.recommendation || 'Confidence components unavailable for this stored result.')} &middot; Tier: <b>${esc(quality.tier || 'unscored')}</b></div>
+          <div class="grid-2">
+            ${[['Vehicle detection',quality.vehicle_detection],['Plate localization',quality.plate_localization],['OCR',quality.ocr],['Multi-frame agreement',quality.multi_frame_agreement],['Registry posterior',quality.registry_match_posterior]].map(([label,val])=>`<div><span class="muted">${label}</span><b style="float:right">${val == null ? 'n/a' : Math.round(val*100)+'%'}</b><div class="prog-box"><div class="prog-fill" style="width:${Math.max(0,Math.min(100,(val||0)*100))}%"></div></div></div>`).join('')}
+          </div>
+          <div class="muted" style="margin-top:8px">These component scores are heuristic quality signals, not calibrated probabilities. Camera: <b>${esc(observation.camera_id || job.camera_id || 'unspecified')}</b> &middot; Capture time: <b>${esc(observation.recorded_at || 'not supplied')}</b> &middot; Processed: ${esc(observation.analyzed_at || 'unknown')}.</div>
         </div>
 
         <div class="two-col">
@@ -842,6 +935,24 @@
           ${renderCandidates(m)}
         </div>
 
+        <div class="card">
+          <h3>Human Review</h3>
+          <div class="muted">Machine output is preserved separately from review. Review actions require the server's VTRACE_REVIEW_TOKEN.</div>
+          <p>State: <b>${esc(review.status || 'pending')}</b> &middot; Machine prediction: <code>${esc(review.machine_prediction || fu.text || 'none')}</code>${review.corrected_plate ? ` &middot; Reviewed plate: <code>${esc(review.corrected_plate)}</code>` : ''}</p>
+          <div class="registry-controls" style="display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:8px">
+            <div><label>Reviewer</label><input id="reviewerName" maxlength="80" placeholder="Operator name or ID" /></div>
+            <div><label>Review token</label><input id="reviewToken" type="password" autocomplete="off" /></div>
+            <div><label>Corrected full registration (only for correction)</label><input id="reviewPlate" maxlength="16" value="${esc(review.corrected_plate || '')}" placeholder="e.g. MH12DE4521" /></div>
+          </div>
+          <label>Review note</label><input id="reviewNote" maxlength="500" placeholder="Evidence or reason for decision" />
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+            <button class="btn btn-sec" onclick="submitReview('accepted')">Accept machine prediction</button>
+            <button class="btn btn-sec" onclick="submitReview('rejected')">Reject prediction</button>
+            <button class="btn" onclick="submitReview('corrected')">Save correction</button>
+          </div>
+          <div id="reviewMessage" class="muted" style="margin-top:8px"></div>
+        </div>
+
         <!-- POSITION-BY-POSITION FUSION TABLE -->
         <div class="card">
           <h2>Multi-Frame Character Fusion Breakdown (Per Plate Position)</h2>
@@ -890,7 +1001,7 @@
               ${[...usedFrames, ...excludedFrames].map(f => `
                 <tr style="cursor:pointer" onclick="jumpToFrame(${f.frame})">
                   <td><b>#${f.frame}</b><br><span class="muted">src ${f.source_frame}</span></td>
-                  <td>${f.time_s}s</td>
+                  <td>${f.timestamp_utc ? esc(f.timestamp_utc) : `video +${f.time_s}s`}</td>
                   <td><img src="/api/jobs/${job.job_id}/asset/${f.plate_img}" style="height:34px;border-radius:4px;border:1px solid var(--border)" /></td>
                   <td>
                     ${(f.chars || []).map(c => `
@@ -1016,18 +1127,20 @@
         body_type: document.getElementById('hintBody').value || null,
         roi: withRoi ? ROI_BOX : null
       };
-      const r = await fetch(`/api/jobs/${CURRENT_JOB_ID}/reanalyse`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-      const data = await r.json();
-      if (data.instant) {
-        CURRENT_JOB.result = data.result;
-        renderJobResult(CURRENT_JOB);
-      } else {
-        pollJob(CURRENT_JOB_ID);
-      }
+      try {
+        const r = await fetch(`/api/jobs/${encodeURIComponent(CURRENT_JOB_ID)}/reanalyse`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const data = await readApiJSON(r);
+        if (data.instant) {
+          CURRENT_JOB.result = data.result;
+          renderJobResult(CURRENT_JOB);
+        } else {
+          pollJob(CURRENT_JOB_ID);
+        }
+      } catch (error) { showRequestError(error); }
     }
 
     function resetHints() {
@@ -1038,20 +1151,86 @@
       applyHints(false);
     }
 
+    async function submitReview(action) {
+      const message = document.getElementById('reviewMessage');
+      if (!CURRENT_JOB_ID) return;
+      const token = document.getElementById('reviewToken').value;
+      const body = {
+        action,
+        reviewer: document.getElementById('reviewerName').value.trim(),
+        corrected_plate: action === 'corrected' ? document.getElementById('reviewPlate').value.trim() : null,
+        note: document.getElementById('reviewNote').value.trim()
+      };
+      try {
+        const response = await fetch(`/api/jobs/${encodeURIComponent(CURRENT_JOB_ID)}/review`, {
+          method:'POST', headers:{'Content-Type':'application/json','X-VTrace-Review-Token':token}, body:JSON.stringify(body)
+        });
+        const data = await readApiJSON(response);
+        CURRENT_JOB.result.review = data.review;
+        renderJobResult(CURRENT_JOB);
+        document.getElementById('reviewMessage').textContent = 'Review saved.';
+        loadAnalytics();
+      } catch (error) { message.textContent = error.message || String(error); }
+    }
+
+    async function loadAnalytics() {
+      const host = document.getElementById('analyticsCards');
+      try {
+        const data = await fetch('/api/analytics').then(readApiJSON);
+        const cards = [
+          ['Analyzed observations',data.observations],['Vehicle tracks found',data.vehicle_tracks_detected],
+          ['High-confidence reads',data.successful_plate_recognitions],['Uncertain / review',data.uncertain_predictions],
+          ['Registry matches',data.registry_matches],['Average processing',data.processing_seconds_mean == null ? 'n/a' : `${data.processing_seconds_mean}s`]
+        ];
+        host.innerHTML = cards.map(([label,val])=>`<div class="card"><div class="muted">${esc(label)}</div><div style="font-size:26px;font-weight:800;margin-top:5px">${esc(val)}</div></div>`).join('') +
+          `<div class="card"><h3>Benchmark error rates</h3><div>Ground-truth clips: ${data.benchmark.labeled_clips}</div><div>Automatic false positives: ${data.benchmark.false_positive_rate == null ? 'n/a' : (data.benchmark.false_positive_rate*100).toFixed(1)+'%'}</div><div>Automatic false negatives: ${data.benchmark.false_negative_rate == null ? 'n/a' : (data.benchmark.false_negative_rate*100).toFixed(1)+'%'}</div><div>Candidate false positives before review gate: ${data.benchmark.registry_candidate_false_positive_rate == null ? 'n/a' : (data.benchmark.registry_candidate_false_positive_rate*100).toFixed(1)+'%'}</div><small class="muted">${esc(data.benchmark.limitation)}</small></div>` +
+          `<div class="card"><h3>Camera counts</h3>${Object.entries(data.by_camera).map(([camera,s])=>`<div>${esc(camera)}: ${s.observations} observations · ${s.registry_matches} registry candidates · ${s.uncertain} uncertain</div>`).join('') || '<div class="muted">No completed observations.</div>'}</div>` +
+          `<div class="card"><h3>Analysis trend by day</h3><div class="muted">Uses processing date, not assumed camera capture date.</div>${Object.entries(data.by_analysis_day).sort(([a],[b])=>a.localeCompare(b)).map(([day,s])=>`<div>${esc(day)}: ${s.observations} analyses · ${s.automatic_matches} automatic matches · ${s.uncertain} uncertain</div>`).join('') || '<div class="muted">No completed observations.</div>'}</div>`;
+      } catch (error) { host.innerHTML = `<div class="card">${esc(error.message || error)}</div>`; }
+    }
+
+    function scheduleHistorySearch() {
+      clearTimeout(HISTORY_SEARCH_TIMER);
+      HISTORY_SEARCH_TIMER = setTimeout(loadHistory, 250);
+    }
+
+    async function loadHistory() {
+      const params = new URLSearchParams({
+        q:document.getElementById('historyQuery').value,
+        camera_id:document.getElementById('historyCamera').value,
+        start:document.getElementById('historyStart').value,
+        end:document.getElementById('historyEnd').value,
+        review_status:document.getElementById('historyReview').value
+      });
+      document.getElementById('historyCsv').href = `/api/observations.csv?${params}`;
+      const host = document.getElementById('historyTable');
+      try {
+        const data = await fetch(`/api/observations?${params}`).then(readApiJSON);
+        host.innerHTML = `<div class="muted" style="margin:8px 0">${data.total} observations</div><div style="overflow:auto;max-height:520px"><table><tr><th>Clip</th><th>Camera</th><th>Capture / analysis time</th><th>Plate</th><th>Tier</th><th>System / registry</th><th>Review</th><th></th></tr>${data.rows.map(r=>`<tr><td>${esc(r.filename)}</td><td>${esc(r.camera_id)}</td><td>${esc(r.recorded_at || r.analyzed_at || 'unknown')}<br><small class="muted">${esc(r.timestamp_basis)}</small></td><td><b>${esc(r.plate || 'unknown')}</b>${r.possible_duplicate_of ? `<br><small>Possible duplicate of ${esc(r.possible_duplicate_of)}</small>` : ''}</td><td>${esc(r.recognition_tier)}</td><td>${esc(r.system_status)} / ${esc(r.registry_status)}${r.registry_candidate ? ` · ${esc(r.registry_candidate)}` : ''}</td><td>${esc(r.review_status)}</td><td><button class="btn btn-sec" onclick="showObservation('${esc(r.job_id)}')">Inspect</button></td></tr>`).join('')}</table></div>`;
+      } catch (error) { host.innerHTML = `<div class="card">${esc(error.message || error)}</div>`; }
+    }
+
+    function showObservation(jobId) {
+      const nav = document.querySelector(".tab-btn[onclick*=\"investigate\"]");
+      switchTab('investigate', nav);
+      pollJob(jobId);
+    }
+
     async function runComparison() {
       const ja = document.getElementById('reidSelectA').value;
       const jb = document.getElementById('reidSelectB').value;
       if (!ja || !jb) return;
       const wrap = document.getElementById('reidResult');
       wrap.innerHTML = `<div class="card">Comparing clips...</div>`;
+      try {
       const [ra, rb, rc] = await Promise.all([
-        fetch(`/api/jobs/${ja}`).then(r => r.json()),
-        fetch(`/api/jobs/${jb}`).then(r => r.json()),
+        fetch(`/api/jobs/${encodeURIComponent(ja)}`).then(readApiJSON),
+        fetch(`/api/jobs/${encodeURIComponent(jb)}`).then(readApiJSON),
         fetch('/api/compare', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ job_a: ja, job_b: jb })
-        }).then(r => r.json())
+        }).then(readApiJSON)
       ]);
 
       const bannerCls = rc.verdict === 'same_vehicle' ? 'match' : 'no_confident_match';
@@ -1088,6 +1267,7 @@
           ${renderCandidates(rc.joint_match)}
         </div>
       `;
+      } catch (error) { wrap.innerHTML = `<div class="card"><b style="color:var(--danger)">${esc(error.message || error)}</b></div>`; }
     }
 
     function setPreset(p, c, b, m) {
@@ -1105,12 +1285,13 @@
         body_type: document.getElementById('qBody').value || null,
         make_model: document.getElementById('qModel').value || null
       };
+      try {
       const r = await fetch('/api/match', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
-      const m = await r.json();
+      const m = await readApiJSON(r);
       document.getElementById('queryResult').innerHTML = `
         <div class="banner ${m.status}">
           <div>${esc(m.message)}</div>
@@ -1121,14 +1302,28 @@
           ${renderCandidates(m)}
         </div>
       `;
+      } catch (error) {
+        document.getElementById('queryResult').innerHTML = `<div class="card"><b style="color:var(--danger)">${esc(error.message || error)}</b></div>`;
+      }
+    }
+
+    function scheduleRegistrySearch() {
+      clearTimeout(REGISTRY_SEARCH_TIMER);
+      REGISTRY_SEARCH_TIMER = setTimeout(loadRegistry, 220);
     }
 
     async function loadRegistry() {
       const q = encodeURIComponent(document.getElementById('regSearch').value);
       const c = encodeURIComponent(document.getElementById('regColour').value);
       const b = encodeURIComponent(document.getElementById('regBody').value);
-      const r = await fetch(`/api/registry?q=${q}&colour=${c}&body_type=${b}&limit=100`);
-      const data = await r.json();
+      let data;
+      try {
+        const r = await fetch(`/api/registry?q=${q}&colour=${c}&body_type=${b}&limit=100`);
+        data = await readApiJSON(r);
+      } catch (error) {
+        document.getElementById('regTableWrap').innerHTML = `<div class="card"><b style="color:var(--danger)">${esc(error.message || error)}</b></div>`;
+        return;
+      }
       document.getElementById('regTableWrap').innerHTML = `
         <div class="muted" style="margin-bottom:8px">Showing ${data.rows.length} of ${data.total} registered vehicles</div>
         <div style="overflow-x:auto;max-height:540px;overflow-y:auto">

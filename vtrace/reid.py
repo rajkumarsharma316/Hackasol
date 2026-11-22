@@ -171,7 +171,16 @@ def compare_clips(res_a: dict, res_b: dict, registry: list) -> dict:
     prob_same = 1.0 / (1.0 + math.exp(-max(-30.0, min(30.0, total_llr + log_prior_odds))))
     conf_pct = round(prob_same * 100, 1)
 
-    if conf_pct >= 75 and (plate_llr >= 3.0 or (align_stats["overlap"] == 0 and total_llr >= 3.5)):
+    # Appearance and coarse attributes can nominate a review candidate, but may
+    # never establish identity by themselves. Require several readable plate
+    # positions to agree before using the definitive same-vehicle verdict.
+    plate_identity_supported = (
+        align_stats["overlap"] >= 3
+        and align_stats["exact"] + align_stats["similar"] >= 3
+        and align_stats["mismatch"] == 0
+        and plate_llr >= 3.0
+    )
+    if conf_pct >= 75 and plate_identity_supported:
         verdict = "same_vehicle"
         summary = f"High confidence ({conf_pct}%) that both clips capture the SAME vehicle."
     elif conf_pct >= 40:

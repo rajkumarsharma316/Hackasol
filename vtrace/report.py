@@ -83,6 +83,32 @@ def render(res: dict, job_dir, embed=True, prefix="") -> str:
                f"&middot; generated {dt.datetime.now():%Y-%m-%d %H:%M} &middot; analysis {res['elapsed_s']} s</div>")
     cls = "ok" if m["status"] == "match" else "warn"
     out.append(f"<div class='card banner {cls}'>{E(m['message'])}</div>")
+    quality = res.get("confidence") or {}
+    observation = res.get("observation") or {}
+    if quality:
+        fields = (("Vehicle detection", "vehicle_detection"), ("Plate localization", "plate_localization"),
+                  ("OCR", "ocr"), ("Multi-frame agreement", "multi_frame_agreement"),
+                  ("Registry posterior", "registry_match_posterior"))
+        parts = [f"<b>{label}:</b> {quality.get(key, 0) * 100:.0f}%" for label, key in fields]
+        out.append("<div class='card'><b>Evidence quality:</b> " + E(quality.get("tier", "unscored"))
+                   + " &middot; " + " &middot; ".join(parts)
+                   + "<div class='muted'>" + E(quality.get("recommendation", ""))
+                   + " Scores are rule-based signals, not calibrated probabilities. "
+                   + E(observation.get("camera_id", "")) + " &middot; "
+                   + E(observation.get("recorded_at") or "capture time not supplied") + "</div></div>")
+    review = res.get("review") or {}
+    if review:
+        out.append("<div class='card'><b>Review:</b> " + E(review.get("status", "pending"))
+                   + " &middot; <b>Machine prediction:</b> <code>"
+                   + E(review.get("machine_prediction") or "none") + "</code>")
+        if review.get("corrected_plate"):
+            out.append(" &middot; <b>Reviewed registration:</b> <code>"
+                       + E(review["corrected_plate"]) + "</code>")
+        for event in review.get("events", []):
+            out.append("<div class='muted'>" + E(event.get("reviewed_at", "")) + " · "
+                       + E(event.get("reviewer", "")) + " · " + E(event.get("action", ""))
+                       + (" · " + E(event["note"]) if event.get("note") else "") + "</div>")
+        out.append("</div>")
 
     # ---- extracted info
     out.append("<h2>1. Extracted information</h2><div class='grid'><div class='card'>")
@@ -114,7 +140,8 @@ def render(res: dict, job_dir, embed=True, prefix="") -> str:
     other = [f for f in res["frames"] if not f.get("used_in_fusion")]
     out.append(f"<h2>2. Frames used and characters recovered per frame</h2><div class='card'>"
                f"<div class='muted'>{len(used)} frames used for fusion, {len(other)} examined but not used. Quality "
-               "weight = OCR confidence&sup2; &times; sharpness &times; plate size.</div><table><tr><th>Frame</th><th>Time</th>"
+               "weight = OCR confidence&sup2; &times; sharpness &times; plate size &times; localisation confidence; "
+               "propagated crops are penalised.</div><table><tr><th>Frame</th><th>Time</th>"
                "<th>Plate crop</th><th>Characters (confidence)</th><th>Weight</th><th>Notes</th></tr>")
     for f in used + other[:12]:
         chars = "".join(
@@ -170,8 +197,9 @@ def render(res: dict, job_dir, embed=True, prefix="") -> str:
         out.append("<div class='card'>Registry empty.</div>")
 
     out.append("<h2>5. Method and limitations</h2><div class='card muted'>"
-               "<p><b>Pipeline.</b> Frames are sampled evenly; vehicles detected with YOLO11 and tracked by IoU; the plate is "
-               "localised with a CRAFT text detector plus a plate-colour heuristic and a temporal-consistency filter; each plate "
+               "<p><b>Pipeline.</b> Frames are sampled evenly; vehicles detected with YOLO11 and tracked with a lightweight "
+               "constant-velocity/IoU association; the optional installed plate detector is used on vehicle crops, otherwise "
+               "the legacy CRAFT/text and colour heuristic runs; temporal consistency filters candidates; each plate "
                "crop is read by a CRNN recogniser whose full per-character CTC probabilities are kept; readings are aligned "
                "across frames and pooled with quality weights. Colour comes from k-means clustering of the vehicle body; body "
                "type fuses YOLO class votes with CLIP zero-shot classification; make/model is a CLIP zero-shot estimate.</p>"
