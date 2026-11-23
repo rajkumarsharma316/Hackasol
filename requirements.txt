@@ -9,8 +9,5 @@ torchvision>=0.17.0
 ultralytics>=8.2.0
 easyocr>=1.7.1
 transformers>=4.40.0
-<<<<<<< HEAD
+huggingface-hub>=0.23.0
 scikit-learn>=1.4.0
-=======
-scikit-learn>=1.4.0
->>>>>>> b4e1347 (Updated project files)

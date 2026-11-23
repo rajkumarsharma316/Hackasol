@@ -22,6 +22,7 @@ MAX_FUSION_FRAMES = 15
 # subset is both faster and less likely to overweight one blurred instant.
 MAX_PLATE_SEARCH_FRAMES = 24
 MAX_OCR_FRAMES = 18
+VEHICLE_CONFIDENCE = 0.20
 
 
 def _np(o):
@@ -162,7 +163,9 @@ class VideoAnalysis:
         names = model.names
         dets = []
         for s in range(0, len(self.frames), 16):
-            res = model.predict(self.frames[s:s + 16], classes=VEHICLE_CLASSES, conf=0.25, verbose=False,
+            # Lower the detector threshold slightly to retain small/distant
+            # vehicles; temporal association later removes one-frame noise.
+            res = model.predict(self.frames[s:s + 16], classes=VEHICLE_CLASSES, conf=VEHICLE_CONFIDENCE, verbose=False,
                                 device=engines.YOLO_DEVICE)
             for r in res:
                 d = []
@@ -300,10 +303,17 @@ class VideoAnalysis:
                                     or not 0.60 <= ratio <= 8.5
                                     or bw * bh > 0.24 * vw * vh):
                                 continue
+                            visual = plate.detector_candidate_quality(crop, (bx1, by1, bx2, by2))
+                            # Keep high-confidence detections in difficult night/dirty
+                            # footage, but reject low-confidence boxes that also fail
+                            # the independent plate-appearance check.
+                            if visual < 0.18 and conf < 0.55:
+                                continue
                             ab = (max(0.0, bx1 + x1), max(0.0, by1 + y1),
                                   min(float(fr_w), bx2 + x1), min(float(fr_h), by2 + y1))
                             candidates.append({
-                                "score": float(conf), "box": ab,
+                                "score": float(0.80 * conf + 0.20 * visual), "box": ab,
+                                "detector_conf": float(conf), "visual_score": round(visual, 3),
                                 "quads": [plate.box_to_quad(ab)], "source": "plate model",
                             })
                     candidates.sort(key=lambda p: -p["score"])

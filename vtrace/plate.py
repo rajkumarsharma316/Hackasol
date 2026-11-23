@@ -101,6 +101,27 @@ def _stroke_score(crop: np.ndarray) -> float:
     return min(1.0, active_cols / 0.35) * min(1.0, vert_dom / 0.85)
 
 
+def detector_candidate_quality(crop: np.ndarray, box) -> float:
+    """Independent visual sanity check for a learned detector proposal.
+
+    A detector confidence alone can be high for bumper trim, badges, and tail
+    lamps. This deliberately lightweight score is not another detector: it
+    verifies that the proposed crop has a plausible plate aspect, bright/yellow
+    substrate (or high local contrast), and character-like vertical strokes.
+    """
+    h, w = crop.shape[:2]
+    x1, y1, x2, y2 = [int(round(v)) for v in box]
+    x1, y1, x2, y2 = max(0, x1), max(0, y1), min(w, x2), min(h, y2)
+    patch = crop[y1:y2, x1:x2]
+    if patch.size == 0 or patch.shape[0] < 5 or patch.shape[1] < 10:
+        return 0.0
+    aspect = patch.shape[1] / max(patch.shape[0], 1)
+    aspect_score = 1.0 if 1.6 <= aspect <= 7.5 else 0.45 if 0.8 <= aspect <= 9.0 else 0.0
+    substrate = min(1.0, _plate_colour_fraction(patch) / 0.45)
+    strokes = _stroke_score(patch)
+    return float(0.25 * aspect_score + 0.35 * substrate + 0.40 * strokes)
+
+
 def _craft_quads(crop: np.ndarray) -> list[np.ndarray]:
     reader = engines.ocr_reader()
     h, w = crop.shape[:2]
