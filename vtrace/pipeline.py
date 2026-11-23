@@ -17,6 +17,11 @@ MAX_FRAMES = 60
 MAX_WIDTH = 1280
 VEHICLE_CLASSES = [1, 2, 3, 5, 7]   # COCO: bicycle, car, motorcycle, bus, truck
 MAX_FUSION_FRAMES = 15
+# CRAFT detection and CRNN OCR are the most expensive stages.  Consecutive
+# CCTV frames tend to be near-identical, so analysing a diverse high-quality
+# subset is both faster and less likely to overweight one blurred instant.
+MAX_PLATE_SEARCH_FRAMES = 24
+MAX_OCR_FRAMES = 18
 
 
 def _np(o):
@@ -66,6 +71,22 @@ def _center_distance(a, b):
     return float(np.linalg.norm(ac - bc) / diag)
 
 
+def _diverse_best(frame_ids, score_for, limit):
+    """Pick at most ``limit`` good frames, spread over the clip timeline.
+
+    Choosing only the globally largest boxes commonly selects a run of almost
+    identical frames.  One winner per temporal bin keeps useful viewpoint and
+    focus variation for temporal OCR fusion.
+    """
+    ids = sorted(frame_ids)
+    if len(ids) <= limit:
+        return ids
+    selected = []
+    for group in np.array_split(np.asarray(ids, dtype=int), limit):
+        selected.append(max((int(i) for i in group), key=score_for))
+    return sorted(set(selected))
+
+
 class VideoAnalysis:
     def __init__(self, video_path, job_dir, registry, progress=None):
         self.video_path = str(video_path)
@@ -95,15 +116,14 @@ class VideoAnalysis:
             fps = 25.0
         picked, i = [], 0
         if reported_total > 0:
-            idxs = set(np.linspace(0, reported_total - 1, min(reported_total, MAX_FRAMES)).astype(int).tolist())
-            while True:
+            # Seek to the sampled frames rather than decode a whole long clip.
+            idxs = np.unique(np.linspace(0, reported_total - 1, min(reported_total, MAX_FRAMES)).astype(int))
+            for frame_idx in idxs:
+                cap.set(cv2.CAP_PROP_POS_FRAMES, int(frame_idx))
                 ok, fr = cap.read()
-                if not ok:
-                    break
-                if i in idxs:
-                    picked.append((i, fr))
-                i += 1
-            total = i
+                if ok:
+                    picked.append((int(frame_idx), fr))
+            total = reported_total
         else:   # Unknown-length videos: reservoir-sample without retaining every decoded frame.
             rng = random.Random(0)
             while True:
@@ -225,7 +245,12 @@ class VideoAnalysis:
         if hints.get("track_id"):
             track = next((t for t in self.tracks if t["id"] == int(hints["track_id"])), track)
         boxes = {fi: b for fi, b, _ in track["boxes"]}
-        self.progress(25, f"Locating number plate (vehicle track #{track['id']}, {len(boxes)} frames)")
+        search_frames = _diverse_best(
+            boxes,
+            lambda fi: (boxes[fi][2] - boxes[fi][0]) * (boxes[fi][3] - boxes[fi][1]),
+            MAX_PLATE_SEARCH_FRAMES,
+        )
+        self.progress(25, f"Locating number plate (vehicle track #{track['id']}, {len(search_frames)} selected frames)")
 
         # ---- plate localisation per frame
         roi = hints.get("roi")
@@ -245,7 +270,8 @@ class VideoAnalysis:
                 # This avoids treating arbitrary CRAFT text (logos, lamps, trim) as
                 # a plate and avoids loading CRAFT weights on the model-backed path.
                 crops, crop_meta = [], []
-                for fi, vb in boxes.items():
+                for fi in search_frames:
+                    vb = boxes[fi]
                     fr = self.frames[fi]
                     x1, y1, x2, y2 = plate.pad_box(vb, fr.shape, 0.08, 0.08)
                     crop = fr[y1:y2, x1:x2]
@@ -287,7 +313,8 @@ class VideoAnalysis:
             else:
                 # Keep the original CRAFT + colour proposals available when the
                 # optional plate detector has not been installed.
-                for k, (fi, vb) in enumerate(boxes.items()):
+                for k, fi in enumerate(search_frames):
+                    vb = boxes[fi]
                     fr = self.frames[fi]
                     x1, y1, x2, y2 = plate.pad_box(vb, fr.shape, 0.04, 0.04)
                     crop = fr[y1:y2, x1:x2]
@@ -304,7 +331,7 @@ class VideoAnalysis:
                         })
                     props[fi] = shifted
                     if k % 5 == 0:
-                        self.progress(25 + int(30 * k / max(len(boxes), 1)), "Locating number plate")
+                        self.progress(25 + int(30 * k / max(len(search_frames), 1)), "Locating number plate")
             # Reference plate location from high-confidence (preferably text-backed) frames
             text_good = [
                 (fi, p[0]) for fi, p in props.items()
@@ -335,9 +362,15 @@ class VideoAnalysis:
                     per_frame[fi] = best
 
         # ---- OCR per frame
-        self.progress(55, "Reading plate characters frame by frame")
+        ocr_frames = _diverse_best(
+            per_frame,
+            lambda fi: per_frame[fi]["score"] * (1.0 + min(_sharpness(self.frames[fi]), 800.0) / 800.0),
+            MAX_OCR_FRAMES,
+        )
+        self.progress(55, f"Reading plate characters from {len(ocr_frames)} selected frames")
         frame_rows, readings = [], []
-        for k, (fi, info) in enumerate(sorted(per_frame.items())):
+        for k, fi in enumerate(ocr_frames):
+            info = per_frame[fi]
             fr = self.frames[fi]
             pb = plate.pad_box(info["box"], fr.shape)
             pc = fr[pb[1]:pb[3], pb[0]:pb[2]]
@@ -394,7 +427,7 @@ class VideoAnalysis:
             if w > 0:
                 readings.append({"frame": fi, "weight": w, "chars": rd["chars"]})
             if k % 5 == 0:
-                self.progress(55 + int(20 * k / max(len(per_frame), 1)), "Reading plate characters")
+                self.progress(55 + int(20 * k / max(len(ocr_frames), 1)), "Reading plate characters")
         readings.sort(key=lambda r: -r["weight"])
         used = readings[:MAX_FUSION_FRAMES]
         used_ids = {r["frame"] for r in used}
@@ -462,7 +495,8 @@ class VideoAnalysis:
         cv2.imwrite(str(self.dir / "keyframe.jpg"), kf, [cv2.IMWRITE_JPEG_QUALITY, 90])
 
         out = {
-            "video": {**self.meta, "file": Path(self.video_path).name},
+            "video": {**self.meta, "file": Path(self.video_path).name,
+                      "plate_search_frames": len(search_frames), "ocr_frames": len(ocr_frames)},
             "track": {"id": track["id"], "frames": len(boxes), "yolo_classes": track["cls"],
                       "fallback_whole_frame": bool(track.get("fallback"))},
             "tracks": self.tracks_summary(),

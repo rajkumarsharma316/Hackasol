@@ -116,11 +116,12 @@ def align_plate(tokens: list, plate: str):
     if m == 0:
         return 0.0, []
     lr = np.ones((m, n))
+    plate_idx = np.array([CHAR_IDX.get(ch, -1) for ch in plate], dtype=int)
     for i, t in enumerate(tokens):
         if t.kind == "dist":
             v = t.lr_vec
-            for j, ch in enumerate(plate):
-                lr[i, j] = v[CHAR_IDX[ch]] if ch in CHAR_IDX else 1.0
+            valid = plate_idx >= 0
+            lr[i, valid] = v[plate_idx[valid]]
     llr = np.log(lr)
 
     NEG = -1e9
@@ -269,17 +270,19 @@ def match(evidence: Evidence, registry: list, top_k: int = 5) -> dict:
         }
     scored = []
     for r in registry:
-        plate_llr, plate_detail = 0.0, []
+        plate_llr, plate_ops = 0.0, []
         for toks, src in zip(evidence.plates, evidence.plate_sources):
             s, ops = align_plate(toks, r["reg_no"])
-            rows, stats = describe_alignment(toks, r["reg_no"], ops)
             plate_llr += s
-            plate_detail.append({"source": src, "llr": round(s, 2), "rows": rows, "stats": stats})
+            # Rendering explanations for every registry row is costly and is
+            # discarded immediately. Keep alignment paths, then expand only
+            # the handful of candidates returned to the investigator.
+            plate_ops.append((toks, src, s, ops))
         c_llr = W_COLOUR * _label_llr(evidence.colour, COLOURS, COLOUR_CONFUSION, r["colour"])
         b_llr = W_BODY * _label_llr(evidence.body, BODY_TYPES, BODY_CONFUSION, r["body_type"])
         m_llr = W_MODEL * _model_llr(evidence.model, r["make"], r["model"], all_models)
         total = plate_llr + c_llr + b_llr + m_llr
-        scored.append((total, plate_llr, c_llr, b_llr, m_llr, plate_detail, r))
+        scored.append((total, plate_llr, c_llr, b_llr, m_llr, plate_ops, r))
 
     # Posterior over registry + null hypothesis (log-sum-exp for stability).
     log_prior = math.log((1 - PRIOR_NULL) / n)
@@ -292,7 +295,11 @@ def match(evidence: Evidence, registry: list, top_k: int = 5) -> dict:
     order = np.argsort(-logs[:-1])[:top_k]
     cands = []
     for rank, idx in enumerate(order, 1):
-        total, p_llr, c_llr, b_llr, m_llr, pdet, r = scored[idx]
+        total, p_llr, c_llr, b_llr, m_llr, plate_ops, r = scored[idx]
+        pdet = []
+        for toks, src, score, ops in plate_ops:
+            rows, stats = describe_alignment(toks, r["reg_no"], ops)
+            pdet.append({"source": src, "llr": round(score, 2), "rows": rows, "stats": stats})
         cands.append({
             "rank": rank,
             "vehicle": r,
